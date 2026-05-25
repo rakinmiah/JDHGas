@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/* JDH Gas — design tokens (from website-plan/06-tokens.md). Light theme only. */
+@theme {
+  /* Brand */
+  --color-ink: #0b1220;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4fd7;
+  --color-flame: #3b82f6;
+  --color-steel: #8da2bc;
+  --color-gas-safe: #ffd200;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1eb759;
+
+  /* Semantic surfaces / text */
+  --color-surface: #ffffff;
+  --color-sunken: #f4f7fb;
+  --color-ink-soft: #142036;
+  --color-border-subtle: #e4e9f0;
+  --color-border-strong: #c9d2de;
+  --color-text: #0b1220;
+  --color-muted: #51607a;
+  --color-inverse: #f5f8fc;
+
+  /* Fonts (wired from next/font in layout) */
+  --font-display: var(--font-display-src), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body-src), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius */
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.06), 0 1px 3px rgba(11, 18, 32, 0.08);
+  --shadow-md: 0 4px 12px rgba(11, 18, 32, 0.08), 0 2px 4px rgba(11, 18, 32, 0.06);
+  --shadow-lg: 0 12px 32px rgba(11, 18, 32, 0.12);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-hover);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.section {
+  padding-block: 3rem;
+}
+@media (min-width: 768px) {
+  .section { padding-block: 5rem; }
+}
+@media (min-width: 1024px) {
+  .section { padding-block: 6rem; }
+}
+
+.container-page {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-page { padding-inline: 2rem; }
+}
+
+.legal {
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+.legal h2 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.legal p { margin-bottom: 1rem; }
+.legal ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+.legal li { margin-bottom: 0.35rem; }
+.legal a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+.legal strong { color: var(--color-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
