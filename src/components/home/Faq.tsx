@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { FAQS } from "@/lib/site";
 
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="section bg-sunken" aria-labelledby="faq-h">

@@ -88,7 +88,16 @@ export function WhyChoose() {
                   <s.icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="font-display text-base font-semibold leading-tight">{s.title}</h3>
-                <span className="ml-auto font-display text-sm font-bold text-primary/40 lg:hidden">0{i + 1}</span>
+                <span
+                  className={`ml-auto grid h-8 w-8 shrink-0 place-items-center rounded-full border font-display text-sm font-bold transition-colors duration-300 lg:hidden ${
+                    i < active
+                      ? "border-primary bg-primary text-white"
+                      : "border-border-strong bg-surface text-muted"
+                  }`}
+                  aria-hidden
+                >
+                  0{i + 1}
+                </span>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">{s.text}</p>
             </li>

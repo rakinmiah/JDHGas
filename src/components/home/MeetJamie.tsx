@@ -12,24 +12,32 @@ const POINTS = [
 
 export function MeetJamie() {
   return (
-    <section className="section bg-sunken" aria-labelledby="jamie-h">
+    <section className="section bg-sunken" aria-label="Meet Jamie">
       <div className="container-page grid items-center gap-10 md:grid-cols-[46%_54%] md:gap-12 lg:gap-16">
-        <Reveal className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:max-w-none">
-          <Image
-            src="/images/jamie-portrait.jpg"
-            alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
-            fill
-            sizes="(max-width: 768px) 90vw, 46vw"
-            className="object-cover object-[50%_25%]"
-          />
-        </Reveal>
+        <div>
+          {/* heading above the image on mobile/tablet */}
+          <div className="md:hidden">
+            <p className="eyebrow">Meet your engineer</p>
+            <h2 className="mt-2 font-display text-3xl font-bold">Meet Jamie</h2>
+          </div>
+          <Reveal className="relative mx-auto mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:mt-0 md:max-w-none">
+            <Image
+              src="/images/jamie-portrait.jpg"
+              alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
+              fill
+              sizes="(max-width: 768px) 90vw, 46vw"
+              className="object-cover object-[50%_25%]"
+            />
+          </Reveal>
+        </div>
 
         <Reveal delay={0.1}>
-          <p className="eyebrow">Meet your engineer</p>
-          <h2 id="jamie-h" className="mt-3 font-display text-3xl font-bold md:text-4xl">
+          {/* heading sits in the text column on desktop */}
+          <p className="eyebrow hidden md:block">Meet your engineer</p>
+          <h2 className="mt-3 hidden font-display text-3xl font-bold md:block md:text-4xl">
             Meet Jamie
           </h2>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+          <p className="max-w-xl text-lg leading-relaxed text-muted md:mt-5">
             I started JDH Gas Services to do gas work the way I&apos;d want it done in my own
             home — carefully, honestly, and explained in plain English. I&apos;m Gas Safe
             registered and I treat every boiler, and every home, like it matters.
