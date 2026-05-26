@@ -20,12 +20,23 @@ export function PageHero({
   imageAlt?: string;
 }) {
   const buttons = (
-    <div className="mt-6 flex flex-wrap gap-3">
-      <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
+    <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+      <Button
+        href={SITE.phoneHref}
+        className="w-full md:w-auto"
+        aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
+      >
         <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
       </Button>
-      <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp</Button>
-      <Button href="/contact" variant="secondary">Send an enquiry</Button>
+      <div className="flex gap-3 md:contents">
+        <Button href={SITE.whatsappHref} variant="whatsapp" className="flex-1 md:flex-none">
+          WhatsApp
+        </Button>
+        <Button href="/contact" variant="secondary" className="flex-1 md:flex-none">
+          <span className="md:hidden">Enquire</span>
+          <span className="hidden md:inline">Send an enquiry</span>
+        </Button>
+      </div>
     </div>
   );
 
