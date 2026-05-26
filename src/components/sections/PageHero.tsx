@@ -15,7 +15,7 @@ export function PageHero({
   crumbs: Crumb[];
 }) {
   return (
-    <section className="bg-sunken">
+    <section className="border-b border-border-subtle bg-sunken">
       <div className="container-page py-10 md:py-14">
         <Breadcrumbs items={crumbs} />
         <p className="eyebrow mt-6">{eyebrow}</p>

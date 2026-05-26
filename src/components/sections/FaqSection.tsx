@@ -14,7 +14,7 @@ export function FaqSection({
   heading?: string;
   jsonLd?: boolean;
 }) {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

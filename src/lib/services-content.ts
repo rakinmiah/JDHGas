@@ -27,8 +27,8 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     h1: "Boiler servicing in Burgess Hill",
     metaTitle: "Boiler Service in Burgess Hill | JDH Gas Services",
     metaDescription:
-      "Annual boiler servicing in Burgess Hill by a Gas Safe registered engineer. Thorough safety & efficiency checks. First service from £75 — book today.",
-    lead: "A boiler service is an annual safety and efficiency check carried out by a Gas Safe registered engineer. I inspect and test your boiler's key components, check it's burning safely, and flag anything that needs attention — so small issues are caught before they become breakdowns. Your first service is £75 for new customers.",
+      "Annual boiler servicing in Burgess Hill by a Gas Safe registered engineer. Thorough safety & efficiency checks. First service from £75. Book today.",
+    lead: "A boiler service is an annual safety and efficiency check carried out by a Gas Safe registered engineer. I inspect and test your boiler's key components, check it's burning safely, and flag anything that needs attention, so small issues are caught before they become breakdowns. Your first service is £75 for new customers.",
     image: "/images/work/bosch-service.jpg",
     imageAlt: "Jamie servicing the internals of a boiler during an annual service in Burgess Hill",
     serviceType: "Boiler Servicing",
@@ -36,7 +36,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     blocks: [
       {
         heading: "What's included in your service",
-        body: "Every service is done by the book — no rushing, no skipped steps. I take my time and explain anything I find in plain English.",
+        body: "Every service is done by the book, with no rushing and no skipped steps. I take my time and explain anything I find in plain English.",
         bullets: [
           "Full visual inspection of the boiler and its installation",
           "Flue gas analysis and combustion readings to confirm it's burning safely",
@@ -48,14 +48,14 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "When to book",
-        body: "Late summer to autumn is the ideal time — it gets your boiler ready before the winter workload, and beats the cold-snap rush. If it's been more than 12 months, or you've just moved in, it's worth booking in.",
+        body: "Late summer to autumn is the ideal time. It gets your boiler ready before the winter workload, and beats the cold-snap rush. If it's been more than 12 months, or you've just moved in, it's worth booking in.",
       },
     ],
     faqs: [
-      { q: "How much is a boiler service?", a: "A boiler service is £75 for new customers — a full Gas Safe check. If anything needs repairing, I'll always give you a clear quote before doing any extra work." },
-      { q: "How long does a boiler service take?", a: "A standard boiler service usually takes 30–60 minutes, depending on the make and how accessible the boiler is. I won't rush it — a proper service is worth doing well." },
+      { q: "How much is a boiler service?", a: "A boiler service is £75 for new customers. It's a full Gas Safe check. If anything needs repairing, I'll always give you a clear quote before doing any extra work." },
+      { q: "How long does a boiler service take?", a: "A standard boiler service usually takes 30–60 minutes, depending on the make and how accessible the boiler is. I won't rush it. A proper service is worth doing well." },
       { q: "How often should a boiler be serviced?", a: "Once every 12 months by a Gas Safe registered engineer. It keeps the boiler safe and efficient, and most manufacturer warranties require an annual service to stay valid." },
-      { q: "Do I need a service to keep my warranty valid?", a: "In most cases yes — boiler manufacturers usually require proof of an annual service to honour the warranty. I'll leave you with a record of the work either way." },
+      { q: "Do I need a service to keep my warranty valid?", a: "In most cases yes. Boiler manufacturers usually require proof of an annual service to honour the warranty. I'll leave you with a record of the work either way." },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     metaTitle: "Landlord Gas Safety Certificate, Burgess Hill | JDH",
     metaDescription:
       "Landlord CP12 gas safety certificates in Burgess Hill from a Gas Safe engineer. Legal annual checks, fast turnaround, digital copy. Book today.",
-    lead: "A CP12 — the Landlord Gas Safety Certificate — is a legal requirement. UK landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer. I carry out CP12 checks across Burgess Hill and Mid Sussex, with a digital certificate sent straight to you.",
+    lead: "A CP12, the Landlord Gas Safety Certificate, is a legal requirement. UK landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer. I carry out CP12 checks across Burgess Hill and Mid Sussex, with a digital certificate sent straight to you.",
     image: "/images/work/manometer.jpg",
     imageAlt: "Gas pressure test being carried out as part of a landlord gas safety check in Burgess Hill",
     serviceType: "Gas Safety Certificate (CP12)",
@@ -92,8 +92,8 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     faqs: [
       { q: "What is a CP12 / landlord gas safety certificate?", a: "A CP12 is the Landlord Gas Safety Certificate. By law, landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer." },
       { q: "How long is a gas safety certificate valid?", a: "A CP12 is valid for 12 months and must be renewed annually. You must give tenants a copy within 28 days of the check, and keep records for at least two years." },
-      { q: "Do homeowners need a gas safety certificate?", a: "No — a CP12 is a legal requirement only for landlords. Homeowners aren't required to have one, but an annual gas safety check is still strongly recommended for peace of mind." },
-      { q: "What does a CP12 cover?", a: "It covers all fixed gas appliances (boiler, cooker, fire), the gas pipework and the flues — checking they're safe, correctly installed and burning properly." },
+      { q: "Do homeowners need a gas safety certificate?", a: "No. A CP12 is a legal requirement only for landlords. Homeowners aren't required to have one, but an annual gas safety check is still strongly recommended for peace of mind." },
+      { q: "What does a CP12 cover?", a: "It covers all fixed gas appliances (boiler, cooker, fire), the gas pipework and the flues, checking they're safe, correctly installed and burning properly." },
       { q: "How much is a landlord gas safety certificate?", a: "It depends on how many gas appliances need checking. Send me your postcode and the number of appliances and I'll give you a clear price." },
     ],
   },
@@ -105,7 +105,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     metaTitle: "Boiler Repair in Burgess Hill | JDH Gas Services",
     metaDescription:
       "Fast, reliable boiler & heating repairs in Burgess Hill from Gas Safe engineer Jamie Hannah. All major brands fixed. Call or WhatsApp for a quick response.",
-    lead: "If your boiler's stopped, your heating's gone cold or you've lost hot water, I carry out fast, reliable repairs on boilers and full heating systems — on every major make. Tell me what's happening (a photo of the boiler and any fault code helps) and I'll get you booked in quickly and give you an honest answer on what it needs.",
+    lead: "If your boiler's stopped, your heating's gone cold or you've lost hot water, I carry out fast, reliable repairs on boilers and full heating systems, on every major make. Tell me what's happening (a photo of the boiler and any fault code helps) and I'll get you booked in quickly and give you an honest answer on what it needs.",
     image: "/images/work/analyser-worcester.jpg",
     imageAlt: "Diagnosing a boiler fault with a flue gas analyser during a repair in Burgess Hill",
     serviceType: "Heating System & Boiler Repair",
@@ -117,24 +117,24 @@ export const SERVICE_CONTENT: ServiceContent[] = [
           "Boiler losing pressure or leaking",
           "Boiler showing a fault code or locking out",
           "Radiators cold at the bottom or not heating up",
-          "Strange noises — banging, gurgling or whistling",
+          "Strange noises like banging, gurgling or whistling",
           "Pilot light or ignition problems",
         ],
       },
       {
         heading: "Repair or replace? I'll tell you straight",
-        body: "Not every fault is worth fixing on an old boiler — and not every old boiler needs replacing. I'll give you honest advice on whether a repair makes sense or whether your money is better spent elsewhere. No pressure, no upsell.",
+        body: "Not every fault is worth fixing on an old boiler, and not every old boiler needs replacing. I'll give you honest advice on whether a repair makes sense or whether your money is better spent elsewhere. No pressure, no upsell.",
       },
       {
         heading: "Response times",
-        body: "I work Monday to Friday and prioritise breakdowns where I can. I don't claim to be a 24/7 emergency service — but I'll always be upfront about when I can get to you.",
+        body: "I work Monday to Friday and prioritise breakdowns where I can. I don't claim to be a 24/7 emergency service, but I'll always be upfront about when I can get to you.",
       },
     ],
     faqs: [
       { q: "Why won't my boiler fire up?", a: "Common causes are low pressure, a tripped lockout/fault code, a frozen condensate pipe in winter, or a faulty component like the ignition or fan. Send me the make and any fault code and I'll know where to start." },
       { q: "Why is my boiler losing pressure?", a: "Usually a small leak somewhere in the system or a failed expansion vessel. If you're topping it up often, it's worth getting looked at before it causes bigger problems." },
-      { q: "Should I repair or replace my boiler?", a: "It depends on the boiler's age, the fault and the repair cost. As a rough guide, if a boiler is over ~12 years old and facing an expensive repair, replacement is often the better value — but I'll give you honest advice for your situation." },
-      { q: "Do you repair all makes of boiler?", a: "Yes — I work on all the major makes including Worcester Bosch, Vaillant, Ideal, Baxi and Bosch." },
+      { q: "Should I repair or replace my boiler?", a: "It depends on the boiler's age, the fault and the repair cost. As a rough guide, if a boiler is over ~12 years old and facing an expensive repair, replacement is often the better value, but I'll give you honest advice for your situation." },
+      { q: "Do you repair all makes of boiler?", a: "Yes.I work on all the major makes including Worcester Bosch, Vaillant, Ideal, Baxi and Bosch." },
     ],
   },
   {
@@ -145,7 +145,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     metaTitle: "Gas Hob & Cooker Fitting Burgess Hill | JDH Gas",
     metaDescription:
       "Gas Safe hob & cooker installation in Burgess Hill. Safe fitting, removal and tightness testing of gas appliances by Jamie Hannah. Get in touch.",
-    lead: "By law, gas hobs and cookers must be installed by a Gas Safe registered engineer. I fit new gas hobs and cookers, safely remove old ones, and tightness-test the connection so you know it's safe to use. Happy to fit an appliance you've already bought — just send me the details.",
+    lead: "By law, gas hobs and cookers must be installed by a Gas Safe registered engineer. I fit new gas hobs and cookers, safely remove old ones, and tightness-test the connection so you know it's safe to use. Happy to fit an appliance you've already bought. Just send me the details.",
     image: "/images/work/gas-hob.jpg",
     imageAlt: "Newly installed gas hob safety-checked and tested by JDH Gas in Burgess Hill",
     serviceType: "Gas Appliance Installation",
@@ -162,13 +162,13 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "Bought your own appliance?",
-        body: "No problem — if you've ordered a new hob or cooker, I can fit it for you. Send me the make and model and a photo of where it's going, and I'll let you know what's involved.",
+        body: "No problem. If you've ordered a new hob or cooker, I can fit it for you. Send me the make and model and a photo of where it's going, and I'll let you know what's involved.",
       },
     ],
     faqs: [
-      { q: "Do I need a Gas Safe engineer to fit a gas hob?", a: "Yes — it's a legal requirement that any gas appliance is installed by a Gas Safe registered engineer. Fitting one yourself or using an unregistered installer is unsafe and illegal." },
+      { q: "Do I need a Gas Safe engineer to fit a gas hob?", a: "Yes.it's a legal requirement that any gas appliance is installed by a Gas Safe registered engineer. Fitting one yourself or using an unregistered installer is unsafe and illegal." },
       { q: "Can you fit a gas hob I've already bought?", a: "Absolutely. Send me the make and model and a photo of the space, and I'll confirm what's needed and give you a price." },
-      { q: "Do you remove the old appliance?", a: "Yes — I'll safely disconnect and remove your old hob or cooker as part of the job." },
+      { q: "Do you remove the old appliance?", a: "Yes.I'll safely disconnect and remove your old hob or cooker as part of the job." },
     ],
   },
 ];

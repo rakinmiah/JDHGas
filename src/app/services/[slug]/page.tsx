@@ -2,14 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
-import { WhatsAppGlyph } from "@/components/ui/icons";
+import { Check, ArrowRight, Phone, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Reviews } from "@/components/home/Reviews";
 import { CtaBand } from "@/components/home/CtaBand";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
 import { SITE } from "@/lib/site";
+
+const AREA_LINKS = [
+  { name: "Burgess Hill", href: "/areas/burgess-hill" },
+  { name: "Haywards Heath", href: "/areas/haywards-heath" },
+  { name: "Hassocks", href: "/areas/hassocks" },
+  { name: "Cuckfield", href: "/areas/cuckfield" },
+];
 
 export function generateStaticParams() {
   return SERVICE_CONTENT.map((s) => ({ slug: s.slug }));
@@ -74,6 +81,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 )}
               </div>
             ))}
+
+            <div>
+              <h2 className="font-display text-2xl font-bold md:text-3xl">Areas I cover</h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-muted">
+                Based in Burgess Hill, I cover the surrounding Mid Sussex towns and villages.
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {AREA_LINKS.map((a) => (
+                  <li key={a.href}>
+                    <Link
+                      href={a.href}
+                      className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-border-subtle bg-surface px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                    >
+                      <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden />
+                      {a.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
@@ -82,11 +109,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-6">
               <p className="font-display text-lg font-bold">Book {s.navTitle.toLowerCase()}</p>
-              <p className="mt-2 text-sm text-muted">Gas Safe registered · {SITE.gasSafe} · 5.0★ from 24 reviews.</p>
+              <p className="mt-2 text-sm text-muted">
+                Gas Safe registered · {SITE.gasSafe} · {SITE.rating.value}★ from {SITE.rating.count} reviews.
+              </p>
               <div className="mt-4 flex flex-col gap-2">
-                <a href={SITE.phoneHref} className="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-pill)] bg-primary px-4 font-semibold text-white hover:bg-primary-hover">Call {SITE.phoneDisplay}</a>
-                <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-whatsapp px-4 font-semibold text-white hover:bg-whatsapp-hover"><WhatsAppGlyph className="h-5 w-5" /> WhatsApp</a>
-                <Link href="/contact" className="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-pill)] border border-border-strong px-4 font-semibold hover:border-primary hover:text-primary">Send an enquiry</Link>
+                <Button href={SITE.phoneHref} className="w-full" aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
+                  <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
+                </Button>
+                <Button href={SITE.whatsappHref} variant="whatsapp" className="w-full">WhatsApp</Button>
+                <Button href="/contact" variant="secondary" className="w-full">Send an enquiry</Button>
               </div>
             </div>
             <div className="rounded-[var(--radius-lg)] border border-border-subtle p-6">
