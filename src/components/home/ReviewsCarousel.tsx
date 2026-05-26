@@ -64,7 +64,7 @@ export function ReviewsCarousel({ reviews }: { reviews: DisplayReview[] }) {
         {reviews.map((r, i) => (
           <figure
             key={`${r.name}-${i}`}
-            className="flex w-[300px] shrink-0 snap-start flex-col rounded-[var(--radius-lg)] border border-border-subtle bg-surface p-6 shadow-[var(--shadow-sm)] md:w-[340px]"
+            className="flex shrink-0 basis-[85%] snap-start flex-col rounded-[var(--radius-lg)] border border-border-subtle bg-surface p-6 shadow-[var(--shadow-sm)] sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">

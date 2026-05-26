@@ -1,5 +1,4 @@
 import { Hero } from "@/components/home/Hero";
-import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
 import { MeetJamie } from "@/components/home/MeetJamie";
 import { WhyChoose } from "@/components/home/WhyChoose";
@@ -38,7 +37,6 @@ export default function Home() {
       <WhyChoose />
       <LogoStrip />
       <MeetJamie />
-      <TrustBar />
       <ServiceArea />
       <Faq />
       <CtaBand />

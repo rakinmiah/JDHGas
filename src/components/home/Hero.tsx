@@ -7,7 +7,12 @@ import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-sunken">
+    <section className="relative isolate overflow-hidden bg-sunken">
+      {/* layered depth */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-32 right-[-8%] h-[42rem] w-[42rem] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-[-25%] left-[-8%] h-[30rem] w-[30rem] rounded-full bg-flame/10 blur-3xl" />
+      </div>
       <div className="container-page grid items-center gap-10 py-12 md:py-16 lg:grid-cols-[44%_56%] lg:gap-8 lg:py-20">
         {/* Copy */}
         <div className="order-2 lg:order-1">
@@ -49,15 +54,17 @@ export function Hero() {
 
         {/* Portrait */}
         <div className="order-1 lg:order-2">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-lg)] lg:aspect-[1/1] lg:max-w-none">
-            <Image
-              src="/images/work/bosch-service.jpg"
-              alt="Jamie Hannah, Gas Safe registered engineer, servicing an open Bosch boiler in Burgess Hill"
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 56vw"
-              className="object-cover object-[50%_32%]"
-            />
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md lg:aspect-[1/1] lg:max-w-none">
+            <div className="relative h-full w-full overflow-hidden rounded-[var(--radius-lg)] ring-1 ring-border-subtle">
+              <Image
+                src="/images/work/bosch-service.jpg"
+                alt="Jamie Hannah, Gas Safe registered engineer, servicing an open Bosch boiler in Burgess Hill"
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 56vw"
+                className="object-cover object-[50%_32%]"
+              />
+            </div>
           </div>
         </div>
       </div>

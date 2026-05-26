@@ -6,6 +6,9 @@ import { SERVICES } from "@/lib/site";
 const ICONS = { Flame, Wrench, ClipboardCheck, CookingPot } as const;
 
 export function Services() {
+  const [featured, ...rest] = SERVICES;
+  const FeaturedIcon = ICONS[featured.icon as keyof typeof ICONS];
+
   return (
     <section className="section bg-surface" aria-labelledby="services-h">
       <div className="container-page">
@@ -13,11 +16,44 @@ export function Services() {
         <h2 id="services-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
           What I can help with
         </h2>
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s, i) => {
+
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Featured — boiler servicing: a wide ink banner carrying the £75 hook */}
+          <Reveal as="li" className="sm:col-span-2 lg:col-span-3">
+            <Link
+              href={featured.href}
+              className="group relative flex flex-col gap-6 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-7 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] sm:flex-row sm:items-center sm:justify-between lg:p-8"
+            >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
+              />
+              <div className="relative flex items-start gap-4 sm:items-center">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
+                  <FeaturedIcon className="h-6 w-6" aria-hidden />
+                </span>
+                <div>
+                  <h3 className="font-display text-xl font-bold text-inverse">{featured.title}</h3>
+                  <p className="mt-1.5 max-w-xl leading-relaxed text-inverse/80">{featured.blurb}</p>
+                </div>
+              </div>
+              <div className="relative flex shrink-0 items-center gap-4">
+                <span className="inline-flex items-center rounded-[var(--radius-pill)] bg-flame px-3.5 py-1.5 text-sm font-bold text-white">
+                  New customers from £75
+                </span>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-inverse">
+                  Learn more
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                </span>
+              </div>
+            </Link>
+          </Reveal>
+
+          {/* The other three — light cards in a row beneath */}
+          {rest.map((s, i) => {
             const Icon = ICONS[s.icon as keyof typeof ICONS];
             return (
-              <Reveal as="li" key={s.href} delay={i * 0.06}>
+              <Reveal as="li" key={s.href} delay={(i + 1) * 0.06}>
                 <Link
                   href={s.href}
                   className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-border-subtle bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:shadow-[var(--shadow-md)]"
@@ -28,7 +64,8 @@ export function Services() {
                   <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{s.blurb}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                    Learn more
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
                   </span>
                 </Link>
               </Reveal>
