@@ -36,7 +36,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     blocks: [
       {
         heading: "What's included in your service",
-        body: "Every service is done by the book, with no rushing and no skipped steps. I take my time and explain anything I find in plain English.",
+        body: "Every service is done by the book, with no rushing and no skipped steps. I take my time and explain anything I find in clear, everyday terms.",
         bullets: [
           "Full visual inspection of the boiler and its installation",
           "Flue gas analysis and combustion readings to confirm it's burning safely",

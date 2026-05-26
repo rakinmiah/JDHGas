@@ -40,7 +40,7 @@ export function MeetJamie() {
           <p className="max-w-xl text-lg leading-relaxed text-muted md:mt-5">
             I started JDH Gas Services to do the job properly, the way I&apos;d want it done in
             my own home. I&apos;m Gas Safe registered, and I&apos;ll always explain what needs
-            doing in plain English and treat your home like it&apos;s my own.
+            doing in clear, everyday terms and treat your home like it&apos;s my own.
           </p>
 
           <blockquote className="mt-6 border-l-2 border-primary pl-4">
