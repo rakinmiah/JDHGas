@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion } from "framer-motion";
 import { Phone, Clock, ShieldCheck, BadgePoundSterling } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
 const STEPS = [
   { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or send a quick enquiry — add a photo of the boiler if you can." },
@@ -34,13 +35,15 @@ export function WhyChoose() {
   return (
     <section className="section bg-surface" aria-labelledby="how-h">
       <div ref={ref} className="container-page">
-        <p className="eyebrow">How it works</p>
-        <h2 id="how-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
-          From first message to job done
-        </h2>
-        <p className="mt-3 max-w-xl text-lg text-muted">
-          Booking me is simple — no call centres, no runaround. Here&apos;s how it goes.
-        </p>
+        <Reveal>
+          <p className="eyebrow">How it works</p>
+          <h2 id="how-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
+            From first message to job done
+          </h2>
+          <p className="mt-3 max-w-xl text-lg text-muted">
+            Booking me is simple — no call centres, no runaround. Here&apos;s how it goes.
+          </p>
+        </Reveal>
 
         {/* progress rail (desktop) — fills as you scroll */}
         <div className="relative mt-14 mb-10 hidden h-12 lg:block" aria-hidden>
@@ -77,7 +80,7 @@ export function WhyChoose() {
           </div>
         </div>
 
-        <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4 lg:gap-8">
+        <Reveal as="ol" delay={0.1} className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-4 lg:gap-8">
           {STEPS.map((s, i) => (
             <li key={s.title} className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-6">
               <div className="flex items-center gap-3">
@@ -90,7 +93,7 @@ export function WhyChoose() {
               <p className="mt-3 text-sm leading-relaxed text-muted">{s.text}</p>
             </li>
           ))}
-        </ol>
+        </Reveal>
       </div>
     </section>
   );

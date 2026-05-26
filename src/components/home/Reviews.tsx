@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { GoogleG } from "@/components/ui/icons";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
+import { Reveal } from "@/components/ui/Reveal";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 const GOOGLE_REVIEWS = "https://www.google.com/search?q=JDH+Gas+Services+Burgess+Hill+reviews";
@@ -10,7 +11,7 @@ export async function Reviews() {
 
   return (
     <section className="section bg-sunken overflow-x-clip" aria-labelledby="reviews-h">
-      <div className="container-page">
+      <Reveal className="container-page">
         <p className="eyebrow">What our customers say</p>
         <h2 id="reviews-h" className="mt-2 max-w-2xl font-display text-3xl font-bold md:text-4xl">
           Trusted across Burgess Hill &amp; Mid Sussex
@@ -38,7 +39,7 @@ export async function Reviews() {
 
           <ReviewsCarousel reviews={[...reviews]} />
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

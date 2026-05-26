@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 const LOGOS = [
   { name: "Worcester Bosch", src: "/brands/worcester.png", h: "h-12" },
   { name: "Vaillant", src: "/brands/vaillant.svg", h: "h-16" },
@@ -14,7 +16,7 @@ export function LogoStrip() {
         className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(60%_120%_at_50%_0%,rgba(59,130,246,0.18),transparent)]"
         aria-hidden
       />
-      <div className="container-page relative py-14 text-center md:py-16">
+      <Reveal className="container-page relative py-14 text-center md:py-16">
         <p className="eyebrow !text-flame">Every major make</p>
         <h2 id="brands-h" className="mt-2 font-display text-2xl font-bold text-inverse md:text-3xl">
           Whatever boiler you&apos;ve got, I can fix it
@@ -36,7 +38,7 @@ export function LogoStrip() {
         <p className="mx-auto mt-9 max-w-md text-sm text-inverse/60">
           Worcester Bosch, Vaillant, Ideal, Baxi and every other major make — serviced, repaired and certified.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

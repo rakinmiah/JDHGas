@@ -13,7 +13,7 @@ const AREAS = [
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-ink text-inverse" role="contentinfo">
+    <footer className="border-t border-white/10 bg-ink-soft text-inverse" role="contentinfo">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 font-display text-lg font-extrabold">

@@ -6,7 +6,7 @@ import { LogoStrip } from "@/components/home/LogoStrip";
 import { Reviews } from "@/components/home/Reviews";
 import { ServiceArea } from "@/components/home/ServiceArea";
 import { Faq } from "@/components/home/Faq";
-import { CtaBand } from "@/components/home/CtaBand";
+import { ContactSection } from "@/components/home/ContactSection";
 import { FAQS } from "@/lib/site";
 
 function FaqJsonLd() {
@@ -39,7 +39,7 @@ export default function Home() {
       <MeetJamie />
       <ServiceArea />
       <Faq />
-      <CtaBand />
+      <ContactSection />
     </>
   );
 }

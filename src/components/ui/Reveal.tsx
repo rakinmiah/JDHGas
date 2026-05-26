@@ -12,7 +12,7 @@ export function Reveal({
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "li" | "section";
+  as?: "div" | "li" | "section" | "ol" | "ul";
 }) {
   const reduce = useReducedMotion();
   const MotionTag = motion[as];

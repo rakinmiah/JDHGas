@@ -22,23 +22,21 @@ export function Services() {
           <Reveal as="li" className="sm:col-span-2 lg:col-span-3">
             <Link
               href={featured.href}
-              className="group relative flex flex-col gap-6 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-7 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] sm:flex-row sm:items-center sm:justify-between lg:p-8"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-7 lg:p-8"
             >
               <div
                 aria-hidden
                 className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
               />
-              <div className="relative flex items-start gap-4 sm:items-center">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
+              <div className="relative">
+                <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
                   <FeaturedIcon className="h-6 w-6" aria-hidden />
                 </span>
-                <div>
-                  <h3 className="font-display text-xl font-bold text-inverse">{featured.title}</h3>
-                  <p className="mt-1.5 max-w-xl leading-relaxed text-inverse/80">{featured.blurb}</p>
-                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-inverse">{featured.title}</h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-inverse/80">{featured.blurb}</p>
               </div>
-              <div className="relative flex shrink-0 items-center gap-4">
-                <span className="inline-flex items-center rounded-[var(--radius-pill)] bg-flame px-3.5 py-1.5 text-sm font-bold text-white">
+              <div className="relative flex shrink-0 flex-col items-start gap-4 sm:items-end">
+                <span className="inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-4 py-1.5 text-sm font-bold text-white">
                   New customers from £75
                 </span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-inverse">

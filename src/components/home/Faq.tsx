@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import { FAQS } from "@/lib/site";
 
 export function Faq() {
@@ -9,7 +10,7 @@ export function Faq() {
 
   return (
     <section className="section bg-sunken" aria-labelledby="faq-h">
-      <div className="container-page max-w-3xl">
+      <Reveal className="container-page max-w-3xl">
         <p className="eyebrow">FAQ</p>
         <h2 id="faq-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
           Common questions
@@ -46,7 +47,7 @@ export function Faq() {
             );
           })}
         </dl>
-      </div>
+      </Reveal>
     </section>
   );
 }
