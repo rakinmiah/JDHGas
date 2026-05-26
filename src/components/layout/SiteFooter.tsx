@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, Flame } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail } from "lucide-react";
 import { InstagramGlyph, WhatsAppGlyph } from "@/components/ui/icons";
 import { SITE, SERVICES } from "@/lib/site";
 
@@ -12,6 +13,9 @@ const AREAS = [
   "Lindfield",
   "Wivelsfield",
   "Keymer",
+  "Hove",
+  "Portslade",
+  "Lancing",
 ];
 
 const PAGES = [
@@ -59,14 +63,12 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-2 font-display text-lg font-extrabold">
-              <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-white/10">
-                <Flame className="h-5 w-5 text-flame" aria-hidden />
-              </span>
+              <Image src="/shield-logo.png" alt="" width={40} height={40} className="h-9 w-9 object-contain" />
               JDH <span className="text-flame">Gas</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-steel">
-              Gas Safe registered gas and heating engineer, covering Burgess Hill and the
-              surrounding Mid Sussex towns and villages.
+              Gas Safe registered gas and heating engineer, covering Burgess Hill, Mid Sussex and
+              down to the coast.
             </p>
             <p className="mt-3 text-sm text-steel">Gas Safe Registered · {SITE.gasSafe}</p>
           </div>

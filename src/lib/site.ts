@@ -71,6 +71,9 @@ export const TOWNS = [
   "Wivelsfield",
   "Lindfield",
   "Keymer",
+  "Hove",
+  "Portslade",
+  "Lancing",
 ] as const;
 
 export const BRANDS = ["Worcester Bosch", "Vaillant", "Ideal", "Baxi", "Bosch"] as const;
@@ -173,7 +176,7 @@ export const FAQS = [
   },
   {
     q: "Which areas do you cover?",
-    a: "I'm based in Burgess Hill and cover Haywards Heath, Hassocks, Cuckfield and the surrounding Mid Sussex villages. Not sure if I reach you? Just ask.",
+    a: "I'm based in Burgess Hill and cover Mid Sussex and down to the coast, including Haywards Heath, Hassocks, Cuckfield, Hove, Portslade and Lancing. Not sure if I reach you? Just ask.",
   },
   {
     q: "How do I book?",

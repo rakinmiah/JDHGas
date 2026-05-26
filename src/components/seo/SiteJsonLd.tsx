@@ -12,9 +12,15 @@ export function SiteJsonLd() {
     telephone: "+447544063330",
     email: SITE.email,
     priceRange: "££",
-    areaServed: ["Burgess Hill", "Haywards Heath", "Hassocks", "Cuckfield"].map(
-      (name) => ({ "@type": "City", name })
-    ),
+    areaServed: [
+      "Burgess Hill",
+      "Haywards Heath",
+      "Hassocks",
+      "Cuckfield",
+      "Hove",
+      "Portslade",
+      "Lancing",
+    ].map((name) => ({ "@type": "City", name })),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Burgess Hill",

@@ -20,10 +20,10 @@ const TOWNS: Town[] = [
   { name: "Wivelsfield", lat: 50.987, lng: -0.105 },
   { name: "Ditchling", lat: 50.92, lng: -0.113 },
   { name: "Keymer", lat: 50.922, lng: -0.138 },
+  { name: "Hove", lat: 50.8279, lng: -0.1687 },
+  { name: "Portslade", lat: 50.834, lng: -0.216 },
+  { name: "Lancing", lat: 50.832, lng: -0.32 },
 ];
-
-// ~6 miles around Burgess Hill — comfortably covers the towns above
-const COVERAGE_RADIUS_M = 9650;
 
 export function CoverageMap() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,17 +50,6 @@ export function CoverageMap() {
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         maxZoom: 19,
         subdomains: "abcd",
-      }).addTo(map);
-
-      // coverage area
-      const coverage = L.circle([BASE.lat, BASE.lng], {
-        radius: COVERAGE_RADIUS_M,
-        color: "#2563eb",
-        weight: 2,
-        opacity: 0.7,
-        dashArray: "4 6",
-        fillColor: "#2563eb",
-        fillOpacity: 0.1,
       }).addTo(map);
 
       // town markers
@@ -113,7 +102,7 @@ export function CoverageMap() {
       ref={ref}
       className="h-full w-full rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-container]:rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-tile-pane]:[filter:saturate(1.15)]"
       role="img"
-      aria-label="Map of the Mid Sussex service area centred on Burgess Hill, covering Haywards Heath, Hassocks, Cuckfield, Lindfield, Wivelsfield, Ditchling and Keymer"
+      aria-label="Map of the service area centred on Burgess Hill, covering Haywards Heath, Hassocks, Cuckfield, Lindfield, Wivelsfield, Ditchling, Keymer, Hove, Portslade and Lancing"
     />
   );
 }

@@ -45,12 +45,12 @@ export function ServiceArea() {
         <div>
           <p className="eyebrow">Service area</p>
           <h2 id="area-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
-            Covering Burgess Hill &amp; Mid Sussex
+            Covering Burgess Hill, Mid Sussex &amp; the coast
           </h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
-            I&apos;m based in Burgess Hill and cover the surrounding Mid Sussex towns and
-            villages: Haywards Heath, Hassocks, Cuckfield, Ditchling, Lindfield, Wivelsfield,
-            Keymer and the bits in between.
+            I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast: Haywards
+            Heath, Hassocks, Cuckfield, Ditchling, Lindfield, Wivelsfield, Keymer, Hove, Portslade,
+            Lancing and the towns in between.
           </p>
 
           <ul className="mt-6 grid max-w-md gap-x-5 gap-y-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">

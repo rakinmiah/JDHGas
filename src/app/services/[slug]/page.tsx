@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { PageHero } from "@/components/sections/PageHero";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ServiceStepList } from "@/components/sections/ServiceStepList";
@@ -22,6 +23,9 @@ const AREAS = [
   "Lindfield",
   "Wivelsfield",
   "Keymer",
+  "Hove",
+  "Portslade",
+  "Lancing",
 ];
 
 const ICON_BY_SLUG: Record<string, LucideIcon> = {
@@ -61,7 +65,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     "@type": "Service",
     serviceType: s.serviceType,
     provider: { "@id": `${SITE.url}/#business` },
-    areaServed: ["Burgess Hill", "Haywards Heath", "Hassocks", "Cuckfield"],
+    areaServed: ["Burgess Hill", "Haywards Heath", "Hassocks", "Cuckfield", "Hove", "Portslade", "Lancing"],
     description: s.metaDescription,
     ...(s.offerPrice
       ? { offers: { "@type": "Offer", price: s.offerPrice, priceCurrency: "GBP", description: "First boiler service for new customers" } }
@@ -104,9 +108,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-ink p-7 text-inverse shadow-[var(--shadow-md)] md:p-8">
                   <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
                   <div className="relative">
-                    <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
-                      <Flame className="h-6 w-6" aria-hidden />
-                    </span>
+                    <BrandMark className="h-12 w-12" />
                     {proseBlocks.map((b, i) => (
                       <div key={b.heading} className={i === 0 ? "mt-5" : "mt-6"}>
                         {i === 0 ? (
@@ -152,8 +154,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               Areas I cover
             </h2>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              I&apos;m based in Burgess Hill and cover the surrounding Mid Sussex towns and villages,
-              including these nearby.
+              I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast, including
+              these areas.
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {AREAS.map((a) => (
