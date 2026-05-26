@@ -20,7 +20,7 @@ export function MeetJamie() {
             <p className="eyebrow">Meet your engineer</p>
             <h2 className="mt-2 font-display text-3xl font-bold">Meet Jamie</h2>
           </div>
-          <Reveal className="relative mx-auto mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:mt-0 md:max-w-none">
+          <Reveal className="relative mx-auto mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:mt-0 md:aspect-[3/4] md:max-w-none lg:aspect-[4/5]">
             <Image
               src="/images/jamie-portrait.jpg"
               alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
