@@ -6,11 +6,14 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 
 const GOOGLE_REVIEWS = "https://www.google.com/search?q=JDH+Gas+Services+Burgess+Hill+reviews";
 
-export async function Reviews() {
+export async function Reviews({ tone = "sunken" }: { tone?: "sunken" | "surface" } = {}) {
   const { rating, count, reviews } = await getGoogleReviews();
 
   return (
-    <section className="section bg-sunken overflow-x-clip" aria-labelledby="reviews-h">
+    <section
+      className={`section overflow-x-clip ${tone === "surface" ? "bg-surface" : "bg-sunken"}`}
+      aria-labelledby="reviews-h"
+    >
       <Reveal className="container-page">
         <p className="eyebrow">What our customers say</p>
         <h2 id="reviews-h" className="mt-2 max-w-2xl font-display text-3xl font-bold md:text-4xl">
