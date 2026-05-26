@@ -122,19 +122,27 @@ export default function AboutPage() {
       <section className="section bg-surface">
         <div className="container-page">
           <div className="grid items-start gap-10 lg:grid-cols-[1fr_minmax(300px,42%)] lg:gap-14">
-            <div className="max-w-2xl">
-              <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">Why I started JDH Gas</h2>
-              <p className="mt-3 text-lg leading-relaxed text-muted">
-                I set up JDH Gas Services to do gas work the way I&apos;d want it done in my own home:
-                carefully, honestly, and explained in plain English. No rushing to the next job, no
-                jargon, and no pressure to pay for things you don&apos;t need.
+            <div className="max-w-xl">
+              <p className="eyebrow">My story</p>
+              <p className="mt-4 font-display text-2xl font-bold leading-[1.25] tracking-tight text-ink md:text-[2rem]">
+                I started JDH Gas to do gas work the way I&apos;d want it done in my own home:
+                carefully, honestly, and explained in plain English.
               </p>
-              <h2 className="mt-8 font-display text-2xl font-bold text-ink md:text-3xl">How I work</h2>
-              <p className="mt-3 text-lg leading-relaxed text-muted">
-                I&apos;ll always turn up when I say I will, treat your home with respect, and leave it
-                exactly as I found it. Whether it&apos;s a quick service or a tricky repair, you get the
-                same care and the same straight answers.
-              </p>
+              <div className="mt-6 space-y-4 border-l-2 border-primary pl-5 text-lg leading-relaxed text-muted">
+                <p>
+                  No rushing to the next job, no jargon, and no pressure to pay for things you
+                  don&apos;t need.
+                </p>
+                <p>
+                  Whether it&apos;s a quick service or a tricky repair, you get the same care and the
+                  same straight answers, and I&apos;ll always turn up when I say I will and leave your
+                  home exactly as I found it.
+                </p>
+              </div>
+              <div className="mt-8">
+                <p className="font-display text-base font-bold text-ink">Jamie Hannah</p>
+                <p className="text-sm text-muted">Founder &amp; Gas Safe registered engineer</p>
+              </div>
             </div>
             <Reveal className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:sticky lg:top-24">
               <Image
