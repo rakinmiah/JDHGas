@@ -28,28 +28,28 @@ export const SERVICES = [
   {
     title: "Boiler servicing",
     blurb:
-      "Thorough annual services to keep your boiler safe, efficient and under warranty.",
+      "Annual servicing that keeps your boiler running safely and your warranty valid.",
     href: "/services/boiler-servicing",
     icon: "Flame",
   },
   {
     title: "Landlord gas safety certificates",
     blurb:
-      "CP12 certificates for landlords, done right and on time — gas safety checks for homeowners too.",
+      "CP12 certificates for landlords, plus gas safety checks for homeowners.",
     href: "/services/gas-safety-certificate",
     icon: "ClipboardCheck",
   },
   {
     title: "Heating system repairs",
     blurb:
-      "Fast, reliable repairs when your heating or hot water stops — boilers and full systems.",
+      "Repairs for when your heating or hot water stops working, on boilers and full systems.",
     href: "/services/boiler-repairs",
     icon: "Wrench",
   },
   {
     title: "Gas hob installs",
     blurb:
-      "Safe installation, removal and testing of gas hobs and cookers.",
+      "Fitting and testing gas hobs and cookers safely.",
     href: "/services/gas-appliances",
     icon: "CookingPot",
   },
@@ -162,15 +162,15 @@ export const REVIEWS = [
 export const FAQS = [
   {
     q: "How much is a boiler service?",
-    a: "A boiler service for new customers starts at £75. It's a full Gas Safe check — for repairs or a gas safety certificate, just call or WhatsApp and I'll give you a clear quote first.",
+    a: "A boiler service for new customers starts at £75. It's a full Gas Safe check. For repairs or a gas safety certificate, just call or WhatsApp and I'll give you a clear quote first.",
   },
   {
     q: "Do I really need my boiler serviced every year?",
-    a: "Yes — an annual service is the best way to keep your boiler safe, efficient and within its warranty. A boiler can look fine while faults build up out of sight; a yearly check catches them early. Prevention over cure.",
+    a: "Yes. An annual service is the best way to keep your boiler safe and within its warranty. A boiler can look fine while faults build up out of sight, so a yearly check catches them early. Prevention over cure.",
   },
   {
     q: "What is a CP12 / landlord gas safety certificate?",
-    a: "A CP12 is the Landlord Gas Safety Certificate. By law, landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer. I provide CP12s across Mid Sussex — homeowners can have a gas safety check too.",
+    a: "A CP12 is the Landlord Gas Safety Certificate. By law, landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer. I provide CP12s across Mid Sussex, and homeowners can have a gas safety check too.",
   },
   {
     q: "Which areas do you cover?",

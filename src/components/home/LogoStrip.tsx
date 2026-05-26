@@ -36,7 +36,7 @@ export function LogoStrip() {
           ))}
         </ul>
         <p className="mx-auto mt-9 max-w-md text-sm text-inverse/60">
-          Worcester Bosch, Vaillant, Ideal, Baxi and every other major make — serviced, repaired and certified.
+          Worcester Bosch, Vaillant, Ideal, Baxi and the rest. If it runs on gas, I can service or fix it.
         </p>
       </Reveal>
     </section>

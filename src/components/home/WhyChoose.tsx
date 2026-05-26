@@ -6,10 +6,10 @@ import { Phone, Clock, ShieldCheck, BadgePoundSterling } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const STEPS = [
-  { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or send a quick enquiry — add a photo of the boiler if you can." },
-  { icon: Clock, title: "I arrive on time", text: "When I say I'll be there, I'm there — and I treat your home with respect." },
-  { icon: ShieldCheck, title: "A proper, thorough job", text: "Done by the book by a Gas Safe engineer, with no rushing off to the next call." },
-  { icon: BadgePoundSterling, title: "Honest price, explained", text: "A fair price and straight advice on what needs doing — and what can wait." },
+  { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or send a quick enquiry. A photo of the boiler helps if you've got one." },
+  { icon: Clock, title: "I arrive on time", text: "When I say I'll be there, I'm there. And I leave your home as clean as I found it." },
+  { icon: ShieldCheck, title: "A proper, thorough job", text: "Done by the book, with no rushing off to the next job." },
+  { icon: BadgePoundSterling, title: "Honest price, explained", text: "A fair price up front, and straight advice on what needs doing now and what can wait." },
 ];
 
 // evenly spaced along the full-width strip: 0%, 33.3%, 66.6%, 100%
@@ -41,7 +41,7 @@ export function WhyChoose() {
             From first message to job done
           </h2>
           <p className="mt-3 max-w-xl text-lg text-muted">
-            Booking me is simple — no call centres, no runaround. Here&apos;s how it goes.
+            Booking me is simple. No call centres, no runaround. Here&apos;s how it goes.
           </p>
         </Reveal>
 

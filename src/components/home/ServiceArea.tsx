@@ -21,9 +21,9 @@ export function ServiceArea() {
             Covering Burgess Hill &amp; Mid Sussex
           </h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
-            Based in Burgess Hill, I cover the surrounding Mid Sussex towns and villages — from
-            Haywards Heath and Hassocks to Cuckfield, plus Ditchling, Lindfield, Wivelsfield,
-            Keymer and the villages in between.
+            I&apos;m based in Burgess Hill and cover the surrounding Mid Sussex towns and
+            villages: Haywards Heath, Hassocks, Cuckfield, Ditchling, Lindfield, Wivelsfield,
+            Keymer and the bits in between.
           </p>
 
           <ul className="mt-6 grid max-w-md gap-x-5 gap-y-3 sm:grid-cols-2">
@@ -40,8 +40,7 @@ export function ServiceArea() {
               Not sure if I reach you?
             </h3>
             <p className="mt-1.5 text-muted">
-              Send me your postcode and I&apos;ll confirm I cover you — no obligation, just
-              straight advice.
+              Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>

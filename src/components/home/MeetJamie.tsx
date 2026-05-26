@@ -13,7 +13,7 @@ const POINTS = [
 export function MeetJamie() {
   return (
     <section className="section bg-sunken" aria-label="Meet Jamie">
-      <div className="container-page grid items-center gap-10 md:grid-cols-[46%_54%] md:gap-12 lg:gap-16">
+      <div className="container-page grid items-center gap-10 md:grid-cols-[46fr_54fr] md:gap-12 lg:gap-16">
         <div>
           {/* heading above the image on mobile/tablet */}
           <div className="md:hidden">
@@ -38,9 +38,9 @@ export function MeetJamie() {
             Meet Jamie
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-muted md:mt-5">
-            I started JDH Gas Services to do gas work the way I&apos;d want it done in my own
-            home — carefully, honestly, and explained in plain English. I&apos;m Gas Safe
-            registered and I treat every boiler, and every home, like it matters.
+            I started JDH Gas Services to do the job properly, the way I&apos;d want it done in
+            my own home. I&apos;m Gas Safe registered, and I&apos;ll always explain what needs
+            doing in plain English and treat your home like it&apos;s my own.
           </p>
 
           <blockquote className="mt-6 border-l-2 border-primary pl-4">

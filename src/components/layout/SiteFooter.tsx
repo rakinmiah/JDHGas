@@ -10,79 +10,85 @@ const AREAS = [
   { label: "Cuckfield", href: "/areas/cuckfield" },
 ];
 
+const PAGES = [
+  { label: "About Jamie", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Our work", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
+];
+
+function LinkRow({ label, links }: { label?: string; links: { label: string; href: string }[] }) {
+  return (
+    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+      {label && <span className="font-semibold text-inverse">{label}</span>}
+      {links.map((l, i) => (
+        <span key={l.href} className="flex items-baseline gap-x-2.5">
+          {i > 0 && <span className="text-white/25" aria-hidden>·</span>}
+          <Link href={l.href} className="text-steel transition-colors hover:text-flame">
+            {l.label}
+          </Link>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-white/10 bg-ink-soft text-inverse" role="contentinfo">
-      <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div className="flex items-center gap-2 font-display text-lg font-extrabold">
-            <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-white/10">
-              <Flame className="h-5 w-5 text-flame" aria-hidden />
-            </span>
-            JDH <span className="text-flame">Gas</span>
+      <div className="container-page py-12">
+        {/* 1 — brand + contact */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
+            <div className="flex items-center gap-2 font-display text-lg font-extrabold">
+              <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-white/10">
+                <Flame className="h-5 w-5 text-flame" aria-hidden />
+              </span>
+              JDH <span className="text-flame">Gas</span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-steel">
+              Gas Safe registered gas and heating engineer, covering Burgess Hill and the
+              surrounding Mid Sussex towns and villages.
+            </p>
+            <p className="mt-3 text-sm text-steel">Gas Safe Registered · {SITE.gasSafe}</p>
           </div>
-          <p className="mt-4 text-sm text-steel">
-            Gas Safe Registered · {SITE.gasSafe}
-          </p>
-          <p className="text-sm text-steel">
-            {SITE.locality}, {SITE.region}
-          </p>
-          <div className="mt-4 flex flex-col gap-2 text-sm">
-            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 hover:text-flame">
-              <Phone className="h-4 w-4" aria-hidden /> {SITE.phoneDisplay}
-            </a>
-            <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-flame">
-              <Mail className="h-4 w-4" aria-hidden /> {SITE.email}
-            </a>
-          </div>
-          <div className="mt-4 flex gap-3">
-            <a href={SITE.whatsappHref} target="_blank" rel="noopener" aria-label="WhatsApp" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
-              <WhatsAppGlyph className="h-5 w-5" />
-            </a>
-            <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
-              <InstagramGlyph className="h-5 w-5" />
-            </a>
+
+          <div className="shrink-0">
+            <p className="text-sm font-semibold uppercase tracking-wide text-steel">Get in touch</p>
+            <div className="mt-3 flex flex-col gap-2 text-sm">
+              <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold hover:text-flame">
+                <Phone className="h-4 w-4" aria-hidden /> {SITE.phoneDisplay}
+              </a>
+              <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-flame">
+                <Mail className="h-4 w-4" aria-hidden /> {SITE.email}
+              </a>
+            </div>
+            <div className="mt-4 flex gap-3">
+              <a href={SITE.whatsappHref} target="_blank" rel="noopener" aria-label="WhatsApp" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
+                <WhatsAppGlyph className="h-5 w-5" />
+              </a>
+              <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
+                <InstagramGlyph className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 
-        <nav aria-label="Services">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-steel">Services</h2>
-          <ul className="mt-4 space-y-2 text-sm">
-            {SERVICES.map((s) => (
-              <li key={s.href}>
-                <Link href={s.href} className="text-inverse/90 hover:text-flame">{s.title}</Link>
-              </li>
-            ))}
-          </ul>
+        {/* 2 — compact link clusters (SEO) */}
+        <nav aria-label="Footer" className="mt-10 space-y-3 border-t border-white/10 pt-8 text-sm">
+          <LinkRow label="Services" links={SERVICES.map((s) => ({ label: s.title, href: s.href }))} />
+          <LinkRow label="Areas" links={AREAS} />
+          <LinkRow links={PAGES} />
         </nav>
 
-        <nav aria-label="Areas">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-steel">Areas</h2>
-          <ul className="mt-4 space-y-2 text-sm">
-            {AREAS.map((a) => (
-              <li key={a.href}>
-                <Link href={a.href} className="text-inverse/90 hover:text-flame">{a.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <nav aria-label="More">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-steel">More</h2>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/about" className="text-inverse/90 hover:text-flame">About Jamie</Link></li>
-            <li><Link href="/reviews" className="text-inverse/90 hover:text-flame">Reviews</Link></li>
-            <li><Link href="/gallery" className="text-inverse/90 hover:text-flame">Our work</Link></li>
-            <li><Link href="/contact" className="text-inverse/90 hover:text-flame">Contact</Link></li>
-            <li><Link href="/privacy-policy" className="text-inverse/90 hover:text-flame">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="text-inverse/90 hover:text-flame">Terms</Link></li>
-          </ul>
-        </nav>
-      </div>
-      <div className="border-t border-white/10">
-        <div className="container-page py-5 text-xs text-steel">
-          © {year} JDH Gas Services. Gas Safe Registered {SITE.gasSafe}.
+        {/* 3 — legal */}
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} JDH Gas Services. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy-policy" className="hover:text-flame">Privacy policy</Link>
+            <Link href="/terms" className="hover:text-flame">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>

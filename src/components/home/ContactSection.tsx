@@ -11,11 +11,11 @@ export function ContactSection() {
         <div>
           <p className="eyebrow !text-flame">Get in touch</p>
           <h2 id="contact-h" className="mt-2 font-display text-3xl font-bold text-inverse md:text-4xl">
-            Ready to book? I&apos;d be glad to help.
+            Ready to book? Tell me about the job.
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-inverse/80">
-            Send a few details — add a photo of the boiler if you can — and I&apos;ll get back to
-            you quickly with honest advice and a clear price.
+            Send me a few details, and a photo of the boiler if you can. I&apos;ll get back to you
+            quickly with a clear price and honest advice.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
