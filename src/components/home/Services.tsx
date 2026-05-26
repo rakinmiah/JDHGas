@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { Flame, Wrench, ClipboardCheck, CookingPot, ArrowRight } from "lucide-react";
+import { Wrench, ClipboardCheck, CookingPot, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { SERVICES } from "@/lib/site";
 
-const ICONS = { Flame, Wrench, ClipboardCheck, CookingPot } as const;
+const ICONS = { Wrench, ClipboardCheck, CookingPot } as const;
 
 export function Services() {
   const [featured, ...rest] = SERVICES;
-  const FeaturedIcon = ICONS[featured.icon as keyof typeof ICONS];
 
   return (
     <section className="section bg-surface" aria-labelledby="services-h">
@@ -29,9 +29,7 @@ export function Services() {
                 className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
               />
               <div className="relative">
-                <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
-                  <FeaturedIcon className="h-6 w-6" aria-hidden />
-                </span>
+                <BrandMark className="h-14 w-14" />
                 <h3 className="mt-4 font-display text-lg font-semibold text-inverse">{featured.title}</h3>
                 <p className="mt-2 max-w-md text-sm leading-relaxed text-inverse/80">{featured.blurb}</p>
               </div>

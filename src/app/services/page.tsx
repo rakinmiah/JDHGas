@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Flame, ClipboardCheck, Wrench, CookingPot } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Wrench, CookingPot, type LucideIcon } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { Reviews } from "@/components/home/Reviews";
 import { CtaBand } from "@/components/home/CtaBand";
 import { SERVICE_CONTENT } from "@/lib/services-content";
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
-const ICONS = [Flame, ClipboardCheck, Wrench, CookingPot];
+const ICON_BY_SLUG: Record<string, LucideIcon> = {
+  "gas-safety-certificate": ClipboardCheck,
+  "boiler-repairs": Wrench,
+  "gas-appliances": CookingPot,
+};
 
 function firstSentence(text: string) {
   return text.split(". ")[0].replace(/\.*$/, "") + ".";
@@ -22,7 +27,6 @@ function firstSentence(text: string) {
 
 export default function ServicesHub() {
   const [featured, ...rest] = SERVICE_CONTENT;
-  const FeaturedIcon = ICONS[0];
 
   return (
     <>
@@ -43,9 +47,7 @@ export default function ServicesHub() {
             >
               <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl" />
               <div className="relative">
-                <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
-                  <FeaturedIcon className="h-6 w-6" aria-hidden />
-                </span>
+                <BrandMark className="h-14 w-14" />
                 <h2 className="mt-4 font-display text-lg font-semibold text-inverse">{featured.navTitle}</h2>
                 <p className="mt-2 max-w-md text-sm leading-relaxed text-inverse/80">{firstSentence(featured.lead)}</p>
               </div>
@@ -62,8 +64,8 @@ export default function ServicesHub() {
           </li>
 
           {/* The other three */}
-          {rest.map((s, i) => {
-            const Icon = ICONS[(i + 1) % ICONS.length];
+          {rest.map((s) => {
+            const Icon = ICON_BY_SLUG[s.slug] ?? Wrench;
             return (
               <li key={s.slug}>
                 <Link

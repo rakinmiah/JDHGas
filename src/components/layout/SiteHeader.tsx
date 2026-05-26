@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Phone, Menu, X, Flame } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { WhatsAppGlyph } from "@/components/ui/icons";
 import { NAV, SITE } from "@/lib/site";
 
@@ -14,9 +15,7 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
       className="flex items-center gap-2 font-display font-extrabold text-lg tracking-tight"
       aria-label="JDH Gas Services — home"
     >
-      <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-ink">
-        <Flame className="h-5 w-5 text-flame" strokeWidth={2.2} aria-hidden />
-      </span>
+      <Image src="/shield-logo.png" alt="" width={40} height={40} priority className="h-9 w-9 object-contain" />
       <span className={inverse ? "text-inverse" : "text-ink"}>
         JDH <span className="text-primary">Gas</span>
       </span>

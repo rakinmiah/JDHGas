@@ -15,6 +15,7 @@ import {
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { ValuesGrid } from "@/components/sections/ValuesGrid";
 import { LogoStrip } from "@/components/home/LogoStrip";
 import { Reviews } from "@/components/home/Reviews";
@@ -117,9 +118,7 @@ export default function AboutPage() {
         />
         <Reveal className="container-page relative grid gap-6 py-12 md:grid-cols-[auto_auto_1fr] md:items-center md:gap-10 md:py-16 lg:gap-12">
           <div className="flex items-center gap-5">
-            <span className="grid h-32 w-32 shrink-0 place-items-center rounded-[var(--radius-lg)] bg-white/10 text-flame">
-              <Flame className="h-16 w-16" aria-hidden />
-            </span>
+            <BrandMark className="h-28 w-28 shrink-0" />
             <p className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-inverse md:text-4xl">
               Prevention
               <br />
@@ -156,7 +155,7 @@ export default function AboutPage() {
               <p className="eyebrow">My story</p>
               <p className="mt-4 font-display text-2xl font-bold leading-[1.25] tracking-tight text-ink md:text-[2rem]">
                 I started JDH Gas to do gas work the way I&apos;d want it done in my own home:
-                carefully, honestly, and explained in plain English.
+                carefully, honestly, and explained clearly without the jargon.
               </p>
               <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:hidden">
                 <Image
