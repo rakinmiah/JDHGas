@@ -1,0 +1,67 @@
+/* JDH Gas design tokens — runtime mirror of src/app/globals.css @theme (commit 5115dce).
+   Light theme only (no dark mode). Regenerate per INFRASTRUCTURE.md. */
+:root {
+  color-scheme: light;
+
+  /* Brand */
+  --color-ink: #0b1220;
+  --color-primary: #1b46c2;
+  --color-primary-hover: #15368f;
+  --color-flame: #f2731b;
+  --color-steel: #8da2bc;
+  --color-gas-safe: #ffd200;
+  --color-whatsapp: #127c3f; /* AA: white text 5.28:1 */
+  --color-whatsapp-hover: #0e6a34;
+
+  /* Semantic surfaces / text */
+  --color-surface: #ffffff;
+  --color-sunken: #f4f7fb;
+  --color-ink-soft: #142036;
+  --color-border-subtle: #e4e9f0;
+  --color-border-strong: #c9d2de;
+  --color-text: #0b1220;
+  --color-muted: #51607a;
+  --color-inverse: #f5f8fc;
+
+  /* Fonts */
+  --font-display: var(--font-display-src), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body-src), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius */
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.06), 0 1px 3px rgba(11, 18, 32, 0.08);
+  --shadow-md: 0 4px 12px rgba(11, 18, 32, 0.08), 0 2px 4px rgba(11, 18, 32, 0.06);
+  --shadow-lg: 0 12px 32px rgba(11, 18, 32, 0.12);
+
+  /* Motion (documented intent — add to globals @theme when referenced by name) */
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --motion-slow: 300ms;
+  --motion-reveal: 500ms;
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout */
+  --container-max: 1200px;
+  --gutter: 1.25rem;
+  --gutter-md: 2rem;
+
+  /* Icon sizes */
+  --icon-xs: 14px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 28px;
+
+  /* Z-index */
+  --z-map: 0;
+  --z-overlap: 10;
+  --z-header: 200;
+  --z-menu: 300;
+  --z-skiplink: 600;
+}
