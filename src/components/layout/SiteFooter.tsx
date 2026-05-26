@@ -17,7 +17,6 @@ const AREAS = [
 const PAGES = [
   { label: "About Jamie", href: "/about" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Our work", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
