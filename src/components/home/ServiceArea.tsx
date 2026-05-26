@@ -11,11 +11,28 @@ const POINTS = [
   { icon: Clock, text: "Quick to respond" },
 ];
 
+function ReachBox() {
+  return (
+    <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-6">
+      <h3 className="font-display text-lg font-semibold text-ink">Not sure if I reach you?</h3>
+      <p className="mt-1.5 text-muted">
+        Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
+      </p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
+          <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
+        </Button>
+        <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp me</Button>
+      </div>
+    </div>
+  );
+}
+
 export function ServiceArea() {
   return (
     <section className="section bg-surface" aria-labelledby="area-h">
-      <Reveal className="container-page grid items-start gap-10 md:grid-cols-2 lg:gap-14">
-        {/* Left — text */}
+      <Reveal className="container-page grid items-start gap-10 md:grid-cols-2 lg:items-center lg:gap-14">
+        {/* Left — text (+ the box on desktop) */}
         <div>
           <p className="eyebrow">Service area</p>
           <h2 id="area-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
@@ -35,9 +52,14 @@ export function ServiceArea() {
               </li>
             ))}
           </ul>
+
+          {/* desktop: box sits below the text in the left column */}
+          <div className="mt-8 hidden lg:block">
+            <ReachBox />
+          </div>
         </div>
 
-        {/* Right — map + "not sure" box stacked */}
+        {/* Right — map (+ the box on mobile/tablet) */}
         <div className="space-y-6">
           <div className="relative isolate z-0 overflow-hidden rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-3 shadow-[var(--shadow-sm)]">
             <span className="absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] bg-surface/90 px-3 py-1.5 text-xs font-semibold shadow-[var(--shadow-sm)] backdrop-blur">
@@ -49,17 +71,9 @@ export function ServiceArea() {
             </div>
           </div>
 
-          <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-6">
-            <h3 className="font-display text-lg font-semibold text-ink">Not sure if I reach you?</h3>
-            <p className="mt-1.5 text-muted">
-              Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
-                <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
-              </Button>
-              <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp me</Button>
-            </div>
+          {/* mobile/tablet: box sits below the map in the right column */}
+          <div className="lg:hidden">
+            <ReachBox />
           </div>
         </div>
       </Reveal>
