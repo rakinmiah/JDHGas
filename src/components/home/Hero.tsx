@@ -33,7 +33,7 @@ export function Hero() {
         <div className="relative z-10 order-2 -mt-16 mx-auto w-full max-w-md rounded-[var(--radius-lg)] bg-surface p-6 shadow-[var(--shadow-lg)] md:order-1 md:mt-0 md:max-w-none md:rounded-none md:bg-transparent md:p-0 md:shadow-none lg:max-w-lg">
           <p className="eyebrow hidden md:block">Gas Safe registered · Burgess Hill &amp; Mid Sussex</p>
           <h1 className="font-display text-[2rem] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[2.5rem] md:mt-3 md:text-[2.25rem] lg:text-[3.5rem]">
-            Your local gas engineer in Burgess Hill.
+            Your local gas &amp; heating engineer in Burgess Hill.
           </h1>
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted md:mt-4 lg:text-lg">
             Boiler servicing, repairs and gas safety, done properly by a local engineer you can

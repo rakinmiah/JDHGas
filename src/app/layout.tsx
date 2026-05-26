@@ -37,6 +37,12 @@ export const metadata: Metadata = {
     url: SITE_URL,
     locale: "en_GB",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gas Engineer in Burgess Hill | JDH Gas Services",
+    description:
+      "Gas Safe registered engineer Jamie Hannah — boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
+  },
 };
 
 export default function RootLayout({

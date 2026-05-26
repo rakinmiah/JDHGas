@@ -1,4 +1,4 @@
-import { SITE, REVIEWS } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export function SiteJsonLd() {
   const business = {
@@ -7,6 +7,7 @@ export function SiteJsonLd() {
     "@id": `${SITE.url}/#business`,
     name: SITE.name,
     image: `${SITE.url}/images/jamie-portrait.jpg`,
+    logo: `${SITE.url}/apple-icon`,
     url: `${SITE.url}/`,
     telephone: "+447544063330",
     email: SITE.email,
@@ -41,12 +42,6 @@ export function SiteJsonLd() {
       ratingValue: SITE.rating.value,
       reviewCount: SITE.rating.count,
     },
-    review: REVIEWS.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      reviewBody: r.text,
-    })),
   };
 
   const website = {
