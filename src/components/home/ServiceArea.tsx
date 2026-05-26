@@ -13,16 +13,25 @@ const POINTS = [
 
 function ReachBox() {
   return (
-    <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-6">
-      <h3 className="font-display text-lg font-semibold text-ink">Not sure if I reach you?</h3>
-      <p className="mt-1.5 text-muted">
-        Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
-      </p>
-      <div className="mt-4 flex flex-wrap gap-3">
-        <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
-          <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
-        </Button>
-        <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp me</Button>
+    <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse shadow-[var(--shadow-md)]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-primary/25 blur-3xl"
+      />
+      <div className="relative">
+        <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
+          <MapPin className="h-5 w-5" aria-hidden />
+        </span>
+        <h3 className="mt-4 font-display text-lg font-bold text-inverse">Not sure if I reach you?</h3>
+        <p className="mt-1.5 text-inverse/80">
+          Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>
+            <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
+          </Button>
+          <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp me</Button>
+        </div>
       </div>
     </div>
   );
