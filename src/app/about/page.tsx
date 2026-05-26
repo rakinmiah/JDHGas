@@ -83,14 +83,14 @@ export default function AboutPage() {
           <div className="order-1 md:order-2">
             <div className="mx-auto max-w-md md:mx-0 md:max-w-none">
               <p className="eyebrow mb-4 md:hidden">About</p>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-[24rem]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-[28rem]">
                 <Image
                   src="/images/jamie-portrait.jpg"
                   alt="Jamie Hannah, Gas Safe registered engineer and owner of JDH Gas Services"
                   fill
                   priority
                   sizes="(max-width: 768px) 92vw, 50vw"
-                  className="object-cover object-[45%_35%]"
+                  className="object-cover object-[45%_48%]"
                 />
               </div>
             </div>
