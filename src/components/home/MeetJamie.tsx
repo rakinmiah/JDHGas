@@ -24,16 +24,16 @@ export function MeetJamie() {
               <h2 id="jamie-h" className="mt-3 font-display text-3xl font-bold text-inverse md:text-4xl">
                 Meet Jamie
               </h2>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-inverse/85">
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-inverse/85">
                 I started JDH Gas Services to do gas work the way I&apos;d want it done in my own
                 home — carefully, honestly, and explained in plain English. I&apos;m Gas Safe
                 registered and I treat every boiler, and every home, like it matters. No rushing
                 to the next job.
               </p>
-              <p className="mt-6 font-display text-2xl font-bold text-flame md:text-3xl">
+              <p className="mt-7 font-display text-2xl font-bold text-flame md:text-3xl">
                 &ldquo;Prevention over cure.&rdquo;
               </p>
-              <div className="mt-5 flex flex-wrap items-center gap-4">
+              <div className="mt-7 flex flex-wrap items-center gap-4">
                 <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] bg-white/10 px-3.5 py-2 text-sm font-semibold">
                   <ShieldCheck className="h-4 w-4 text-flame" aria-hidden /> Gas Safe Registered · 977838
                 </span>

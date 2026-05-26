@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Phone, Menu, X, Flame } from "lucide-react";
 import { WhatsAppGlyph } from "@/components/ui/icons";
@@ -26,6 +27,9 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -55,16 +59,24 @@ export function SiteHeader() {
       >
         <Logo />
 
-        <div className="hidden items-center gap-7 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[0.95rem] font-medium text-text hover:text-primary transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-1 lg:flex">
+          {NAV.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-[var(--radius-pill)] px-3.5 py-2 text-[0.95rem] font-medium transition-colors ${
+                  active
+                    ? "bg-sunken text-primary"
+                    : "text-text hover:bg-sunken hover:text-primary"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="hidden items-center gap-2 lg:flex">
@@ -115,16 +127,23 @@ export function SiteHeader() {
             </button>
           </div>
           <div className="container-page mt-6 flex flex-col gap-1">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-white/10 py-4 text-xl font-semibold text-inverse"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`flex items-center justify-between border-b border-white/10 py-4 text-xl font-semibold ${
+                    active ? "text-flame" : "text-inverse"
+                  }`}
+                >
+                  {item.label}
+                  {active && <span className="h-2 w-2 rounded-full bg-flame" aria-hidden />}
+                </Link>
+              );
+            })}
             <div className="mt-6 flex flex-col gap-3">
               <a
                 href={SITE.phoneHref}

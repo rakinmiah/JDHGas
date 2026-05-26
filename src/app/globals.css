@@ -45,18 +45,20 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+@layer base {
+  body {
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
-  color: var(--color-ink);
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+  }
 }
 
 .eyebrow {

@@ -5,7 +5,6 @@ import { MeetJamie } from "@/components/home/MeetJamie";
 import { WhyChoose } from "@/components/home/WhyChoose";
 import { LogoStrip } from "@/components/home/LogoStrip";
 import { Reviews } from "@/components/home/Reviews";
-import { Gallery } from "@/components/home/Gallery";
 import { ServiceArea } from "@/components/home/ServiceArea";
 import { Faq } from "@/components/home/Faq";
 import { CtaBand } from "@/components/home/CtaBand";
@@ -34,13 +33,12 @@ export default function Home() {
     <>
       <FaqJsonLd />
       <Hero />
-      <TrustBar />
       <Services />
       <Reviews />
-      <MeetJamie />
       <WhyChoose />
       <LogoStrip />
-      <Gallery />
+      <MeetJamie />
+      <TrustBar />
       <ServiceArea />
       <Faq />
       <CtaBand />

@@ -8,7 +8,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section bg-surface" aria-labelledby="faq-h">
+    <section className="section bg-sunken" aria-labelledby="faq-h">
       <div className="container-page max-w-3xl">
         <p className="eyebrow">FAQ</p>
         <h2 id="faq-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">

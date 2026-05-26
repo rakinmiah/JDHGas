@@ -73,6 +73,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/about" className="text-inverse/90 hover:text-flame">About Jamie</Link></li>
             <li><Link href="/reviews" className="text-inverse/90 hover:text-flame">Reviews</Link></li>
+            <li><Link href="/gallery" className="text-inverse/90 hover:text-flame">Our work</Link></li>
             <li><Link href="/contact" className="text-inverse/90 hover:text-flame">Contact</Link></li>
             <li><Link href="/privacy-policy" className="text-inverse/90 hover:text-flame">Privacy Policy</Link></li>
             <li><Link href="/terms" className="text-inverse/90 hover:text-flame">Terms</Link></li>

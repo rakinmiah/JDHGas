@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { TOWNS, SITE } from "@/lib/site";
 
@@ -12,7 +11,7 @@ const LINKED: Record<string, string> = {
 
 export function ServiceArea() {
   return (
-    <section className="section bg-sunken" aria-labelledby="area-h">
+    <section className="section bg-surface" aria-labelledby="area-h">
       <div className="container-page grid items-center gap-10 lg:grid-cols-[55%_45%]">
         <div>
           <p className="eyebrow">Service area</p>
@@ -49,18 +48,15 @@ export function ServiceArea() {
           </div>
         </div>
 
-        <div
-          className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-[var(--radius-lg)] border border-border-subtle bg-[radial-gradient(circle_at_50%_40%,#e8eef7,#dde6f2)] shadow-[var(--shadow-sm)]"
-          role="img"
-          aria-label="Map of the JDH Gas service area across Mid Sussex"
-        >
-          <div className="flex flex-col items-center text-center">
-            <span className="grid h-14 w-14 place-items-center rounded-full bg-primary text-white shadow-[var(--shadow-md)]">
-              <MapPin className="h-7 w-7" aria-hidden />
-            </span>
-            <span className="mt-3 font-display text-xl font-bold text-ink">Burgess Hill</span>
-            <span className="text-sm text-muted">&amp; surrounding Mid Sussex</span>
-          </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-border-subtle shadow-[var(--shadow-sm)]">
+          <iframe
+            title="Map showing JDH Gas Services' base in Burgess Hill and the Mid Sussex service area"
+            src="https://maps.google.com/maps?q=Burgess%20Hill,%20West%20Sussex&z=12&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full border-0"
+          />
         </div>
       </div>
     </section>
