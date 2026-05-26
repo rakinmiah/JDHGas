@@ -85,6 +85,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`transition-all duration-200 ${
         scrolled
@@ -147,10 +148,11 @@ export function SiteHeader() {
           <Menu className="h-6 w-6 text-ink" />
         </button>
       </nav>
+    </header>
 
-      {open && (
-        <div
-          ref={dialogRef}
+    {open && (
+      <div
+        ref={dialogRef}
           className="fixed inset-0 z-[300] bg-ink/95 backdrop-blur lg:hidden"
           role="dialog"
           aria-modal="true"
@@ -204,6 +206,6 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
