@@ -13,11 +13,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
 import { SITE } from "@/lib/site";
 
-const AREA_LINKS = [
-  { name: "Burgess Hill", href: "/areas/burgess-hill" },
-  { name: "Haywards Heath", href: "/areas/haywards-heath" },
-  { name: "Hassocks", href: "/areas/hassocks" },
-  { name: "Cuckfield", href: "/areas/cuckfield" },
+const AREAS = [
+  "Burgess Hill",
+  "Haywards Heath",
+  "Hassocks",
+  "Cuckfield",
+  "Ditchling",
+  "Lindfield",
+  "Wivelsfield",
+  "Keymer",
 ];
 
 const ICON_BY_SLUG: Record<string, LucideIcon> = {
@@ -148,19 +152,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               Areas I cover
             </h2>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              I&apos;m based in Burgess Hill and cover the surrounding Mid Sussex towns and villages.
-              Tap a town to see {s.navTitle.toLowerCase()} in your area.
+              I&apos;m based in Burgess Hill and cover the surrounding Mid Sussex towns and villages,
+              including these nearby.
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {AREA_LINKS.map((a) => (
-                <li key={a.href}>
-                  <Link
-                    href={a.href}
-                    className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-border-subtle bg-surface px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden />
-                    {a.name}
-                  </Link>
+              {AREAS.map((a) => (
+                <li
+                  key={a}
+                  className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-border-subtle bg-surface px-3.5 py-1.5 text-sm font-medium"
+                >
+                  <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden />
+                  {a}
                 </li>
               ))}
             </ul>

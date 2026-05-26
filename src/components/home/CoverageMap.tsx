@@ -13,9 +13,9 @@ type Town = {
 const BASE = { name: "Burgess Hill", lat: 50.9577, lng: -0.1281 };
 
 const TOWNS: Town[] = [
-  { name: "Haywards Heath", lat: 51.004, lng: -0.1028, href: "/areas/haywards-heath" },
-  { name: "Cuckfield", lat: 51.018, lng: -0.1496, href: "/areas/cuckfield" },
-  { name: "Hassocks", lat: 50.9237, lng: -0.1487, href: "/areas/hassocks" },
+  { name: "Haywards Heath", lat: 51.004, lng: -0.1028 },
+  { name: "Cuckfield", lat: 51.018, lng: -0.1496 },
+  { name: "Hassocks", lat: 50.9237, lng: -0.1487 },
   { name: "Lindfield", lat: 51.0103, lng: -0.0786 },
   { name: "Wivelsfield", lat: 50.987, lng: -0.105 },
   { name: "Ditchling", lat: 50.92, lng: -0.113 },
