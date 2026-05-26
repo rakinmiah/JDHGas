@@ -12,7 +12,7 @@ The **honest local tradesman** — plain-spoken, reassuring, no fluff. Confident
 
 ## Sentence length & reading level
 - Target **≤ 18 words**, ceiling **26**. Break long sentences into two.
-- Reading level **~Grade 7–8** (consumer). Plain English; explain jargon (e.g. "CP12 — the Landlord Gas Safety Certificate").
+- Reading level **~Grade 7–8** (consumer). Clear, jargon-free language; explain terms (e.g. "CP12 — the Landlord Gas Safety Certificate").
 
 ## CTA verbs
 - **Allowed for primary CTAs:** **Call**, **WhatsApp** (and "WhatsApp me"), **Book**, **Send** (enquiry), **Get a quote**, **Request a quote**.

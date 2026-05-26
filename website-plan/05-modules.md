@@ -201,7 +201,7 @@ Expected **11 reusable components**: `SiteHeader`, `SiteFooter`, `Button` (varia
 **Final copy:**
 - Eyebrow: `Meet your engineer`
 - Headline: `Meet Jamie`
-- Body: `I started JDH Gas Services to do gas work the way I'd want it done in my own home — carefully, honestly, and explained in plain English. I'm Gas Safe registered and I treat every boiler, and every home, like it matters. No rushing to the next job.`
+- Body: `I started JDH Gas Services to do gas work the way I'd want it done in my own home: carefully, honestly, and explained in clear, everyday terms. I'm Gas Safe registered and I treat every boiler, and every home, like it matters. No rushing to the next job.`
 - Signature line: `"Prevention over cure."`
 - Badge: `Gas Safe Registered · 977838`
 - CTA: `More about me →` → `/about` (same tab)
