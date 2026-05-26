@@ -192,6 +192,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <LogoStrip />
+
       {/* What I do — service cards */}
       <section className="section bg-surface">
         <div className="container-page">
@@ -223,7 +225,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <LogoStrip />
       <Reviews />
       <CtaBand />
     </>
