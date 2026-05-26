@@ -36,7 +36,7 @@ export function Services() {
                 <p className="mt-2 max-w-md text-sm leading-relaxed text-inverse/80">{featured.blurb}</p>
               </div>
               <div className="relative flex shrink-0 flex-col items-start gap-4 lg:items-end">
-                <span className="inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-4 py-1.5 text-sm font-bold text-white">
+                <span className="inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-4 py-1.5 text-sm font-bold text-ink">
                   New customers from £75
                 </span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-inverse">

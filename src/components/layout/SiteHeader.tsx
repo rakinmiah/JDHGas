@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Phone, Menu, X, Flame } from "lucide-react";
 import { WhatsAppGlyph } from "@/components/ui/icons";
 import { NAV, SITE } from "@/lib/site";
@@ -28,6 +28,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -42,6 +44,43 @@ export function SiteHeader() {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  // Mobile menu: focus management, Escape to close, Tab focus-trap.
+  useEffect(() => {
+    if (!open) return;
+    const dialog = dialogRef.current;
+    const focusables = () =>
+      dialog
+        ? Array.from(
+            dialog.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+          )
+        : [];
+    focusables()[0]?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key === "Tab") {
+        const f = focusables();
+        if (f.length === 0) return;
+        const first = f[0];
+        const last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      menuBtnRef.current?.focus();
     };
   }, [open]);
 
@@ -98,6 +137,7 @@ export function SiteHeader() {
         </div>
 
         <button
+          ref={menuBtnRef}
           type="button"
           className="grid h-11 w-11 place-items-center rounded-[var(--radius-md)] lg:hidden"
           aria-label="Open menu"
@@ -110,6 +150,7 @@ export function SiteHeader() {
 
       {open && (
         <div
+          ref={dialogRef}
           className="fixed inset-0 z-[300] bg-ink/95 backdrop-blur lg:hidden"
           role="dialog"
           aria-modal="true"
