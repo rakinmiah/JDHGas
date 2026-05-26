@@ -79,11 +79,11 @@ export default function AboutPage() {
         <div className="container-page pt-6">
           <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
         </div>
-        <div className="container-page grid gap-8 pb-10 pt-4 md:grid-cols-[44fr_56fr] md:items-stretch md:gap-10 md:py-10 lg:gap-14">
+        <div className="container-page grid gap-8 pb-10 pt-4 md:grid-cols-[44fr_56fr] md:items-center md:gap-10 md:py-10 lg:gap-14">
           <div className="order-1 md:order-2">
-            <div className="mx-auto max-w-md md:mx-0 md:h-full md:max-w-none">
+            <div className="mx-auto max-w-md md:mx-0 md:max-w-none">
               <p className="eyebrow mb-4 md:hidden">About</p>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:h-full md:min-h-[24rem]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-[24rem]">
                 <Image
                   src="/images/jamie-portrait.jpg"
                   alt="Jamie Hannah, Gas Safe registered engineer and owner of JDH Gas Services"
