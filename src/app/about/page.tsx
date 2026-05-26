@@ -4,11 +4,8 @@ import Link from "next/link";
 import {
   ShieldCheck,
   ArrowRight,
+  Check,
   Phone,
-  Clock,
-  BadgePoundSterling,
-  Sparkles,
-  MessageSquare,
   Flame,
   ClipboardCheck,
   Wrench,
@@ -18,6 +15,7 @@ import {
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { ValuesGrid } from "@/components/sections/ValuesGrid";
 import { LogoStrip } from "@/components/home/LogoStrip";
 import { Reviews } from "@/components/home/Reviews";
 import { CtaBand } from "@/components/home/CtaBand";
@@ -50,13 +48,6 @@ const personSchema = {
     identifier: SITE.gasSafe,
   },
 };
-
-const VALUES = [
-  { icon: Clock, title: "On time, every time", text: "When I say I'll be there, I'm there. No vague windows, no no-shows." },
-  { icon: BadgePoundSterling, title: "Honest pricing", text: "A fair price up front, and straight advice on what needs doing now and what can wait." },
-  { icon: Sparkles, title: "Clean and respectful", text: "I treat your home with care and leave it exactly as I found it." },
-  { icon: MessageSquare, title: "Explained in plain English", text: "No jargon. I'll tell you what I've found and why it matters." },
-];
 
 const ICON_BY_SLUG: Record<string, LucideIcon> = {
   "boiler-servicing": Flame,
@@ -124,19 +115,35 @@ export default function AboutPage() {
           aria-hidden
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
         />
-        <Reveal className="container-page relative py-12 md:py-16">
-          <div className="max-w-3xl">
-            <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
-              <Flame className="h-6 w-6" aria-hidden />
+        <Reveal className="container-page relative grid gap-6 py-12 md:grid-cols-[auto_auto_1fr] md:items-center md:gap-10 md:py-16 lg:gap-12">
+          <div className="flex items-center gap-5">
+            <span className="grid h-32 w-32 shrink-0 place-items-center rounded-[var(--radius-lg)] bg-white/10 text-flame">
+              <Flame className="h-16 w-16" aria-hidden />
             </span>
-            <p className="mt-5 font-display text-3xl font-extrabold tracking-tight text-inverse md:text-4xl">
-              Prevention over cure.
+            <p className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-inverse md:text-4xl">
+              Prevention
+              <br />
+              over cure.
             </p>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-inverse/80">
+          </div>
+          <span
+            aria-hidden
+            className="h-px w-16 shrink-0 rounded-full bg-flame md:h-24 md:w-0.5 md:self-center"
+          />
+          <div>
+            <p className="text-lg leading-relaxed text-inverse/85">
               A boiler can look like it&apos;s running fine while faults quietly build up out of
               sight. I take the time to check things properly, catch problems early, and keep your
               home safe and warm, so a small fix today saves a cold-weather breakdown later.
             </p>
+            <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-medium text-inverse">
+              {["Faults caught early", "Safer, more efficient heating", "Fewer winter breakdowns"].map((t) => (
+                <li key={t} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0 text-flame" aria-hidden />
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </section>
@@ -185,20 +192,7 @@ export default function AboutPage() {
         <div className="container-page">
           <p className="eyebrow">How I do things</p>
           <h2 className="mt-2 font-display text-2xl font-bold md:text-3xl">What you can expect</h2>
-          <Reveal as="ul" className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUES.map((v) => (
-              <li
-                key={v.title}
-                className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface p-6 shadow-[var(--shadow-sm)]"
-              >
-                <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-sunken text-primary">
-                  <v.icon className="h-6 w-6" aria-hidden />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{v.text}</p>
-              </li>
-            ))}
-          </Reveal>
+          <ValuesGrid />
         </div>
       </section>
 
