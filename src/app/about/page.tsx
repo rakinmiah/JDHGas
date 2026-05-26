@@ -118,7 +118,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story + ethos */}
+      {/* Ethos band */}
+      <section className="relative overflow-hidden bg-ink text-inverse">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
+        />
+        <Reveal className="container-page relative py-12 md:py-16">
+          <div className="max-w-3xl">
+            <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
+              <Flame className="h-6 w-6" aria-hidden />
+            </span>
+            <p className="mt-5 font-display text-3xl font-extrabold tracking-tight text-inverse md:text-4xl">
+              Prevention over cure.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-inverse/80">
+              A boiler can look like it&apos;s running fine while faults quietly build up out of
+              sight. I take the time to check things properly, catch problems early, and keep your
+              home safe and warm, so a small fix today saves a cold-weather breakdown later.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Story */}
       <section className="section bg-surface">
         <div className="container-page">
           <div className="grid items-start gap-10 lg:grid-cols-[1fr_minmax(300px,42%)] lg:gap-14">
@@ -154,27 +177,6 @@ export default function AboutPage() {
               />
             </Reveal>
           </div>
-
-          {/* Ethos panel */}
-          <Reveal className="relative mt-12 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-8 text-inverse shadow-[var(--shadow-md)] md:mt-14 md:p-12">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-primary/25 blur-3xl"
-            />
-            <div className="relative max-w-3xl">
-              <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
-                <Flame className="h-6 w-6" aria-hidden />
-              </span>
-              <p className="mt-5 font-display text-3xl font-extrabold tracking-tight text-inverse md:text-4xl">
-                Prevention over cure.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-inverse/80">
-                A boiler can look like it&apos;s running fine while faults quietly build up out of
-                sight. I take the time to check things properly, catch problems early, and keep your
-                home safe and warm, so a small fix today saves a cold-weather breakdown later.
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
