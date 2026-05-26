@@ -158,6 +158,15 @@ export default function AboutPage() {
                 I started JDH Gas to do gas work the way I&apos;d want it done in my own home:
                 carefully, honestly, and explained in plain English.
               </p>
+              <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:hidden">
+                <Image
+                  src="/images/work/analyser-worcester.jpg"
+                  alt="Jamie using a flue gas analyser during a boiler service in Burgess Hill"
+                  fill
+                  sizes="92vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="mt-6 space-y-4 border-l-2 border-primary pl-5 text-lg leading-relaxed text-muted">
                 <p>
                   No rushing to the next job, no jargon, and no pressure to pay for things you
@@ -174,7 +183,7 @@ export default function AboutPage() {
                 <p className="text-sm text-muted">Founder &amp; Gas Safe registered engineer</p>
               </div>
             </div>
-            <Reveal className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:sticky lg:top-24">
+            <Reveal className="relative hidden aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:block lg:sticky lg:top-24">
               <Image
                 src="/images/work/analyser-worcester.jpg"
                 alt="Jamie using a flue gas analyser during a boiler service in Burgess Hill"
