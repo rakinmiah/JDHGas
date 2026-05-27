@@ -16,6 +16,7 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | null>(null);
+  const [service, setService] = useState("");
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -60,6 +61,7 @@ export function ContactForm() {
         setStatus("success");
         formRef.current?.reset();
         clearPhoto();
+        setService("");
       } else if (json.errors) {
         setErrors(json.errors);
         setStatus("error");
@@ -120,11 +122,17 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="service" className={labelCls}>What do you need?</label>
-        <select id="service" name="service" required defaultValue="" className={inputCls} aria-invalid={!!err("service")} aria-describedby={err("service") ? "service-e" : undefined}>
+        <select id="service" name="service" required value={service} onChange={(e) => setService(e.target.value)} className={inputCls} aria-invalid={!!err("service")} aria-describedby={err("service") ? "service-e" : undefined}>
           <option value="" disabled>Choose a service…</option>
           {SERVICE_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
         </select>
         {err("service") && <p id="service-e" className="mt-1 text-sm text-[#DC2626]">{err("service")}</p>}
+        {service === "Boiler servicing" && (
+          <p className="mt-2 rounded-[var(--radius-md)] border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-sm leading-relaxed text-ink">
+            <span className="font-semibold">New customer?</span> To claim the £75 first-service
+            offer, please mention in your message below that you&apos;re a new customer wanting the offer.
+          </p>
+        )}
       </div>
 
       <div>

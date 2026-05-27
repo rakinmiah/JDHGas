@@ -239,6 +239,12 @@ export function HomeEnquiryForm() {
               placeholder="Make/model of boiler, the problem, anything useful."
             />
           </div>
+          {service === "Boiler servicing" && (
+            <p className="rounded-[var(--radius-md)] border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-sm leading-relaxed text-ink">
+              <span className="font-semibold">New customer?</span> To claim the £75 first-service
+              offer, please mention in your message that you&apos;re a new customer wanting the offer.
+            </p>
+          )}
           <div>
             <span className={labelCls}>
               Add a photo <span className="font-normal text-muted">(optional)</span>
