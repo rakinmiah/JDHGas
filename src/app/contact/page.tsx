@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { SITE } from "@/lib/site";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const metadata: Metadata = {
   title: "Contact | JDH Gas Services, Burgess Hill Gas Engineer",
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
 
 const rowCls = "flex items-center gap-3 text-inverse transition-colors hover:text-flame";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { rating, count } = await getGoogleReviews();
   return (
     <>
       <section className="border-b border-border-subtle bg-sunken">
@@ -88,7 +90,7 @@ export default function ContactPage() {
                         <Star key={i} className="h-3.5 w-3.5 fill-gas-safe text-gas-safe" />
                       ))}
                     </span>
-                    {SITE.rating.value} from {SITE.rating.count} Google reviews
+                    {rating} from {count} Google reviews
                   </p>
                 </div>
               </div>

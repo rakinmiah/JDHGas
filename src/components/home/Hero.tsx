@@ -4,10 +4,12 @@ import { Phone, Star, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GoogleG } from "@/components/ui/icons";
 import { SITE } from "@/lib/site";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
 const TRUST = ["All makes of boiler", "Free quotes", "Quick to respond"];
 
-export function Hero() {
+export async function Hero() {
+  const { rating, count } = await getGoogleReviews();
   return (
     <section className="relative border-b border-border-subtle bg-sunken">
       <div className="container-page grid items-center gap-8 py-12 md:grid-cols-[44fr_56fr] md:gap-8 md:py-16 lg:gap-12 lg:py-20">
@@ -42,7 +44,7 @@ export function Hero() {
           <Link
             href="/reviews"
             className="mt-6 inline-flex items-center gap-2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border-subtle bg-surface px-3.5 py-2 shadow-[var(--shadow-sm)] transition-colors hover:border-primary"
-            aria-label="Rated 5.0 out of 5 from 24 Google reviews"
+            aria-label={`Rated ${rating} out of 5 from ${count} Google reviews`}
           >
             <span className="hidden text-xs font-bold uppercase tracking-wide text-ink lg:inline">Excellent</span>
             <GoogleG className="h-5 w-5 shrink-0" />
@@ -51,7 +53,7 @@ export function Hero() {
                 <Star key={i} className="h-3.5 w-3.5 fill-gas-safe text-gas-safe" />
               ))}
             </span>
-            <span className="text-sm text-muted">24 reviews</span>
+            <span className="text-sm text-muted">{count} reviews</span>
           </Link>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={SITE.phoneHref} aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}>

@@ -1,13 +1,15 @@
 import { SITE } from "@/lib/site";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
-export function SiteJsonLd() {
+export async function SiteJsonLd() {
+  const { rating, count } = await getGoogleReviews();
   const business = {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
     "@id": `${SITE.url}/#business`,
     name: SITE.name,
     image: `${SITE.url}/images/jamie-portrait.jpg`,
-    logo: `${SITE.url}/apple-icon`,
+    logo: `${SITE.url}/shield-logo.png`,
     url: `${SITE.url}/`,
     telephone: "+447544063330",
     email: SITE.email,
@@ -45,8 +47,8 @@ export function SiteJsonLd() {
     sameAs: [SITE.instagram],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: SITE.rating.value,
-      reviewCount: SITE.rating.count,
+      ratingValue: rating,
+      reviewCount: count,
     },
   };
 
