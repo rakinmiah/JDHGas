@@ -74,8 +74,8 @@ export async function POST(req: Request) {
         method: "POST",
         headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
         body: JSON.stringify({
-          from: "JDH Gas Website <enquiries@jdhgas.co.uk>",
-          to: [SITE.email],
+          from: process.env.CONTACT_FROM_EMAIL || "JDH Gas Website <enquiries@jdhgas.co.uk>",
+          to: [process.env.CONTACT_TO_EMAIL || SITE.email],
           reply_to: email || undefined,
           subject: `New enquiry: ${service} — ${name} (${postcode})`,
           text: summary,
