@@ -38,8 +38,8 @@ export async function Hero() {
             Your local gas &amp; heating engineer in Burgess Hill.
           </h1>
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted md:mt-4 lg:text-lg">
-            Boiler servicing, repairs and gas safety, done properly by a local engineer you can
-            actually get hold of.
+            Boiler servicing, boiler &amp; heating repairs, gas safety certificates, done properly
+            by Jamie, a local Gas Safe engineer.
           </p>
           <Link
             href="/reviews"

@@ -6,7 +6,7 @@ One named author/expert: **Jamie Hannah, Gas Safe registered engineer (977838)**
 
 ## Voice rules `[STAND-IN — pending /plan-brand]`
 - First person ("I"/"my"), occasionally "we". Name Jamie; never faceless.
-- Plain-spoken, reassuring, safety-first, technically credible without jargon-dumping.
+- Plain-spoken, reassuring, safety-first, technically credible and easy to follow.
 - Checklist style works (what was checked/done). Signature: **"prevention over cure."**
 - **No emoji** in website body (fine on Instagram). No corporate filler ("Welcome to…", "we pride ourselves", "your trusted provider"). No "cheapest", no unsubstantiated superlatives, no fake urgency.
 - Sample to match (real, from IG): _"A boiler can look like it's running fine while faults build up in the background. Regular annual servicing helps prevent breakdowns and keeps your home safe."_

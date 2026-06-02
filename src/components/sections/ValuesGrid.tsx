@@ -8,7 +8,7 @@ const VALUES: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Clock, title: "On time, every time", text: "When I say I'll be there, I'm there. No vague windows, no no-shows." },
   { icon: BadgePoundSterling, title: "Honest pricing", text: "A fair price up front, and straight advice on what needs doing now and what can wait." },
   { icon: Sparkles, title: "Clean and respectful", text: "I treat your home with care and leave it exactly as I found it." },
-  { icon: MessageSquare, title: "Clear, jargon-free advice", text: "I'll tell you what I've found and why it matters, in clear, everyday terms." },
+  { icon: MessageSquare, title: "Honest advice", text: "I'll tell you what I've found and why it matters, in clear, everyday terms." },
 ];
 
 /**

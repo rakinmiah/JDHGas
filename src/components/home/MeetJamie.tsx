@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const POINTS = [
   { icon: ShieldCheck, text: "Gas Safe registered · 977838" },
-  { icon: MessageCircle, text: "Honest, jargon-free advice" },
+  { icon: MessageCircle, text: "Honest advice" },
   { icon: Clock, text: "On time, no rushing off" },
   { icon: Sparkles, text: "Clean, tidy work" },
 ];

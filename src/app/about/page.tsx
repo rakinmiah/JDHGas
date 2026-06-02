@@ -155,7 +155,7 @@ export default function AboutPage() {
               <p className="eyebrow">My story</p>
               <p className="mt-4 font-display text-2xl font-bold leading-[1.25] tracking-tight text-ink md:text-[2rem]">
                 I started JDH Gas to do gas work the way I&apos;d want it done in my own home:
-                carefully, honestly, and explained clearly without the jargon.
+                carefully, honestly, and explained clearly.
               </p>
               <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle lg:hidden">
                 <Image
@@ -168,8 +168,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-6 space-y-4 border-l-2 border-primary pl-5 text-lg leading-relaxed text-muted">
                 <p>
-                  No rushing to the next job, no jargon, and no pressure to pay for things you
-                  don&apos;t need.
+                  No rushing to the next job, and no pressure to pay for things you don&apos;t need.
                 </p>
                 <p>
                   Whether it&apos;s a quick service or a tricky repair, you get the same care and the

@@ -5,7 +5,7 @@ _Annotations for `/plan-website` Phase 5, not final copy. Brand voice wins every
 ## Brand voice stand-in `[STAND-IN — pending /plan-brand]`
 Derived from Jamie's real Instagram captions + live-site copy. Calibration:
 - **Person:** first-person singular ("I"), occasionally "we"/"my". Jamie is the brand — name him.
-- **Tone:** plain-spoken, safety-first, reassuring, technically credible without jargon-dumping. Light structure (checklist of what was done). Sparing emoji on social only — **no emoji in website body copy**.
+- **Tone:** plain-spoken, safety-first, reassuring, technically credible and easy to follow. Light structure (checklist of what was done). Sparing emoji on social only — **no emoji in website body copy**.
 - **Signature line:** "Prevention over cure." Real sample: _"A boiler can look like it's running fine while faults build up in the background. Regular annual servicing helps prevent breakdowns and keeps your home safe."_
 - **Banned (stand-in):** corporate filler ("Welcome to…", "your trusted provider of…", "we pride ourselves"), "cheapest", hype superlatives ("the best in the UK"), fake urgency. No "unlock", "seamless", "bespoke solutions".
 - **YMYL rule:** every safety claim must be true and attributable (Gas Safe reg 977838, named engineer Jamie Hannah). Never imply credentials not held.
