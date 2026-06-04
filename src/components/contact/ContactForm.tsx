@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { Upload, X, CheckCircle2, Phone } from "lucide-react";
 import { SERVICE_OPTIONS, SITE } from "@/lib/site";
+import { compressImage } from "@/lib/compress-image";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Errors = Record<string, string>;
@@ -19,6 +20,7 @@ export function ContactForm() {
   const [service, setService] = useState("");
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
+  const compressedPhotoRef = useRef<Promise<File> | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -28,23 +30,29 @@ export function ContactForm() {
     if (!file) {
       setPhotoPreview(null);
       setPhotoName(null);
+      compressedPhotoRef.current = null;
       return;
     }
     if (!file.type.startsWith("image/")) {
       setErrors((p) => ({ ...p, photo: "Please choose an image file." }));
+      compressedPhotoRef.current = null;
       return;
     }
-    if (file.size > 10 * 1024 * 1024) {
-      setErrors((p) => ({ ...p, photo: "That image is too large (max 10MB)." }));
+    if (file.size > 20 * 1024 * 1024) {
+      setErrors((p) => ({ ...p, photo: "That image is too large. Please pick one under 20MB." }));
+      compressedPhotoRef.current = null;
       return;
     }
     setPhotoPreview(URL.createObjectURL(file));
     setPhotoName(file.name);
+    // Start resizing in the background so it's ready by the time they submit.
+    compressedPhotoRef.current = compressImage(file);
   }
 
   function clearPhoto() {
     setPhotoPreview(null);
     setPhotoName(null);
+    compressedPhotoRef.current = null;
     if (fileRef.current) fileRef.current.value = "";
   }
 
@@ -55,6 +63,15 @@ export function ContactForm() {
     setFormError(null);
     try {
       const data = new FormData(e.currentTarget);
+      // Swap in the resized photo (if any) so we never blow Vercel's body limit.
+      if (compressedPhotoRef.current) {
+        try {
+          const compressed = await compressedPhotoRef.current;
+          data.set("photo", compressed);
+        } catch {
+          /* fall through with the original file in the form */
+        }
+      }
       const res = await fetch("/api/contact", { method: "POST", body: data });
       const json = await res.json();
       if (res.ok && json.ok) {
