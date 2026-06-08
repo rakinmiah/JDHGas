@@ -53,7 +53,7 @@ export default function ServicesHub() {
               </div>
               <div className="relative flex shrink-0 flex-col items-start gap-4 lg:items-end">
                 <span className="inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-4 py-1.5 text-sm font-bold text-ink">
-                  New customers from £75
+                  New customers from £85
                 </span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-inverse">
                   Learn more

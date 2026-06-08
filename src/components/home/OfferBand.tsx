@@ -9,7 +9,7 @@ export function OfferBand() {
           <p className="eyebrow">New customer offer</p>
           <h2 id="offer-h" className="mt-3 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
             Your first boiler service from{" "}
-            <span className="text-primary">£75</span>
+            <span className="text-primary">£85</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
             A full, Gas Safe registered boiler service for new customers across Burgess Hill

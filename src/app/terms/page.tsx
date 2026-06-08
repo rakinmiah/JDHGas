@@ -25,7 +25,7 @@ export default function Terms() {
       <h2>Enquiries and quotes</h2>
       <p>
         Submitting an enquiry through this website does not create a contract. Any prices mentioned
-        on the site (such as the £75 first-service offer) are indicative; I&apos;ll confirm pricing
+        on the site (such as the £85 first-service offer) are indicative; I&apos;ll confirm pricing
         and details with you directly before carrying out any work. The terms of the work itself are
         agreed between us at the time of booking.
       </p>

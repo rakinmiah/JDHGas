@@ -27,12 +27,12 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     h1: "Boiler servicing in Burgess Hill",
     metaTitle: "Boiler Service in Burgess Hill | JDH Gas Services",
     metaDescription:
-      "Annual boiler servicing in Burgess Hill by a Gas Safe registered engineer. Thorough safety & efficiency checks. First service from £75. Book today.",
-    lead: "A boiler service is an annual safety and efficiency check carried out by a Gas Safe registered engineer. I inspect and test your boiler's key components, check it's burning safely, and flag anything that needs attention, so small issues are caught before they become breakdowns. Your first service is £75 for new customers.",
+      "Annual boiler servicing in Burgess Hill by a Gas Safe registered engineer. Thorough safety & efficiency checks. First service from £85. Book today.",
+    lead: "A boiler service is an annual safety and efficiency check carried out by a Gas Safe registered engineer. I inspect and test your boiler's key components, check it's burning safely, and flag anything that needs attention, so small issues are caught before they become breakdowns. Your first service is £85 for new customers.",
     image: "/images/work/bosch-service.jpg",
     imageAlt: "Jamie servicing the internals of a boiler during an annual service in Burgess Hill",
     serviceType: "Boiler Servicing",
-    offerPrice: "75",
+    offerPrice: "85",
     blocks: [
       {
         heading: "What's included in your service",
@@ -52,7 +52,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
     ],
     faqs: [
-      { q: "How much is a boiler service?", a: "A boiler service is £75 for new customers. It's a full Gas Safe check. If anything needs repairing, I'll always give you a clear quote before doing any extra work." },
+      { q: "How much is a boiler service?", a: "A boiler service is £85 for new customers. It's a full Gas Safe check. If anything needs repairing, I'll always give you a clear quote before doing any extra work." },
       { q: "How long does a boiler service take?", a: "A standard boiler service usually takes 30–60 minutes, depending on the make and how accessible the boiler is. I won't rush it. A proper service is worth doing well." },
       { q: "How often should a boiler be serviced?", a: "Once every 12 months by a Gas Safe registered engineer. It keeps the boiler safe and efficient, and most manufacturer warranties require an annual service to stay valid." },
       { q: "Do I need a service to keep my warranty valid?", a: "In most cases yes. Boiler manufacturers usually require proof of an annual service to honour the warranty. I'll leave you with a record of the work either way." },

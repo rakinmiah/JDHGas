@@ -20,7 +20,7 @@ export function CtaBand() {
           <Button href={SITE.whatsappHref} variant="whatsapp">WhatsApp</Button>
         </div>
         <p className="mt-4 text-sm text-inverse/70">
-          New customers: first boiler service from £75. Monday to Friday, across Burgess Hill &amp; Mid Sussex.
+          New customers: first boiler service from £85. Monday to Friday, across Burgess Hill &amp; Mid Sussex.
         </p>
       </div>
     </section>

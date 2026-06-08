@@ -146,7 +146,7 @@ export function ContactForm() {
         {err("service") && <p id="service-e" className="mt-1 text-sm text-[#DC2626]">{err("service")}</p>}
         {service === "Boiler servicing" && (
           <p className="mt-2 rounded-[var(--radius-md)] border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-sm leading-relaxed text-ink">
-            <span className="font-semibold">New customer?</span> To claim the £75 first-service
+            <span className="font-semibold">New customer?</span> To claim the £85 first-service
             offer, please mention in your message below that you&apos;re a new customer wanting the offer.
           </p>
         )}
