@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Star, ArrowRight, Check } from "lucide-react";
+import { Phone, Star, ArrowRight, Check, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GoogleG } from "@/components/ui/icons";
 import { SITE } from "@/lib/site";
@@ -40,6 +40,10 @@ export async function Hero() {
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted md:mt-4 lg:text-lg">
             Boiler servicing, boiler &amp; heating repairs, gas safety certificates, done properly
             by Jamie, a local Gas Safe engineer.
+          </p>
+          <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-text">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-gas-safe" aria-hidden />
+            Gas Safe registered · reg. no. {SITE.gasSafe}
           </p>
           <Link
             href="/reviews"

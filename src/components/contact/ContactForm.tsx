@@ -76,6 +76,9 @@ export function ContactForm() {
       const json = await res.json();
       if (res.ok && json.ok) {
         setStatus("success");
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", { form: "contact" });
+        }
         formRef.current?.reset();
         clearPhoto();
         setService("");

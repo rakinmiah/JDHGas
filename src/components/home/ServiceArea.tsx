@@ -11,7 +11,8 @@ const POINTS = [
   { icon: Clock, text: "Quick to respond" },
 ];
 
-function ReachBox() {
+function ReachBox({ headingAs = "h3" }: { headingAs?: "h3" | "p" }) {
+  const Heading = headingAs;
   return (
     <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse shadow-[var(--shadow-md)]">
       <div
@@ -22,7 +23,7 @@ function ReachBox() {
         <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] bg-white/10 text-flame">
           <MapPin className="h-5 w-5" aria-hidden />
         </span>
-        <h3 className="mt-4 font-display text-lg font-bold text-inverse">Not sure if I reach you?</h3>
+        <Heading className="mt-4 font-display text-lg font-bold text-inverse">Not sure if I reach you?</Heading>
         <p className="mt-1.5 text-inverse/80">
           Send me your postcode and I&apos;ll tell you if I cover you. No obligation.
         </p>
@@ -62,9 +63,11 @@ export function ServiceArea() {
             ))}
           </ul>
 
-          {/* desktop: box sits below the text in the left column */}
+          {/* desktop: box sits below the text in the left column. The mobile/tablet
+              copy below carries the single <h3>; this one is demoted so the
+              document outline isn't duplicated. */}
           <div className="mt-8 hidden lg:block">
-            <ReachBox />
+            <ReachBox headingAs="p" />
           </div>
         </div>
 

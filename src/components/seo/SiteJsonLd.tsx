@@ -44,11 +44,22 @@ export async function SiteJsonLd() {
       credentialCategory: "Gas Safe Register",
       identifier: SITE.gasSafe,
     },
+    founder: {
+      "@type": "Person",
+      name: SITE.engineer,
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Gas Safe Register",
+        identifier: SITE.gasSafe,
+      },
+    },
     sameAs: [SITE.instagram],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: rating,
       reviewCount: count,
+      bestRating: "5",
+      worstRating: "1",
     },
   };
 

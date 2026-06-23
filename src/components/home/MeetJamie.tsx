@@ -15,10 +15,12 @@ export function MeetJamie() {
     <section className="section bg-sunken" aria-label="Meet Jamie">
       <div className="container-page grid items-center gap-10 md:grid-cols-[46fr_54fr] md:gap-12 lg:gap-16">
         <div>
-          {/* heading above the image on mobile/tablet */}
-          <div className="md:hidden">
+          {/* heading above the image on mobile/tablet — single <h2> lives in the
+              text column below; this visual duplicate is a non-heading so the
+              document outline keeps exactly one "Meet Jamie" heading */}
+          <div className="md:hidden" aria-hidden>
             <p className="eyebrow">Meet your engineer</p>
-            <h2 className="mt-2 font-display text-3xl font-bold">Meet Jamie</h2>
+            <p className="mt-2 font-display text-3xl font-bold">Meet Jamie</p>
           </div>
           <Reveal className="relative mx-auto mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:mt-0 md:aspect-[3/4] md:max-w-none lg:aspect-[4/5]">
             <Image
