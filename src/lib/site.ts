@@ -11,7 +11,7 @@ export const SITE = {
   locality: "Burgess Hill",
   region: "West Sussex",
   postcodeArea: "RH15",
-  rating: { value: "5.0", count: 24 },
+  rating: { value: "5.0", count: 36 },
   hours: "Mon–Fri",
 } as const;
 

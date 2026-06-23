@@ -5,6 +5,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
+import { Analytics } from "@/components/analytics/Analytics";
 
 const display = Manrope({
   variable: "--font-display-src",
@@ -43,6 +44,11 @@ export const metadata: Metadata = {
     description:
       "Gas Safe registered engineer Jamie Hannah — boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
   },
+  // Google Search Console verification — set GOOGLE_SITE_VERIFICATION to the
+  // token from GSC's "HTML tag" method to verify ownership (no-op until set).
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -54,6 +60,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface text-text">
+        <Analytics />
         <SiteJsonLd />
         <a
           href="#main"
