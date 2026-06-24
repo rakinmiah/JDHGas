@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
+import { CONSENT_KEY, CONSENT_EVENT } from "@/components/analytics/CookieBanner";
 
 // GA4 Measurement ID. Public by design (it ships in the page HTML), so it's
 // baked in as the default; NEXT_PUBLIC_GA_ID can override it if ever needed.
@@ -15,13 +16,29 @@ declare global {
 }
 
 /**
- * GA4, wired only when NEXT_PUBLIC_GA_ID is set (graceful no-op otherwise, in
- * keeping with the rest of the site's env handling). Fires a `call` conversion
- * event on any tel: click so phone enquiries are measurable in GA4.
+ * GA4, loaded only after the visitor accepts analytics cookies via the
+ * CookieBanner (consent stored in localStorage under CONSENT_KEY). No GA
+ * script or cookie is set until then. Also fires a `call` conversion event
+ * on any tel: click so phone enquiries are measurable.
  */
 export function Analytics() {
+  const [granted, setGranted] = useState(false);
+
   useEffect(() => {
-    if (!GA_ID) return;
+    const read = () => {
+      try {
+        setGranted(localStorage.getItem(CONSENT_KEY) === "granted");
+      } catch {
+        /* ignore */
+      }
+    };
+    read();
+    window.addEventListener(CONSENT_EVENT, read);
+    return () => window.removeEventListener(CONSENT_EVENT, read);
+  }, []);
+
+  useEffect(() => {
+    if (!granted) return;
     function onClick(e: MouseEvent) {
       const link = (e.target as HTMLElement)?.closest?.('a[href^="tel:"]');
       if (link && typeof window.gtag === "function") {
@@ -32,9 +49,9 @@ export function Analytics() {
     }
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, []);
+  }, [granted]);
 
-  if (!GA_ID) return null;
+  if (!GA_ID || !granted) return null;
 
   return (
     <>

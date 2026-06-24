@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { Analytics } from "@/components/analytics/Analytics";
+import { CookieBanner } from "@/components/analytics/CookieBanner";
 
 const display = Manrope({
   variable: "--font-display-src",
@@ -76,6 +77,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <CookieBanner />
       </body>
     </html>
   );
