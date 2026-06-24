@@ -145,7 +145,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     metaTitle: "Boiler Installation in Burgess Hill | JDH Gas Services",
     metaDescription:
       "New boiler & heating installation in Burgess Hill by Gas Safe engineer Jamie Hannah. Honest advice, a clear fixed quote and a tidy install. Get a free quote.",
-    lead: "New boilers and full heating systems, fitted properly. I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch, and I'll help you choose the right boiler for your home and budget, with honest advice and a clear, fixed quote before any work starts.",
+    lead: "From a like-for-like boiler swap to a full new heating system, fitted properly. I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch, and I'll help you choose the right boiler for your home and budget, with honest advice and a clear, fixed quote before any work starts.",
     image: "/images/work/ideal-install.jpg",
     imageAlt: "A new boiler freshly installed by JDH Gas in Burgess Hill",
     serviceType: "Boiler Installation",
@@ -174,6 +174,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     faqs: [
       { q: "How much does a new boiler cost?", a: "It depends on the boiler and your home, so I give every customer a clear, fixed quote first, with no obligation. Send me a few photos or book a quick visit and I'll price it up properly." },
       { q: "How long does a boiler installation take?", a: "A straightforward combi swap is usually a day. A bigger job, like moving the boiler or upgrading the system, can take two to three. I'll always tell you what to expect up front." },
+      { q: "Do you do like-for-like boiler swaps?", a: "Yes. If you're happy with where your boiler is and just want it replaced with a similar model, a like-for-like swap is usually the quickest and most cost-effective option, often done in a day. I'll tell you if a different setup would suit you better." },
       { q: "Which boiler should I get?", a: "It depends on your home and how you use hot water. Combis suit smaller homes with one bathroom; system boilers suit larger homes with higher demand. I'll recommend what genuinely fits, not the priciest option." },
       { q: "Which boiler brands do you install?", a: "I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch boilers. They're reliable, well-supported and come with strong manufacturer warranties. If you've got a preference, just ask." },
       { q: "Do you remove the old boiler?", a: "Yes. I safely disconnect, remove and dispose of your old boiler as part of the job, and leave everything clean and tidy." },
