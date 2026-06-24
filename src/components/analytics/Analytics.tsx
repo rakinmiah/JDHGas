@@ -3,7 +3,9 @@
 import { useEffect } from "react";
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// GA4 Measurement ID. Public by design (it ships in the page HTML), so it's
+// baked in as the default; NEXT_PUBLIC_GA_ID can override it if ever needed.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-TSRXM048T2";
 
 declare global {
   interface Window {
