@@ -145,30 +145,30 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     metaTitle: "Boiler Installation in Burgess Hill | JDH Gas Services",
     metaDescription:
       "New boiler & heating installation in Burgess Hill by Gas Safe engineer Jamie Hannah. Honest advice, a clear fixed quote and a tidy install. Get a free quote.",
-    lead: "A new boiler is a big decision, so I make it a straightforward one. I install new boilers and full heating systems, and I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch. I'll help you choose the right boiler for your home and budget, fit it properly, and leave everything clean and working, with honest advice up front and a clear, fixed quote before any work starts.",
+    lead: "New boilers and full heating systems, fitted properly. I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch, and I'll help you choose the right boiler for your home and budget, with honest advice and a clear, fixed quote before any work starts.",
     image: "/images/work/ideal-install.jpg",
     imageAlt: "A new boiler freshly installed by JDH Gas in Burgess Hill",
     serviceType: "Boiler Installation",
     blocks: [
       {
         heading: "What a new installation includes",
-        body: "Every install is done properly and to current regulations, with no shortcuts. Here's what's covered.",
+        body: "Done properly, to current regulations, with no shortcuts.",
         bullets: [
-          "Honest advice on the right boiler for your home, hot water and budget",
-          "Supply and fit of your new boiler (Glow-worm, Vaillant, Ideal, Worcester Bosch)",
+          "Advice on the right boiler for your home and budget",
+          "Supply and fit (Glow-worm, Vaillant, Ideal, Worcester Bosch)",
           "Safe removal and disposal of your old boiler",
-          "A chemical flush and system inhibitor to protect the new boiler and keep it efficient",
-          "Fitting of controls, a filter and any pipework needed",
-          "Commissioning, safety checks and registering the installation with Gas Safe",
+          "A chemical flush and system inhibitor",
+          "New controls, filter and any pipework needed",
+          "Commissioning, safety checks and Gas Safe registration",
         ],
       },
       {
         heading: "Repair or replace? I'll tell you straight",
-        body: "Not every old boiler needs replacing. If yours can be repaired and it's worth it, I'll tell you, rather than sell you a new one you don't need. And if a new boiler genuinely is the better value, I'll explain why in a way that makes sense, and recommend what suits your home, not the most expensive option.",
+        body: "Not every old boiler needs replacing. If yours can be repaired and it's worth it, I'll say so, rather than sell you one you don't need. And if a new boiler is the better value, I'll recommend what suits your home, not the priciest option.",
       },
       {
         heading: "A clear quote, and a warranty that stays valid",
-        body: "No surprises. After I understand what you need (a quick visit or a few photos usually does it), you get a written, fixed quote covering the boiler, parts and labour. And because I'm Gas Safe registered, I register every installation properly, so your manufacturer's warranty stays valid and you keep all the paperwork.",
+        body: "No surprises. After a quick visit or a few photos, you get a written, fixed quote covering the boiler, parts and labour. And because I'm Gas Safe registered, I register every installation, so your manufacturer's warranty stays valid.",
       },
     ],
     faqs: [
