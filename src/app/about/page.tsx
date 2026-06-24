@@ -10,6 +10,7 @@ import {
   ClipboardCheck,
   Wrench,
   CookingPot,
+  Hammer,
   type LucideIcon,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -54,6 +55,7 @@ const ICON_BY_SLUG: Record<string, LucideIcon> = {
   "boiler-servicing": Flame,
   "gas-safety-certificate": ClipboardCheck,
   "boiler-repairs": Wrench,
+  "boiler-heating-installation": Hammer,
   "gas-appliances": CookingPot,
 };
 
@@ -210,7 +212,7 @@ export default function AboutPage() {
         <div className="container-page">
           <p className="eyebrow">What I do</p>
           <h2 className="mt-2 font-display text-2xl font-bold md:text-3xl">How I can help</h2>
-          <Reveal as="ul" className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal as="ul" className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICE_CONTENT.map((s) => {
               const Icon = ICON_BY_SLUG[s.slug] ?? Flame;
               return (

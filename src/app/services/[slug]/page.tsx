@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, type LucideIcon } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, Hammer, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { PageHero } from "@/components/sections/PageHero";
@@ -32,6 +32,7 @@ const ICON_BY_SLUG: Record<string, LucideIcon> = {
   "boiler-servicing": Flame,
   "gas-safety-certificate": ClipboardCheck,
   "boiler-repairs": Wrench,
+  "boiler-heating-installation": Hammer,
   "gas-appliances": CookingPot,
 };
 
@@ -188,7 +189,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="section bg-sunken">
         <div className="container-page">
           <h2 className="font-display text-2xl font-bold md:text-3xl">Other services</h2>
-          <Reveal as="ul" className="mt-7 grid gap-5 sm:grid-cols-3">
+          <Reveal as="ul" className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((o) => {
               const Icon = ICON_BY_SLUG[o.slug] ?? Flame;
               return (

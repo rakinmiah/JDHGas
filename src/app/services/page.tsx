@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ClipboardCheck, Wrench, CookingPot, type LucideIcon } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Wrench, CookingPot, Hammer, type LucideIcon } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { BrandMark } from "@/components/ui/BrandMark";
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 const ICON_BY_SLUG: Record<string, LucideIcon> = {
   "gas-safety-certificate": ClipboardCheck,
   "boiler-repairs": Wrench,
+  "boiler-heating-installation": Hammer,
   "gas-appliances": CookingPot,
 };
 
@@ -38,9 +39,9 @@ export default function ServicesHub() {
       />
 
       <section className="section bg-surface" aria-label="Our services">
-        <Reveal as="ul" className="container-page grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal as="ul" className="container-page grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {/* Featured — boiler servicing */}
-          <li className="sm:col-span-2 lg:col-span-3">
+          <li className="sm:col-span-2 lg:col-span-4">
             <Link
               href={`/services/${featured.slug}`}
               className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:p-8"

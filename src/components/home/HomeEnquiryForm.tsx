@@ -6,6 +6,7 @@ import {
   Flame,
   ClipboardCheck,
   Wrench,
+  Hammer,
   CookingPot,
   HelpCircle,
   Upload,
@@ -22,6 +23,7 @@ const SERVICES = [
   { value: "Boiler servicing", label: "Boiler servicing", icon: Flame },
   { value: "Landlord gas safety certificate (CP12)", label: "Gas safety certificate", icon: ClipboardCheck },
   { value: "Heating system repair", label: "Heating repair", icon: Wrench },
+  { value: "Boiler or heating installation", label: "Boiler installation", icon: Hammer },
   { value: "Gas hob install", label: "Gas hob install", icon: CookingPot },
   { value: "Something else", label: "Something else", icon: HelpCircle },
 ];

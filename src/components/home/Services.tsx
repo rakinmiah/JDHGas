@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Wrench, ClipboardCheck, CookingPot, ArrowRight } from "lucide-react";
+import { Wrench, ClipboardCheck, CookingPot, Hammer, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { SERVICES } from "@/lib/site";
 
-const ICONS = { Wrench, ClipboardCheck, CookingPot } as const;
+const ICONS = { Wrench, ClipboardCheck, CookingPot, Hammer } as const;
 
 export function Services() {
   const [featured, ...rest] = SERVICES;
@@ -17,9 +17,9 @@ export function Services() {
           What I can help with
         </h2>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {/* Featured — boiler servicing: a wide ink banner carrying the £85 hook */}
-          <Reveal as="li" className="lg:col-span-3">
+          <Reveal as="li" className="sm:col-span-2 lg:col-span-4">
             <Link
               href={featured.href}
               className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:p-8"

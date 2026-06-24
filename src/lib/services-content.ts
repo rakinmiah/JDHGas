@@ -138,6 +138,49 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     ],
   },
   {
+    slug: "boiler-heating-installation",
+    navTitle: "Boiler & heating installation",
+    eyebrow: "Boiler & heating installation",
+    h1: "Boiler & heating installation in Burgess Hill",
+    metaTitle: "Boiler Installation in Burgess Hill | JDH Gas Services",
+    metaDescription:
+      "New boiler & heating installation in Burgess Hill by Gas Safe engineer Jamie Hannah. Honest advice, a clear fixed quote and a tidy install. Get a free quote.",
+    lead: "A new boiler is a big decision, so I make it a straightforward one. I install new boilers and full heating systems, and I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch. I'll help you choose the right boiler for your home and budget, fit it properly, and leave everything clean and working, with honest advice up front and a clear, fixed quote before any work starts.",
+    image: "/images/work/ideal-install.jpg",
+    imageAlt: "A new boiler freshly installed by JDH Gas in Burgess Hill",
+    serviceType: "Boiler Installation",
+    blocks: [
+      {
+        heading: "What a new installation includes",
+        body: "Every install is done properly and to current regulations, with no shortcuts. Here's what's covered.",
+        bullets: [
+          "Honest advice on the right boiler for your home, hot water and budget",
+          "Supply and fit of your new boiler (Glow-worm, Vaillant, Ideal, Worcester Bosch)",
+          "Safe removal and disposal of your old boiler",
+          "A chemical flush and system inhibitor to protect the new boiler and keep it efficient",
+          "Fitting of controls, a filter and any pipework needed",
+          "Commissioning, safety checks and registering the installation with Gas Safe",
+        ],
+      },
+      {
+        heading: "Repair or replace? I'll tell you straight",
+        body: "Not every old boiler needs replacing. If yours can be repaired and it's worth it, I'll tell you, rather than sell you a new one you don't need. And if a new boiler genuinely is the better value, I'll explain why in a way that makes sense, and recommend what suits your home, not the most expensive option.",
+      },
+      {
+        heading: "A clear quote, and a warranty that stays valid",
+        body: "No surprises. After I understand what you need (a quick visit or a few photos usually does it), you get a written, fixed quote covering the boiler, parts and labour. And because I'm Gas Safe registered, I register every installation properly, so your manufacturer's warranty stays valid and you keep all the paperwork.",
+      },
+    ],
+    faqs: [
+      { q: "How much does a new boiler cost?", a: "It depends on the boiler and your home, so I give every customer a clear, fixed quote first, with no obligation. Send me a few photos or book a quick visit and I'll price it up properly." },
+      { q: "How long does a boiler installation take?", a: "A straightforward combi swap is usually a day. A bigger job, like moving the boiler or upgrading the system, can take two to three. I'll always tell you what to expect up front." },
+      { q: "Which boiler should I get?", a: "It depends on your home and how you use hot water. Combis suit smaller homes with one bathroom; system boilers suit larger homes with higher demand. I'll recommend what genuinely fits, not the priciest option." },
+      { q: "Which boiler brands do you install?", a: "I specialise in Glow-worm, Vaillant, Ideal and Worcester Bosch boilers. They're reliable, well-supported and come with strong manufacturer warranties. If you've got a preference, just ask." },
+      { q: "Do you remove the old boiler?", a: "Yes. I safely disconnect, remove and dispose of your old boiler as part of the job, and leave everything clean and tidy." },
+      { q: "Will my new boiler be under warranty?", a: "Yes. New boilers come with a manufacturer's warranty, and because I'm Gas Safe registered I register the installation so your warranty stays valid. You'll get all the paperwork." },
+    ],
+  },
+  {
     slug: "gas-appliances",
     navTitle: "Gas hob installs",
     eyebrow: "Gas hob & cooker installation",

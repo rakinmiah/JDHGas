@@ -46,6 +46,13 @@ export const SERVICES = [
     icon: "Wrench",
   },
   {
+    title: "Boiler & heating installation",
+    blurb:
+      "New boilers and full heating systems, fitted properly with a clear fixed quote.",
+    href: "/services/boiler-heating-installation",
+    icon: "Hammer",
+  },
+  {
     title: "Gas hob installs",
     blurb:
       "Fitting and testing gas hobs and cookers safely.",
@@ -58,6 +65,7 @@ export const SERVICE_OPTIONS = [
   "Boiler servicing",
   "Landlord gas safety certificate (CP12)",
   "Heating system repair",
+  "Boiler or heating installation",
   "Gas hob install",
   "Something else",
 ] as const;
