@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { compressImage } from "@/lib/compress-image";
+import { trackEvent } from "@/lib/analytics";
 
 const SERVICES = [
   { value: "Boiler servicing", label: "Boiler servicing", icon: Flame },
@@ -149,9 +150,7 @@ export function HomeEnquiryForm() {
       const json = await res.json();
       if (res.ok && json.ok) {
         setStatus("success");
-        if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag("event", "generate_lead", { form: "home_enquiry" });
-        }
+        trackEvent("enquiry_submit", { form: "home_enquiry" });
         formRef.current?.reset();
         clearPhoto();
         setService("");

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Upload, X, CheckCircle2, Phone } from "lucide-react";
 import { SERVICE_OPTIONS, SITE } from "@/lib/site";
 import { compressImage } from "@/lib/compress-image";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Errors = Record<string, string>;
@@ -76,9 +77,7 @@ export function ContactForm() {
       const json = await res.json();
       if (res.ok && json.ok) {
         setStatus("success");
-        if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag("event", "generate_lead", { form: "contact" });
-        }
+        trackEvent("enquiry_submit", { form: "contact" });
         formRef.current?.reset();
         clearPhoto();
         setService("");

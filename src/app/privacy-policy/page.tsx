@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <LegalShell title="Privacy Policy" href="/privacy-policy" updated="25 May 2026">
+    <LegalShell title="Privacy Policy" href="/privacy-policy" updated="26 June 2026">
       <p>
         This privacy policy explains how <strong>JDH Gas Services</strong> (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;)
         collects and uses your personal information when you use this website or get in touch. JDH
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
       <ul>
         <li><strong>Resend</strong> — delivers enquiry emails to me.</li>
         <li><strong>Vercel</strong> — hosts this website.</li>
-        <li><strong>Google Analytics</strong> — provides anonymous website usage statistics (only if you accept analytics cookies).</li>
+        <li><strong>Google Analytics</strong> — provides anonymous website usage statistics. It uses cookies only if you accept them; if you decline, it still collects anonymous, cookieless measurements that don&apos;t identify you.</li>
       </ul>
 
       <h2>How long I keep it</h2>
