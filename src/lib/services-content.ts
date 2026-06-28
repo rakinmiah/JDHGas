@@ -127,7 +127,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "Response times",
-        body: "I work Monday to Friday and prioritise breakdowns where I can. I don't claim to be a 24/7 emergency service, but I'll always be upfront about when I can get to you.",
+        body: "I work Monday to Friday and prioritise breakdowns where I can, often getting to you the same or next day. I can sometimes fit in evenings or weekends too — just ask — and I'll always be upfront about when I can get there.",
       },
     ],
     faqs: [
