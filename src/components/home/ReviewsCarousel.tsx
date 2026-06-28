@@ -3,9 +3,8 @@
 import { useEffect, useRef } from "react";
 import { Star, BadgeCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { GoogleG } from "@/components/ui/icons";
+import { GoogleReviewsLink } from "@/components/ui/GoogleReviewsLink";
 import type { DisplayReview } from "@/lib/google-reviews";
-
-const GOOGLE_REVIEWS = "https://www.google.com/search?q=JDH+Gas+Services+Burgess+Hill+reviews";
 
 function Stars() {
   return (
@@ -84,9 +83,7 @@ export function ReviewsCarousel({ reviews }: { reviews: DisplayReview[] }) {
               <span className="sr-only">Rated 5 out of 5, verified.</span>
             </div>
             <blockquote className="mt-3 line-clamp-5 flex-1 text-sm leading-relaxed text-text">{r.text}</blockquote>
-            <a href={GOOGLE_REVIEWS} target="_blank" rel="noopener" className="mt-3 text-sm font-semibold text-primary hover:text-primary-hover">
-              Read more
-            </a>
+            <GoogleReviewsLink className="mt-3" />
           </figure>
         ))}
       </div>

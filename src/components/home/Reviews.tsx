@@ -2,9 +2,8 @@ import { Star } from "lucide-react";
 import { GoogleG } from "@/components/ui/icons";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
 import { Reveal } from "@/components/ui/Reveal";
+import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviews } from "@/lib/google-reviews";
-
-const GOOGLE_REVIEWS = "https://www.google.com/search?q=JDH+Gas+Services+Burgess+Hill+reviews";
 
 export async function Reviews({ tone = "sunken" }: { tone?: "sunken" | "surface" } = {}) {
   const { rating, count, reviews } = await getGoogleReviews();
@@ -30,11 +29,11 @@ export async function Reviews({ tone = "sunken" }: { tone?: "sunken" | "surface"
             </div>
             <p className="mt-2 text-muted">
               <span className="sr-only">Rated {rating} out of 5. </span>Based on{" "}
-              <a href={GOOGLE_REVIEWS} target="_blank" rel="noopener" className="font-semibold text-ink underline underline-offset-2">
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener" className="font-semibold text-ink underline underline-offset-2">
                 {count} reviews
               </a>
             </p>
-            <a href={GOOGLE_REVIEWS} target="_blank" rel="noopener" className="mt-3 inline-flex items-center gap-2" aria-label="Read JDH Gas reviews on Google">
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener" className="mt-3 inline-flex items-center gap-2" aria-label="Read JDH Gas reviews on Google">
               <GoogleG className="h-7 w-7" />
               <span className="font-display text-xl font-bold text-ink">Google</span>
             </a>

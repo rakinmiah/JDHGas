@@ -3,9 +3,11 @@ import { Star, ArrowRight, Quote, ShieldCheck, MapPin, BadgeCheck } from "lucide
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { GoogleG } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
+import { GoogleReviewsLink } from "@/components/ui/GoogleReviewsLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/home/CtaBand";
 import { REVIEWS, SITE } from "@/lib/site";
+import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const metadata: Metadata = {
@@ -14,8 +16,6 @@ export const metadata: Metadata = {
     "What Burgess Hill & Mid Sussex customers say about JDH Gas Services — 5.0 stars on Google. Honest, thorough, Gas Safe work from engineer Jamie Hannah.",
   alternates: { canonical: "/reviews" },
 };
-
-const GOOGLE_REVIEWS = "https://www.google.com/search?q=JDH+Gas+Services+Burgess+Hill+reviews";
 
 function Stars({ size = "h-4 w-4", className = "" }: { size?: string; className?: string }) {
   return (
@@ -66,7 +66,7 @@ export default async function ReviewsPage() {
                 Mid Sussex. Here are some of the {count} reviews left on my Google profile.
               </p>
               <div className="mt-6">
-                <Button href={GOOGLE_REVIEWS}>
+                <Button href={GOOGLE_REVIEWS_URL}>
                   Read all on Google <ArrowRight className="h-5 w-5" aria-hidden />
                 </Button>
               </div>
@@ -126,6 +126,7 @@ export default async function ReviewsPage() {
                 </span>
               </span>
             </figcaption>
+            <GoogleReviewsLink className="mt-6" />
           </Reveal>
 
           {/* Masonry */}
@@ -152,6 +153,7 @@ export default async function ReviewsPage() {
                       </span>
                     </span>
                   </figcaption>
+                  <GoogleReviewsLink className="mt-4" />
                 </figure>
               </Reveal>
             ))}
@@ -163,7 +165,7 @@ export default async function ReviewsPage() {
               <p className="font-display text-lg font-bold text-ink">Worked with me recently?</p>
               <p className="mt-1 text-muted">A quick Google review really helps a local business like mine.</p>
             </div>
-            <Button href={GOOGLE_REVIEWS} variant="secondary" className="shrink-0">
+            <Button href={GOOGLE_REVIEWS_URL} variant="secondary" className="shrink-0">
               Leave a review <ArrowRight className="h-5 w-5" aria-hidden />
             </Button>
           </div>
