@@ -94,7 +94,11 @@ export async function getGoogleReviews(): Promise<ReviewsData> {
           color: AVATAR_COLORS[i % AVATAR_COLORS.length],
           date: (rv.relativePublishTimeDescription as string) || "",
           text: textObj.text || "",
-          photo: author.photoUri || undefined,
+          // Only real uploaded profile photos ("/a-/…" URLs). Google serves
+          // generated letter-monogram avatars for photo-less accounts under
+          // "/a/…" — those should fall back to our own initials instead.
+          photo:
+            author.photoUri && author.photoUri.includes("/a-/") ? author.photoUri : undefined,
         };
       })
       .filter((r: DisplayReview) => r.text);
