@@ -1,7 +1,7 @@
 export const SITE = {
   name: "JDH Gas Services",
   engineer: "Jamie Hannah",
-  url: "https://jdhgas.co.uk",
+  url: "https://www.jdhgas.co.uk",
   phoneDisplay: "07544 063330",
   phoneHref: "tel:+447544063330",
   whatsappHref: "https://wa.me/447544063330",

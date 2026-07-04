@@ -23,7 +23,7 @@ const body = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://jdhgas.co.uk";
+const SITE_URL = "https://www.jdhgas.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
