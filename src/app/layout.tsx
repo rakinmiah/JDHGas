@@ -4,6 +4,7 @@ import "./globals.css";
 import { TopBar } from "@/components/layout/TopBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { Analytics } from "@/components/analytics/Analytics";
 import { CookieBanner } from "@/components/analytics/CookieBanner";
@@ -77,6 +78,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <MobileActionBar />
         <CookieBanner />
       </body>
     </html>

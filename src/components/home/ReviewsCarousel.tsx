@@ -67,8 +67,20 @@ export function ReviewsCarousel({ reviews }: { reviews: DisplayReview[] }) {
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-full font-display text-lg font-bold text-white" style={{ backgroundColor: r.color }} aria-hidden>
-                  {r.initial}
+                <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full font-display text-lg font-bold text-white" style={{ backgroundColor: r.color }} aria-hidden>
+                  {r.photo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={r.photo}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    r.initial
+                  )}
                 </span>
                 <div>
                   <figcaption className="font-semibold text-ink">{r.name}</figcaption>

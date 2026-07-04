@@ -22,14 +22,28 @@ export function MeetJamie() {
             <p className="eyebrow">Meet your engineer</p>
             <p className="mt-2 font-display text-3xl font-bold">Meet Jamie</p>
           </div>
-          <Reveal className="relative mx-auto mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:mx-0 md:mt-0 md:aspect-[3/4] md:max-w-none lg:aspect-[4/5]">
-            <Image
-              src="/images/jamie-portrait.jpg"
-              alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
-              fill
-              sizes="(max-width: 768px) 90vw, 46vw"
-              className="object-cover object-[50%_25%]"
-            />
+          <Reveal className="relative mx-auto mt-5 w-full max-w-sm md:mx-0 md:mt-0 md:max-w-none">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:aspect-[3/4] lg:aspect-[4/5]">
+              <Image
+                src="/images/jamie-portrait.jpg"
+                alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
+                fill
+                sizes="(max-width: 768px) 90vw, 46vw"
+                className="object-cover object-[50%_25%]"
+              />
+            </div>
+            {/* On-the-job inset — real work, Gas Safe patch on show */}
+            <div className="absolute -bottom-6 -right-3 w-[44%] overflow-hidden rounded-[var(--radius-lg)] border-4 border-sunken shadow-[var(--shadow-lg)] sm:-right-5">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/images/work/bosch-rafters-service.jpg"
+                  alt="Jamie servicing a Bosch boiler tucked under the rafters"
+                  fill
+                  sizes="(max-width: 768px) 40vw, 20vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </Reveal>
         </div>
 

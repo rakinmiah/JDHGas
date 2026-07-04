@@ -2,6 +2,9 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
+import { GasSafeBadge } from "@/components/ui/GasSafeBadge";
+import { HeroSocialProof } from "@/components/sections/HeroSocialProof";
+import type { DisplayReview } from "@/lib/google-reviews";
 import { SITE } from "@/lib/site";
 
 export function PageHero({
@@ -11,6 +14,9 @@ export function PageHero({
   crumbs,
   image,
   imageAlt,
+  rating,
+  reviewCount,
+  reviews,
 }: {
   eyebrow: string;
   title: string;
@@ -18,6 +24,9 @@ export function PageHero({
   crumbs: Crumb[];
   image?: string;
   imageAlt?: string;
+  rating?: string;
+  reviewCount?: number;
+  reviews?: DisplayReview[];
 }) {
   const buttons = (
     <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
@@ -40,6 +49,14 @@ export function PageHero({
     </div>
   );
 
+  const meta =
+    rating && reviewCount != null ? (
+      <div className="mt-5 flex flex-col items-start gap-3">
+        <GasSafeBadge />
+        <HeroSocialProof rating={rating} count={reviewCount} reviews={reviews} />
+      </div>
+    ) : null;
+
   // Text-only hero (e.g. services hub) — unchanged stacked layout.
   if (!image) {
     return (
@@ -51,6 +68,7 @@ export function PageHero({
             {title}
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{intro}</p>
+          {meta}
           {buttons}
         </div>
       </section>
@@ -68,7 +86,7 @@ export function PageHero({
         <div className="order-1 md:order-2">
           <div className="mx-auto max-w-md md:mx-0 md:h-full md:max-w-none">
             <p className="eyebrow mb-4 md:hidden">{eyebrow}</p>
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-full md:min-h-[22rem]">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-full md:min-h-[22rem]">
               <Image
                 src={image}
                 alt={imageAlt ?? ""}
@@ -87,7 +105,10 @@ export function PageHero({
           <h1 className="font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-4xl md:mt-2 md:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted lg:text-lg">{intro}</p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted line-clamp-5 md:line-clamp-none lg:text-lg">
+            {intro}
+          </p>
+          {meta}
           {buttons}
         </div>
       </div>

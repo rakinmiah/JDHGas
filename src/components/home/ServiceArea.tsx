@@ -1,7 +1,9 @@
-import { MapPin, Users, BadgePoundSterling, Clock, Phone } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Users, BadgePoundSterling, Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { Reveal } from "@/components/ui/Reveal";
+import { LOCAL_TOWNS } from "@/lib/local-pages";
 import { SITE } from "@/lib/site";
 
 const POINTS = [
@@ -49,10 +51,29 @@ export function ServiceArea() {
             Covering Burgess Hill, Mid Sussex &amp; the coast
           </h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
-            I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast: Haywards
-            Heath, Hassocks, Cuckfield, Ditchling, Lindfield, Wivelsfield, Keymer, Hove, Portslade,
-            Lancing and the towns in between.
+            I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast — pick your
+            area for local details, reviews and how to book:
           </p>
+
+          <ul className="mt-5 flex max-w-xl flex-wrap gap-2">
+            {LOCAL_TOWNS.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  href={`/${t.slug}`}
+                  className="inline-flex items-center gap-1 rounded-[var(--radius-pill)] border border-border-subtle bg-surface px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                >
+                  {t.name}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/areas"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover"
+          >
+            See all the areas I cover <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
 
           <ul className="mt-6 grid max-w-md gap-x-5 gap-y-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
             {POINTS.map((p) => (

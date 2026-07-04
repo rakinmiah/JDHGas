@@ -4,14 +4,14 @@ import { HomeEnquiryForm } from "@/components/home/HomeEnquiryForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { SITE } from "@/lib/site";
 
-export function ContactSection() {
+export function ContactSection({ town }: { town?: string } = {}) {
   return (
     <section id="enquiry" className="section bg-ink text-inverse" aria-labelledby="contact-h">
       <Reveal className="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
         <div>
           <p className="eyebrow !text-flame">Get in touch</p>
           <h2 id="contact-h" className="mt-2 font-display text-3xl font-bold text-inverse md:text-4xl">
-            Ready to book? Tell me about the job.
+            {town ? `Ready to book in ${town}?` : "Ready to book? Tell me about the job."}
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-inverse/80">
             Send me a few details, and a photo of the boiler if you can. I&apos;ll get back to you
@@ -32,7 +32,7 @@ export function ContactSection() {
             </li>
             <li className="flex items-center gap-2.5">
               <MapPin className="h-4 w-4 shrink-0 text-flame" aria-hidden />
-              Burgess Hill &amp; Mid Sussex
+              {town ? `${town} & the surrounding area` : "Burgess Hill & Mid Sussex"}
             </li>
             <li className="flex items-center gap-2.5">
               <Clock className="h-4 w-4 shrink-0 text-flame" aria-hidden />

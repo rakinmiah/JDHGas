@@ -6,6 +6,8 @@ export type DisplayReview = {
   color: string;
   date: string;
   text: string;
+  /** Reviewer's public Google profile photo (absent on the fallback set). */
+  photo?: string;
 };
 
 export type ReviewsData = {
@@ -82,7 +84,8 @@ export async function getGoogleReviews(): Promise<ReviewsData> {
 
     const reviews: DisplayReview[] = (data.reviews ?? [])
       .map((rv: Record<string, unknown>, i: number) => {
-        const author = (rv.authorAttribution as { displayName?: string }) ?? {};
+        const author =
+          (rv.authorAttribution as { displayName?: string; photoUri?: string }) ?? {};
         const textObj = (rv.text as { text?: string }) ?? (rv.originalText as { text?: string }) ?? {};
         const name = author.displayName || "Google user";
         return {
@@ -91,6 +94,7 @@ export async function getGoogleReviews(): Promise<ReviewsData> {
           color: AVATAR_COLORS[i % AVATAR_COLORS.length],
           date: (rv.relativePublishTimeDescription as string) || "",
           text: textObj.text || "",
+          photo: author.photoUri || undefined,
         };
       })
       .filter((r: DisplayReview) => r.text);

@@ -12,17 +12,16 @@ type Town = {
 
 const BASE = { name: "Burgess Hill", lat: 50.9577, lng: -0.1281 };
 
+// The towns with live area pages (Wave 1). Markers link through to each page.
+// Keep in sync with LOCAL_TOWNS in src/lib/local-pages.ts as more towns launch.
 const TOWNS: Town[] = [
-  { name: "Haywards Heath", lat: 51.004, lng: -0.1028 },
-  { name: "Cuckfield", lat: 51.018, lng: -0.1496 },
-  { name: "Hassocks", lat: 50.9237, lng: -0.1487 },
-  { name: "Lindfield", lat: 51.0103, lng: -0.0786 },
-  { name: "Wivelsfield", lat: 50.987, lng: -0.105 },
-  { name: "Ditchling", lat: 50.92, lng: -0.113 },
-  { name: "Keymer", lat: 50.922, lng: -0.138 },
-  { name: "Hove", lat: 50.8279, lng: -0.1687 },
-  { name: "Portslade", lat: 50.834, lng: -0.216 },
-  { name: "Lancing", lat: 50.832, lng: -0.32 },
+  { name: "Haywards Heath", lat: 51.004, lng: -0.1028, href: "/haywards-heath" },
+  { name: "Hassocks", lat: 50.9237, lng: -0.1487, href: "/hassocks" },
+  { name: "Hurstpierpoint", lat: 50.9347, lng: -0.1797, href: "/hurstpierpoint" },
+  { name: "Henfield", lat: 50.9293, lng: -0.2725, href: "/henfield" },
+  { name: "Lewes", lat: 50.8743, lng: -0.0086, href: "/lewes" },
+  { name: "Hove", lat: 50.8279, lng: -0.1687, href: "/hove" },
+  { name: "Portslade", lat: 50.834, lng: -0.216, href: "/portslade" },
 ];
 
 export function CoverageMap() {
@@ -100,9 +99,9 @@ export function CoverageMap() {
   return (
     <div
       ref={ref}
-      className="h-full w-full rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-container]:rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-tile-pane]:[filter:saturate(1.15)]"
+      className="relative z-0 isolate h-full w-full rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-container]:rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-tile-pane]:[filter:saturate(1.15)]"
       role="img"
-      aria-label="Map of the service area centred on Burgess Hill, covering Haywards Heath, Hassocks, Cuckfield, Lindfield, Wivelsfield, Ditchling, Keymer, Hove, Portslade and Lancing"
+      aria-label="Map of the service area centred on Burgess Hill, covering Haywards Heath, Hassocks, Hurstpierpoint, Henfield, Lewes, Hove and Portslade"
     />
   );
 }

@@ -3,19 +3,12 @@ import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { InstagramGlyph, WhatsAppGlyph } from "@/components/ui/icons";
 import { SITE, SERVICES } from "@/lib/site";
+import { LOCAL_TOWNS } from "@/lib/local-pages";
 
-const AREAS = [
-  "Burgess Hill",
-  "Haywards Heath",
-  "Hassocks",
-  "Cuckfield",
-  "Ditchling",
-  "Lindfield",
-  "Wivelsfield",
-  "Keymer",
-  "Hove",
-  "Portslade",
-  "Lancing",
+const AREA_LINKS = [
+  { label: "All areas", href: "/areas" },
+  { label: "Burgess Hill", href: "/" },
+  ...LOCAL_TOWNS.map((t) => ({ label: t.name, href: `/${t.slug}` })),
 ];
 
 const PAGES = [
@@ -34,20 +27,6 @@ function LinkRow({ label, links }: { label?: string; links: { label: string; hre
           <Link href={l.href} className="text-steel transition-colors hover:text-flame">
             {l.label}
           </Link>
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function TextRow({ label, items }: { label: string; items: string[] }) {
-  return (
-    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-steel">
-      <span className="font-semibold text-inverse">{label}</span>
-      {items.map((t, i) => (
-        <span key={t} className="flex items-baseline gap-x-2.5">
-          {i > 0 && <span className="text-white/25" aria-hidden>·</span>}
-          {t}
         </span>
       ))}
     </div>
@@ -97,7 +76,7 @@ export function SiteFooter() {
         {/* 2 — compact link clusters (SEO) */}
         <nav aria-label="Footer" className="mt-10 space-y-3 border-t border-white/10 pt-8 text-sm">
           <LinkRow label="Services" links={SERVICES.map((s) => ({ label: s.title, href: s.href }))} />
-          <TextRow label="Areas covered" items={AREAS} />
+          <LinkRow label="Areas covered" links={AREA_LINKS} />
           <LinkRow links={PAGES} />
         </nav>
 

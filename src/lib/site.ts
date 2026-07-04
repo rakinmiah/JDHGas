@@ -11,13 +11,14 @@ export const SITE = {
   locality: "Burgess Hill",
   region: "West Sussex",
   postcodeArea: "RH15",
-  rating: { value: "5.0", count: 36 },
+  rating: { value: "5.0", count: 41 },
   hours: "Mon–Fri",
 } as const;
 
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Areas", href: "/areas" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },

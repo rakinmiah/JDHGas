@@ -12,6 +12,7 @@ import { CtaBand } from "@/components/home/CtaBand";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
+import { ServiceAreaPersonalizer } from "@/components/personalization/AreaPersonalization";
 import { SITE } from "@/lib/site";
 
 const AREAS = [
@@ -80,6 +81,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+
+      {/* Localises the hero headline to the town a visitor came from (client-only,
+          SEO-safe — search engines always see the default Burgess Hill page). */}
+      <ServiceAreaPersonalizer />
 
       <PageHero
         eyebrow={s.eyebrow}
