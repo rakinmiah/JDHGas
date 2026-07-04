@@ -2,6 +2,7 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
+import { ExpandableText } from "@/components/ui/ExpandableText";
 import { GasSafeBadge } from "@/components/ui/GasSafeBadge";
 import { HeroSocialProof } from "@/components/sections/HeroSocialProof";
 import type { DisplayReview } from "@/lib/google-reviews";
@@ -105,9 +106,10 @@ export function PageHero({
           <h1 className="font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-4xl md:mt-2 md:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted line-clamp-5 md:line-clamp-none lg:text-lg">
-            {intro}
-          </p>
+          <ExpandableText
+            text={intro}
+            className="mt-4 max-w-xl text-base leading-relaxed text-muted lg:text-lg"
+          />
           {meta}
           {buttons}
         </div>
