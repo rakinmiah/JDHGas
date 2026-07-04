@@ -48,6 +48,11 @@ export function HeroSocialProof({
               )}
             </span>
           ))}
+          {count > avatars.length && (
+            <span className="z-0 -ml-2.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink font-display text-xs font-bold text-inverse ring-2 ring-surface">
+              +{count - avatars.length}
+            </span>
+          )}
         </div>
       )}
       <Link
