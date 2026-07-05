@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { Analytics } from "@/components/analytics/Analytics";
+import { Clarity } from "@/components/analytics/Clarity";
 import { CookieBanner } from "@/components/analytics/CookieBanner";
 
 const display = Manrope({
@@ -63,6 +64,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-surface text-text">
         <Analytics />
+        <Clarity />
         <SiteJsonLd />
         <a
           href="#main"

@@ -47,6 +47,7 @@ export default function PrivacyPolicy() {
         <li><strong>Resend</strong>: delivers enquiry emails to me.</li>
         <li><strong>Vercel</strong>: hosts this website.</li>
         <li><strong>Google Analytics</strong>: provides anonymous website usage statistics. It uses cookies only if you accept them; if you decline, it still collects anonymous, cookieless measurements that don&apos;t identify you.</li>
+        <li><strong>Microsoft Clarity</strong>: provides anonymised heatmaps and session insights, only if you accept. It masks all text and form fields, so nothing you type is recorded, and it does not identify you.</li>
       </ul>
 
       <h2>How long I keep it</h2>

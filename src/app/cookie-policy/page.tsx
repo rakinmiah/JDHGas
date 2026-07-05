@@ -34,6 +34,15 @@ export default function CookiePolicy() {
         affect your use of the site.
       </p>
 
+      <h2>Session insights (Microsoft Clarity)</h2>
+      <p>
+        If you accept, I also use <strong>Microsoft Clarity</strong> to understand how the site is
+        used, through aggregated heatmaps and anonymised session replays (such as general mouse
+        movement, clicks and scrolling). This only runs after you accept — never beforehand. Clarity
+        automatically masks text and form fields, so anything you type, including your name, phone
+        number, email or postcode, is never recorded. It does not identify you.
+      </p>
+
       <h2>Managing cookies</h2>
       <p>
         You can accept or decline analytics cookies using the banner shown when you first visit. You
