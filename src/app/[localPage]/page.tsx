@@ -112,6 +112,10 @@ export default async function LocalTownPage({
       provider: { "@id": `${SITE.url}/#business` },
       areaServed: { "@type": "City", name: town.name },
       description: serviceAngle(town, svc.slug) ?? svc.metaDescription,
+      // NOTE: no `review`/`aggregateRating` here — Service is not a supported
+      // type for Google review snippets (flagged by Search Console). Review
+      // markup lives on the HVACBusiness entity in SiteJsonLd instead; the
+      // town reviews remain as visible page content.
       ...(svc.offerPrice
         ? {
             offers: {
@@ -120,16 +124,6 @@ export default async function LocalTownPage({
               priceCurrency: "GBP",
               description: "First boiler service for new customers",
             },
-          }
-        : {}),
-      ...(svc.slug === "boiler-servicing" && town.reviews?.length
-        ? {
-            review: town.reviews.map((r) => ({
-              "@type": "Review",
-              author: { "@type": "Person", name: r.name },
-              reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-              reviewBody: r.text,
-            })),
           }
         : {}),
     })),
