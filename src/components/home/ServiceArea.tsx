@@ -51,7 +51,7 @@ export function ServiceArea() {
             Covering Burgess Hill, Mid Sussex &amp; the coast
           </h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
-            I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast — pick your
+            I&apos;m based in Burgess Hill and cover Mid Sussex and down to the coast. Pick your
             area for local details, reviews and how to book:
           </p>
 

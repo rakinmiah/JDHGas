@@ -227,7 +227,7 @@ export default async function LocalTownPage({
                           New customers £85
                         </span>
                         <p className="mt-4 leading-relaxed text-inverse/80">
-                          A full Gas Safe service — no rushing, no skipped steps. Your annual check
+                          A full Gas Safe service: no rushing, no skipped steps. Your annual check
                           keeps the boiler safe, efficient and within its warranty.
                         </p>
                         <Button
@@ -358,7 +358,7 @@ export default async function LocalTownPage({
             </p>
             <Button
               href={`${SITE.whatsappHref}?text=${encodeURIComponent(
-                `Hi Jamie, I'm in ${town.name} — my postcode is `,
+                `Hi Jamie, I'm in ${town.name} and my postcode is `,
               )}`}
               variant="whatsapp"
               className="mt-6"

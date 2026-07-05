@@ -52,7 +52,7 @@ export async function POST(req: Request) {
   }
 
   const summary = [
-    `New enquiry — JDH Gas`,
+    `New enquiry: JDH Gas`,
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email || "—"}`,
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
           from: process.env.CONTACT_FROM_EMAIL || "JDH Gas Website <enquiries@jdhgas.co.uk>",
           to: [process.env.CONTACT_TO_EMAIL || SITE.email],
           reply_to: email || undefined,
-          subject: `New enquiry: ${service} — ${name} (${postcode})`,
+          subject: `New enquiry: ${service} from ${name} (${postcode})`,
           text: summary,
           attachments: attachments.length ? attachments : undefined,
         }),

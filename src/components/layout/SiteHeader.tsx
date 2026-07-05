@@ -13,7 +13,7 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
     <Link
       href="/"
       className="flex items-center gap-2 font-display font-extrabold text-lg tracking-tight"
-      aria-label="JDH Gas Services — home"
+      aria-label="JDH Gas Services home"
     >
       <Image src="/shield-logo.png" alt="" width={40} height={40} priority className="h-9 w-9 object-contain" />
       <span className={inverse ? "text-inverse" : "text-ink"}>

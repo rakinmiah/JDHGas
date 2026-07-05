@@ -82,7 +82,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "For landlords and letting agents",
-        body: "Whether it's one property or a portfolio, I make CP12s straightforward: a digital certificate by email, a reminder when your next one is due, and I'm happy to liaise directly with tenants or your agent to arrange access.",
+        body: "One property or a whole portfolio, I make CP12s straightforward: a digital certificate by email, a reminder when your next one is due, and I'm happy to liaise directly with tenants or your agent to arrange access.",
       },
       {
         heading: "Homeowners",
@@ -92,7 +92,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     faqs: [
       { q: "What is a CP12 / landlord gas safety certificate?", a: "A CP12 is the Landlord Gas Safety Certificate. By law, landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer." },
       { q: "How long is a gas safety certificate valid?", a: "A CP12 is valid for 12 months and must be renewed annually. You must give tenants a copy within 28 days of the check, and keep records for at least two years." },
-      { q: "Do homeowners need a gas safety certificate?", a: "No. A CP12 is a legal requirement only for landlords. Homeowners aren't required to have one, but an annual gas safety check is still strongly recommended for peace of mind." },
+      { q: "Do homeowners need a gas safety certificate?", a: "No. A CP12 is a legal requirement only for landlords. Homeowners aren't required to have one, but an annual gas safety check is still well worth having." },
       { q: "What does a CP12 cover?", a: "It covers all fixed gas appliances (boiler, cooker, fire), the gas pipework and the flues, checking they're safe, correctly installed and burning properly." },
       { q: "How much is a landlord gas safety certificate?", a: "It depends on how many gas appliances need checking. Send me your postcode and the number of appliances and I'll give you a clear price." },
     ],
@@ -127,7 +127,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "Response times",
-        body: "I work Monday to Friday and prioritise breakdowns where I can, often getting to you the same or next day. I can sometimes fit in evenings or weekends too — just ask — and I'll always be upfront about when I can get there.",
+        body: "I work Monday to Friday and prioritise breakdowns where I can, often getting to you the same or next day. I can sometimes fit in evenings or weekends too (just ask), and I'll always be upfront about when I can get there.",
       },
     ],
     faqs: [

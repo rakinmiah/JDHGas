@@ -176,7 +176,7 @@ export function HomeEnquiryForm() {
     return (
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
-        <h3 className="mt-4 font-display text-2xl font-bold">Thanks — I&apos;ve got your message.</h3>
+        <h3 className="mt-4 font-display text-2xl font-bold">Thanks, I&apos;ve got your message.</h3>
         <p className="mx-auto mt-2 max-w-md text-muted">
           I&apos;ll be in touch shortly. Need me sooner? Call{" "}
           <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.

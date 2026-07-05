@@ -98,7 +98,7 @@ export function ContactForm() {
     return (
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
-        <h2 className="mt-4 font-display text-2xl font-bold">Thanks — I&apos;ve got your message.</h2>
+        <h2 className="mt-4 font-display text-2xl font-bold">Thanks, I&apos;ve got your message.</h2>
         <p className="mx-auto mt-2 max-w-md text-muted">
           I&apos;ll be in touch shortly. Need me sooner? Call{" "}
           <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
@@ -156,7 +156,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelCls}>Message <span className="font-normal text-muted">(optional)</span></label>
-        <textarea id="message" name="message" rows={4} className={inputCls} placeholder="Tell me a bit about the job — make/model of boiler, the problem, anything useful." />
+        <textarea id="message" name="message" rows={4} className={inputCls} placeholder="Tell me a bit about the job: make/model of boiler, the problem, anything useful." />
       </div>
 
       {/* Photo upload */}

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "JDH Gas Services",
     title: "Gas Engineer in Burgess Hill | JDH Gas Services",
     description:
-      "Gas Safe registered engineer Jamie Hannah — boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
+      "Gas Safe registered engineer Jamie Hannah. Boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
     url: SITE_URL,
     locale: "en_GB",
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gas Engineer in Burgess Hill | JDH Gas Services",
     description:
-      "Gas Safe registered engineer Jamie Hannah — boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
+      "Gas Safe registered engineer Jamie Hannah. Boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
   },
   // Google Search Console verification — set GOOGLE_SITE_VERIFICATION to the
   // token from GSC's "HTML tag" method to verify ownership (no-op until set).

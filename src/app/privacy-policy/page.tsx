@@ -44,9 +44,9 @@ export default function PrivacyPolicy() {
       <h2>Who I share it with</h2>
       <p>Your information is handled by a small number of trusted service providers that help run this website:</p>
       <ul>
-        <li><strong>Resend</strong> — delivers enquiry emails to me.</li>
-        <li><strong>Vercel</strong> — hosts this website.</li>
-        <li><strong>Google Analytics</strong> — provides anonymous website usage statistics. It uses cookies only if you accept them; if you decline, it still collects anonymous, cookieless measurements that don&apos;t identify you.</li>
+        <li><strong>Resend</strong>: delivers enquiry emails to me.</li>
+        <li><strong>Vercel</strong>: hosts this website.</li>
+        <li><strong>Google Analytics</strong>: provides anonymous website usage statistics. It uses cookies only if you accept them; if you decline, it still collects anonymous, cookieless measurements that don&apos;t identify you.</li>
       </ul>
 
       <h2>How long I keep it</h2>

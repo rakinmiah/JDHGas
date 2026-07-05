@@ -13,7 +13,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 export const metadata: Metadata = {
   title: "Reviews | JDH Gas Services, Burgess Hill",
   description:
-    "What Burgess Hill & Mid Sussex customers say about JDH Gas Services — 5.0 stars on Google. Honest, thorough, Gas Safe work from engineer Jamie Hannah.",
+    "What Burgess Hill & Mid Sussex customers say about JDH Gas Services: 5.0 stars on Google. Honest, thorough, Gas Safe work from engineer Jamie Hannah.",
   alternates: { canonical: "/reviews" },
 };
 

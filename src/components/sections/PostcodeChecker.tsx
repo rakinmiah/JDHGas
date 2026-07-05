@@ -103,7 +103,7 @@ export function PostcodeChecker({ towns }: { towns: TownRef[] }) {
             <>
               <p className="flex items-start gap-2.5 font-semibold text-ink">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-whatsapp" aria-hidden />
-                That&apos;s my home turf — I&apos;m based right there in Burgess Hill.
+                That&apos;s my home turf. I&apos;m based right there in Burgess Hill.
               </p>
               <Link
                 href="/services"
@@ -118,7 +118,7 @@ export function PostcodeChecker({ towns }: { towns: TownRef[] }) {
             <>
               <p className="flex items-start gap-2.5 font-semibold text-ink">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-whatsapp" aria-hidden />
-                Yes — that&apos;s my patch.
+                Yes, that&apos;s my patch.
               </p>
               <div className="mt-3 flex flex-wrap gap-2.5">
                 {result.towns.map((t) => (
@@ -140,7 +140,7 @@ export function PostcodeChecker({ towns }: { towns: TownRef[] }) {
             <>
               <p className="flex items-start gap-2.5 font-semibold text-ink">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-whatsapp" aria-hidden />
-                Very likely — I&apos;m in the {result.prefix}&nbsp;villages all the time. Send it
+                Very likely. I&apos;m in the {result.prefix}&nbsp;villages all the time. Send it
                 over and I&apos;ll confirm.
               </p>
               {whatsAppCta(result.prefix)}
@@ -151,7 +151,7 @@ export function PostcodeChecker({ towns }: { towns: TownRef[] }) {
             <>
               <p className="flex items-start gap-2.5 font-semibold text-ink">
                 <HelpCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                Send it to me and I&apos;ll tell you straight away — no obligation.
+                Send it to me and I&apos;ll tell you straight away, no obligation.
               </p>
               {whatsAppCta(result.prefix)}
             </>
@@ -159,7 +159,7 @@ export function PostcodeChecker({ towns }: { towns: TownRef[] }) {
 
           {result.kind === "invalid" && (
             <p className="text-sm text-muted">
-              That doesn&apos;t look like a UK postcode — try something like{" "}
+              That doesn&apos;t look like a UK postcode. Try something like{" "}
               <span className="font-semibold text-ink">RH16</span> or{" "}
               <span className="font-semibold text-ink">BN6 8AB</span>.
             </p>

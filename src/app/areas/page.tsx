@@ -21,7 +21,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 export const metadata: Metadata = {
   title: "Areas I Cover | JDH Gas Services, Burgess Hill",
   description:
-    "Gas Safe registered engineer Jamie Hannah covers Burgess Hill, Mid Sussex and the coast — Haywards Heath, Hassocks, Hurstpierpoint, Hove, Portslade, Lewes, Henfield and more. Pick your town.",
+    "Gas Safe registered engineer Jamie Hannah covers Burgess Hill, Mid Sussex and the coast: Haywards Heath, Hassocks, Hurstpierpoint, Hove, Portslade, Lewes, Henfield and more. Pick your town.",
   alternates: { canonical: "/areas" },
 };
 
@@ -117,7 +117,7 @@ export default async function AreasHub() {
             Do I cover you? Check your postcode
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Type your postcode for an instant answer, or pick your town below — each area page has
+            Type your postcode for an instant answer, or pick your town below. Each area page has
             the services I offer there, real local reviews and how to book.
           </p>
           <div className="mt-6">

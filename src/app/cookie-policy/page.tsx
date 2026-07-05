@@ -11,7 +11,7 @@ export default function CookiePolicy() {
   return (
     <LegalShell title="Cookie Policy" href="/cookie-policy" updated="26 June 2026">
       <p>
-        This website uses a small number of cookies — little files stored on your device — to help
+        This website uses a small number of cookies (little files stored on your device) to help
         the site work and to understand how it&apos;s used. I keep these to a minimum.
       </p>
 
@@ -23,13 +23,13 @@ export default function CookiePolicy() {
 
       <h2>Analytics</h2>
       <p>
-        I use Google Analytics to collect anonymous statistics about how visitors use the site —
+        I use Google Analytics to collect anonymous statistics about how visitors use the site,
         such as which pages are popular. This helps me improve the website.
       </p>
       <p>
         No analytics cookies are set unless you accept them. If you decline, or before you&apos;ve
         chosen, Google Analytics still records anonymous, aggregated measurements using Google&apos;s
-        Consent Mode — these set no cookies, store nothing on your device and can&apos;t identify
+        Consent Mode. These set no cookies, store nothing on your device and can&apos;t identify
         you. Accepting turns on the full analytics cookies. Either choice is fine and won&apos;t
         affect your use of the site.
       </p>
