@@ -55,9 +55,8 @@ export async function Hero() {
               <Button href={SITE.whatsappHref} variant="whatsapp" className="flex-1 md:flex-none">
                 WhatsApp
               </Button>
-              <Button href="/contact" variant="secondary" className="flex-1 md:flex-none">
-                <span className="md:hidden">Enquire</span>
-                <span className="hidden md:inline">Send an enquiry</span>
+              <Button href="#enquiry" variant="secondary" className="flex-1 md:flex-none">
+                Get a quote
               </Button>
             </div>
           </div>

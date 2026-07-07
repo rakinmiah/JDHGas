@@ -176,9 +176,9 @@ export function HomeEnquiryForm() {
     return (
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
-        <h3 className="mt-4 font-display text-2xl font-bold">Thanks, I&apos;ve got your message.</h3>
+        <h3 className="mt-4 font-display text-2xl font-bold">Thanks, your quote request is in.</h3>
         <p className="mx-auto mt-2 max-w-md text-muted">
-          I&apos;ll be in touch shortly. Need me sooner? Call{" "}
+          I&apos;ll get back to you shortly with a price. Need me sooner? Call{" "}
           <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
         </p>
       </div>
@@ -329,7 +329,7 @@ export function HomeEnquiryForm() {
           <div className="flex items-start gap-3">
             <input id="consent" name="consent" type="checkbox" value="yes" className="mt-1 h-5 w-5 shrink-0 rounded border-border-strong accent-[#2563eb]" />
             <label htmlFor="consent" className="text-sm text-muted">
-              I&apos;m happy for JDH Gas to contact me about my enquiry. See our{" "}
+              I&apos;m happy for JDH Gas to contact me about my quote. See our{" "}
               <a href="/privacy-policy" className="font-medium text-primary underline-offset-2 hover:underline">privacy policy</a>.
             </label>
           </div>
@@ -349,7 +349,7 @@ export function HomeEnquiryForm() {
             disabled={status === "submitting"}
             className="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-pill)] bg-primary px-6 text-sm font-semibold text-white transition-all hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {status === "submitting" ? "Sending…" : "Send enquiry"}
+            {status === "submitting" ? "Sending…" : "Get my quote"}
           </button>
         </div>
       </div>

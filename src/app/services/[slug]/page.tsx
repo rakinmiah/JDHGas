@@ -8,7 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ServiceStepList } from "@/components/sections/ServiceStepList";
 import { Reviews } from "@/components/home/Reviews";
-import { CtaBand } from "@/components/home/CtaBand";
+import { ContactSection } from "@/components/home/ContactSection";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
@@ -221,7 +221,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       <FaqSection items={[...s.faqs]} />
-      <CtaBand />
+      <ContactSection />
     </>
   );
 }

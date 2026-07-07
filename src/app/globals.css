@@ -42,7 +42,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Anchor jumps (e.g. the "Get a quote" buttons → #enquiry) land instantly
+     and reliably. Smooth-scroll is deliberately NOT set: animating the long
+     jump to the footer form fights the lazy-loading images and reveal
+     animations above it, and the scroll gets cancelled mid-flight.
+     scroll-padding-top clears the sticky header (TopBar + SiteHeader ≈ 100px)
+     so the form heading isn't hidden underneath. */
+  scroll-padding-top: 7rem;
 }
 
 @layer base {

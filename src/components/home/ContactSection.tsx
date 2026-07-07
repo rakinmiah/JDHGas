@@ -9,13 +9,13 @@ export function ContactSection({ town }: { town?: string } = {}) {
     <section id="enquiry" className="section bg-ink text-inverse" aria-labelledby="contact-h">
       <Reveal className="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
         <div>
-          <p className="eyebrow !text-flame">Get in touch</p>
+          <p className="eyebrow !text-flame">Get a quote</p>
           <h2 id="contact-h" className="mt-2 font-display text-3xl font-bold text-inverse md:text-4xl">
-            {town ? `Ready to book in ${town}?` : "Ready to book? Tell me about the job."}
+            {town ? `Get a free quote in ${town}` : "Get a free quote for the job"}
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-inverse/80">
             Send me a few details, and a photo of the boiler if you can. I&apos;ll get back to you
-            quickly with a clear price and honest advice.
+            quickly with a clear, no-obligation quote and honest advice.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">

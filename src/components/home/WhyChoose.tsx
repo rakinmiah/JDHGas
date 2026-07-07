@@ -6,7 +6,7 @@ import { Phone, Clock, ShieldCheck, BadgePoundSterling } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const STEPS = [
-  { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or send a quick enquiry. A photo of the boiler helps if you've got one." },
+  { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or get a quick quote. A photo of the boiler helps if you've got one." },
   { icon: Clock, title: "I arrive on time", text: "When I say I'll be there, I'm there. And I leave your home as clean as I found it." },
   { icon: ShieldCheck, title: "A proper, thorough job", text: "Done by the book, with no rushing off to the next job." },
   { icon: BadgePoundSterling, title: "Honest price, explained", text: "A fair price up front, and straight advice on what needs doing now and what can wait." },

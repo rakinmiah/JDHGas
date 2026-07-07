@@ -43,7 +43,16 @@ export function Button({
       {children}
     </>
   );
-  if (external || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:")) {
+  // Plain <a> for external, protocol, and in-page hash links. Hash links in
+  // particular must NOT use next/link — the App Router mishandles same-page
+  // anchor scrolling; a native anchor + scroll-padding-top just works.
+  if (
+    external ||
+    href.startsWith("http") ||
+    href.startsWith("tel:") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("#")
+  ) {
     const target = href.startsWith("http") ? "_blank" : undefined;
     const rel = target ? "noopener" : undefined;
     return (
