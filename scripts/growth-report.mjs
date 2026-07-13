@@ -5,9 +5,20 @@
  *
  * Usage: node scripts/growth-report.mjs
  * Needs: gcloud ADC login done once on this machine (analytics.readonly +
- * webmasters.readonly scopes). Prints a markdown report to stdout.
+ * webmasters.readonly scopes). Prints a markdown report to stdout AND saves a
+ * dated copy to ~/Desktop/JDH Gas Reports/ so there's a persistent archive.
  */
 import { execSync } from "node:child_process";
+import { writeFileSync, mkdirSync } from "node:fs";
+import { homedir } from "node:os";
+
+// Tee everything printed into a buffer so we can also save it to a file.
+const _buf = [];
+const _log = console.log.bind(console);
+console.log = (...a) => {
+  _buf.push(a.map(String).join(" "));
+  _log(...a);
+};
 
 const GSC_SITE = "sc-domain:jdhgas.co.uk";
 const GA4_PROPERTY = "543081820";
@@ -112,3 +123,11 @@ console.log(
 for (const name of KEY_EVENTS) {
   console.log(`- ${name}: ${evCount(curEvents, name)} (${pct(evCount(curEvents, name), evCount(prevEvents, name))})`);
 }
+
+// Persist a dated copy to the Reports folder for the archive.
+const REPORTS_DIR = `${homedir()}/Desktop/JDH Gas Reports`;
+mkdirSync(REPORTS_DIR, { recursive: true });
+const stamp = new Date().toISOString().slice(0, 10);
+const REPORT_FILE = `${REPORTS_DIR}/Growth Report ${stamp}.md`;
+writeFileSync(REPORT_FILE, _buf.join("\n") + "\n");
+_log(`\n[saved: ${REPORT_FILE}]`);
