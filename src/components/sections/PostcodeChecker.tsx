@@ -17,7 +17,7 @@ type Result =
   | { kind: "invalid" };
 
 /** Outward prefixes I'm in all the time but that don't have a live town page yet. */
-const LIKELY_PREFIXES = ["RH17"];
+const LIKELY_PREFIXES = ["RH13"];
 
 /**
  * "Do I cover you?" — instant postcode check against the live town pages.

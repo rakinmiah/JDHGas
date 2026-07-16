@@ -134,6 +134,12 @@ export const LOCAL_TOWNS: Town[] = [
     photo: "/images/work/boiler-inspection-torch.jpg",
     photoAlt:
       "Jamie Hannah, Gas Safe registered engineer covering Hassocks, inspecting an open boiler by torchlight during a service",
+    reviews: [
+      {
+        name: "Ann Karlsson",
+        text: "Jamie was very professional and turned up on time. He also carried out some work which was needed.",
+      },
+    ],
     faqs: [
       {
         q: "How quickly can you get to Hassocks?",
@@ -241,6 +247,10 @@ export const LOCAL_TOWNS: Town[] = [
         name: "Andy Wagstaff",
         text: "Jamie serviced our boiler and did a really good job. He is very conscientious, polite and his communication from start to finish was excellent. Recommended.",
       },
+      {
+        name: "Leon Ellerton",
+        text: "Excellent, thorough and polite",
+      },
     ],
     faqs: [
       {
@@ -321,13 +331,57 @@ export const LOCAL_TOWNS: Town[] = [
       },
     ],
   },
-];
-
-// ---------------------------------------------------------------------------
-// WAVE 2 — built, but held back until each has its own review/photo. Not wired
-// to the route or sitemap yet; promote into LOCAL_TOWNS when ready.
-// ---------------------------------------------------------------------------
-export const WAVE_2_TOWNS: Town[] = [
+  {
+    slug: "horsham",
+    name: "Horsham",
+    postcode: "RH12",
+    nearby: ["Southwater", "Broadbridge Heath", "Roffey"],
+    intro:
+      "Need a gas engineer in Horsham? I'm Jamie Hannah, Gas Safe registered and based in Burgess Hill, covering Horsham as the north-west edge of my patch. From the older terraces around the town centre and Roffey to the newer developments at Highwood and Kilnwood Vale, I look after boiler servicing, landlord CP12s, repairs and installs: same engineer every visit, honest advice and tidy work. Call 07544 063330 to book.",
+    areas: [
+      "the town centre & Carfax",
+      "Roffey",
+      "Southwater",
+      "Broadbridge Heath",
+      "Highwood Village",
+      "Kilnwood Vale",
+    ],
+    serviceAngles: {
+      "gas-safety-certificate":
+        "Horsham has one of the busiest rental markets in my patch, so I keep landlord CP12s simple across RH12 and RH13: flexible access with your tenants or agent, a digital certificate by email and a free reminder before renewal.",
+      "boiler-servicing":
+        "Horsham runs from older town-centre terraces to brand-new estates where the boiler is still under warranty. An annual service keeps that warranty valid, and I do it by the book, with no rushing.",
+    },
+    blurb:
+      "The north-west edge of my patch: town-centre terraces to the new estates at Highwood and Kilnwood Vale.",
+    photo: "/images/work/analyser-probe-service.jpg",
+    photoAlt:
+      "Jamie Hannah, Gas Safe registered engineer covering Horsham, testing a boiler with a flue gas analyser probe",
+    reviews: [
+      {
+        name: "Gary Woolnough",
+        text: "First class service from Jamie very professional thank you",
+      },
+      {
+        name: "Diana Dodds",
+        text: "Excellent and diligent engineer, hope he does my gas boiler service when next due",
+      },
+      {
+        name: "Suriani Hulbert",
+        text: "Excellent service. Jamie carried out a very thorough inspection and identified issue with our external water flow that had been missed by four previous engineers during their annual services. Professional and meticulous throughout. Highly recommend.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you cover Horsham?",
+        a: "Yes. Horsham is about half an hour from my Burgess Hill base and I cover the whole RH12 and RH13 area, including Southwater and Broadbridge Heath. Send me your postcode and I'll confirm a slot.",
+      },
+      {
+        q: "Do you do landlord gas safety certificates (CP12) in Horsham?",
+        a: "Yes. I issue CP12 certificates for landlords and letting agents across Horsham, RH12 and RH13, with a digital copy by email and a free renewal reminder.",
+      },
+    ],
+  },
   {
     slug: "cuckfield",
     name: "Cuckfield",
@@ -341,6 +395,11 @@ export const WAVE_2_TOWNS: Town[] = [
       "boiler-servicing":
         "Cuckfield's older village properties often hide their boilers away in cupboards and lofts; I take the time to service them properly wherever they are, and explain anything I find.",
     },
+    blurb:
+      "Village homes and older cottages with boilers in awkward spots, minutes from my Burgess Hill base.",
+    photo: "/images/work/worcester-controls-check.jpg",
+    photoAlt:
+      "Jamie Hannah, Gas Safe registered engineer covering Cuckfield, checking the controls on a Worcester boiler",
     faqs: [
       {
         q: "Do you cover Cuckfield?",
@@ -361,6 +420,11 @@ export const WAVE_2_TOWNS: Town[] = [
       "boiler-servicing":
         "Ditchling's older cottages can have characterful, tucked-away boilers. I service them carefully and by the book, with no rushing.",
     },
+    blurb:
+      "Period cottages and village homes on my regular route out towards the Downs.",
+    photo: "/images/work/boiler-panel-work.jpg",
+    photoAlt:
+      "Jamie Hannah, Gas Safe registered engineer covering Ditchling, working on an open boiler during a service",
     faqs: [
       {
         q: "Do you cover Ditchling?",
@@ -381,6 +445,11 @@ export const WAVE_2_TOWNS: Town[] = [
       "boiler-servicing":
         "From period homes on the High Street to newer builds, I give every Lindfield boiler a thorough annual service, without the rush.",
     },
+    blurb:
+      "Conservation-area homes and High Street properties, minutes from Haywards Heath.",
+    photo: "/images/work/worcester-service-complete.jpg",
+    photoAlt:
+      "A Worcester boiler freshly serviced by JDH Gas, with the Gas Safe registered mat laid out",
     faqs: [
       {
         q: "Do you cover Lindfield?",
@@ -401,6 +470,11 @@ export const WAVE_2_TOWNS: Town[] = [
       "boiler-servicing":
         "Being right on the edge of Burgess Hill, Wivelsfield is a quick trip for me: a thorough annual service that keeps your boiler safe and warranty-valid.",
     },
+    blurb:
+      "Right on the edge of Burgess Hill: Wivelsfield and Wivelsfield Green are everyday territory.",
+    photo: "/images/work/worcester-service-gloved.jpg",
+    photoAlt:
+      "Jamie Hannah, Gas Safe registered engineer covering Wivelsfield, servicing the internals of an open Worcester boiler",
     faqs: [
       {
         q: "Do you cover Wivelsfield?",
@@ -421,6 +495,11 @@ export const WAVE_2_TOWNS: Town[] = [
       "boiler-servicing":
         "Keymer's a quick hop from Burgess Hill, so I can usually fit a thorough annual service in promptly.",
     },
+    blurb:
+      "Tucked between Hassocks and Ditchling, one of my closest patches.",
+    photo: "/images/work/worcester-torchlit-service.jpg",
+    photoAlt:
+      "Jamie Hannah, Gas Safe registered engineer covering Keymer, inspecting an open Worcester boiler by torchlight during a service",
     faqs: [
       {
         q: "How quickly can you reach Keymer?",
@@ -428,6 +507,13 @@ export const WAVE_2_TOWNS: Town[] = [
       },
     ],
   },
+];
+
+// ---------------------------------------------------------------------------
+// WAVE 2 — built, but held back until each has its own review/photo. Not wired
+// to the route or sitemap yet; promote into LOCAL_TOWNS when ready.
+// ---------------------------------------------------------------------------
+export const WAVE_2_TOWNS: Town[] = [
   {
     slug: "lancing",
     name: "Lancing",

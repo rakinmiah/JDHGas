@@ -12,7 +12,7 @@ type Town = {
 
 const BASE = { name: "Burgess Hill", lat: 50.9577, lng: -0.1281 };
 
-// The towns with live area pages (Wave 1). Markers link through to each page.
+// The towns with live area pages. Markers link through to each page.
 // Keep in sync with LOCAL_TOWNS in src/lib/local-pages.ts as more towns launch.
 const TOWNS: Town[] = [
   { name: "Haywards Heath", lat: 51.004, lng: -0.1028, href: "/haywards-heath" },
@@ -22,6 +22,12 @@ const TOWNS: Town[] = [
   { name: "Lewes", lat: 50.8743, lng: -0.0086, href: "/lewes" },
   { name: "Hove", lat: 50.8279, lng: -0.1687, href: "/hove" },
   { name: "Portslade", lat: 50.834, lng: -0.216, href: "/portslade" },
+  { name: "Horsham", lat: 51.063, lng: -0.327, href: "/horsham" },
+  { name: "Cuckfield", lat: 51.0117, lng: -0.143, href: "/cuckfield" },
+  { name: "Ditchling", lat: 50.921, lng: -0.115, href: "/ditchling" },
+  { name: "Lindfield", lat: 51.0132, lng: -0.0846, href: "/lindfield" },
+  { name: "Wivelsfield", lat: 50.9705, lng: -0.1178, href: "/wivelsfield" },
+  { name: "Keymer", lat: 50.9226, lng: -0.1354, href: "/keymer" },
 ];
 
 export function CoverageMap() {
