@@ -182,23 +182,29 @@ button, **not a completed call** — it's a floor, and GBP map-pack calls are in
 
 ---
 
-## 9. ⚠️ CURRENT STATE — Wave 2 is staged, NOT deployed
+## 9. CURRENT STATE — Wave 2 shipped 17 July 2026
 
-**There is uncommitted work in the tree.** Do not blow it away.
+**Live:** the 6 Wave 2 town pages (**Horsham, Cuckfield, Ditchling, Lindfield,
+Wivelsfield, Keymer** — 13 towns total), each with a unique hero photo, blurb,
+intro, service angles, FAQs. Town-verified reviews added (Hassocks ← Ann Karlsson;
+Horsham ← Gary Woolnough + Diana Dodds + Suriani Hulbert; Hurstpierpoint ← Leon
+Ellerton). Map pins + postcode prefixes updated (RH17 → Cuckfield; RH13 → "likely").
 
-**Built, verified locally, awaiting Rakin's "ship":**
-- **6 new town pages** promoted into `LOCAL_TOWNS`: **Horsham, Cuckfield, Ditchling,
-  Lindfield, Wivelsfield, Keymer** (13 towns total). Each has a unique hero photo,
-  blurb, intro, service angles, FAQs. Production build passes.
-- **Lancing is deliberately held** in `WAVE_2_TOWNS` — 15+ miles out, no demand
-  signal, no evidence of work there. Don't launch it without a real job/review.
-- **New town-verified reviews** added: Hassocks ← Ann Karlsson; Horsham ← Gary
-  Woolnough + Diana Dodds + Suriani Hulbert; Hurstpierpoint ← Leon Ellerton.
-- Map pins + postcode prefixes (RH17 → Cuckfield; RH13 → "likely") updated.
-- New photos copied into `public/images/work/`; 13 unique town heroes, no dupes.
-
-**To ship:** `npm run build` → commit → push `main` → Vercel deploys → verify live →
-submit the 6 new URLs in Search Console.
+- **Lancing is still deliberately held** in `WAVE_2_TOWNS` — 15+ miles out, no
+  demand signal. Don't launch it without a real job/review.
+- Indexing (checked via URL Inspection API, 17 July): 5 of 6 new pages indexed
+  same day; `/ditchling` crawled, pending. **Weeks-old gaps found on www:**
+  `/services` + `/services/gas-safety-certificate` unknown to Google,
+  `boiler-heating-installation` + `gas-appliances` discovered-never-crawled —
+  Rakin is requesting indexing manually. GSC's registered sitemap is the old
+  non-www path; the www one should be submitted in the UI (API scope is read-only).
+- **Mobile reveal bug fixed post-launch:** `Reveal` used `viewport.amount: 0.15`;
+  the 14-card areas grid (~5400px tall on mobile) could never satisfy it, so the
+  cards never appeared. Fraction thresholds on tall elements are the trap — keep
+  the height-independent `amount: "some"` + negative margin.
+- The embedded preview browser **never fires IntersectionObserver callbacks** —
+  that's why below-fold Reveal content looks blank there (§2). Verify scroll
+  behaviour in headless Chromium (playwright-core + cached binary), not the pane.
 
 ---
 

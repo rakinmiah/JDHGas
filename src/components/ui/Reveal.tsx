@@ -21,7 +21,10 @@ export function Reveal({
       className={className}
       initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      /* amount must not be a fraction: lists taller than the viewport can
+         never satisfy it, so they'd stay at opacity 0 (13-town grid on mobile).
+         "some" + negative margin = reveal once ~80px has scrolled into view. */
+      viewport={{ once: true, amount: "some", margin: "0px 0px -80px 0px" }}
       transition={{ duration: 0.5, ease: [0, 0, 0.2, 1], delay }}
     >
       {children}
