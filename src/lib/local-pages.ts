@@ -55,6 +55,10 @@ export type Town = {
   /** Hero photo (real JDH job photo). Falls back to a default if unset. */
   photo?: string;
   photoAlt?: string;
+  /** CSS object-position for the /areas card's 16:10 crop. Portrait photos
+      crop centre by default, which can cut Jamie's face off — set e.g.
+      "50% 18%" to bias the crop toward the top of the photo. */
+  photoPosition?: string;
   /** Genuine Google reviews from customers in this town. */
   reviews?: TownReview[];
 };
@@ -473,6 +477,7 @@ export const LOCAL_TOWNS: Town[] = [
     blurb:
       "Right on the edge of Burgess Hill: Wivelsfield and Wivelsfield Green are everyday territory.",
     photo: "/images/work/worcester-service-gloved.jpg",
+    photoPosition: "50% 15%",
     photoAlt:
       "Jamie Hannah, Gas Safe registered engineer covering Wivelsfield, servicing the internals of an open Worcester boiler",
     faqs: [
@@ -497,9 +502,10 @@ export const LOCAL_TOWNS: Town[] = [
     },
     blurb:
       "Tucked between Hassocks and Ditchling, one of my closest patches.",
-    photo: "/images/work/worcester-torchlit-service.jpg",
+    photo: "/images/work/worcester-service-profile.jpg",
+    photoPosition: "50% 24%",
     photoAlt:
-      "Jamie Hannah, Gas Safe registered engineer covering Keymer, inspecting an open Worcester boiler by torchlight during a service",
+      "Jamie Hannah, Gas Safe registered engineer covering Keymer, working on an open Worcester boiler during a service",
     faqs: [
       {
         q: "How quickly can you reach Keymer?",

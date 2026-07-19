@@ -138,6 +138,7 @@ export default async function AreasHub() {
                         fill
                         sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 23vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        style={t.photoPosition ? { objectPosition: t.photoPosition } : undefined}
                       />
                     </div>
                   )}
