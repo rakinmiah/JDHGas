@@ -649,7 +649,7 @@ export function townMetaTitle(town: Town): string {
 
 /** Town-page meta description. */
 export function townMetaDescription(town: Town): string {
-  return `Gas Safe registered engineer covering ${town.name} (${town.postcode}): boiler servicing from £85, landlord gas safety certificates (CP12), repairs & installs. Same local engineer, rated 5.0. Call 07544 063330.`;
+  return `Gas Safe engineer covering ${town.name} (${town.postcode}): boiler servicing from £85, gas safety certificates, repairs & installs. Rated 5.0. Call 07544 063330.`;
 }
 
 /** Absolute URL for a town page, used in canonical + JSON-LD. */

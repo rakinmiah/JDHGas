@@ -13,7 +13,7 @@ import { CoverageMap } from "@/components/home/CoverageMap";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
 import { ServiceAreaPersonalizer } from "@/components/personalization/AreaPersonalization";
-import { SITE } from "@/lib/site";
+import { SITE, OG_IMAGE, TWITTER_IMAGE } from "@/lib/site";
 
 const AREAS = [
   "Burgess Hill",
@@ -53,7 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: s.metaTitle,
     description: s.metaDescription,
     alternates: { canonical: `/services/${s.slug}` },
-    openGraph: { title: s.metaTitle, description: s.metaDescription, url: `${SITE.url}/services/${s.slug}` },
+    openGraph: { title: s.metaTitle, description: s.metaDescription, url: `${SITE.url}/services/${s.slug}`, images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title: s.metaTitle, description: s.metaDescription, images: [TWITTER_IMAGE] },
   };
 }
 

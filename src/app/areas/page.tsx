@@ -21,7 +21,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 export const metadata: Metadata = {
   title: "Areas I Cover | JDH Gas Services, Burgess Hill",
   description:
-    "Gas Safe registered engineer Jamie Hannah covers Burgess Hill, Mid Sussex and the coast: Haywards Heath, Hassocks, Hurstpierpoint, Hove, Portslade, Lewes, Henfield and more. Pick your town.",
+    "Gas Safe engineer Jamie Hannah covers Burgess Hill, Mid Sussex and the coast: Haywards Heath, Hassocks, Hove, Lewes, Henfield and more. Find your town.",
   alternates: { canonical: "/areas" },
 };
 

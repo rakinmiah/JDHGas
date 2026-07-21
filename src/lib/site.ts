@@ -15,6 +15,14 @@ export const SITE = {
   hours: "Mon–Fri",
 } as const;
 
+// File-convention share images (app/opengraph-image.tsx + app/twitter-image.tsx),
+// resolved against metadataBase. Pages that set their own `openGraph`/`twitter`
+// in generateMetadata must reference these explicitly — a per-page social block
+// without `images` drops the file-convention image for that page.
+const SHARE_IMAGE_ALT = `${SITE.name}: Gas Safe registered engineer in Burgess Hill & Mid Sussex`;
+export const OG_IMAGE = { url: "/opengraph-image", width: 1200, height: 630, alt: SHARE_IMAGE_ALT };
+export const TWITTER_IMAGE = { url: "/twitter-image", width: 1200, height: 630, alt: SHARE_IMAGE_ALT };
+
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },

@@ -29,7 +29,7 @@ import {
   type Town,
 } from "@/lib/local-pages";
 import type { ServiceContent } from "@/lib/services-content";
-import { SITE } from "@/lib/site";
+import { SITE, OG_IMAGE, TWITTER_IMAGE } from "@/lib/site";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const dynamicParams = false;
@@ -58,7 +58,8 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/${town.slug}` },
-    openGraph: { title, description, url: townUrl(town.slug) },
+    openGraph: { title, description, url: townUrl(town.slug), images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title, description, images: [TWITTER_IMAGE] },
   };
 }
 
