@@ -41,6 +41,13 @@ export const SERVICES = [
     icon: "Flame",
   },
   {
+    title: "Boiler strip-down service",
+    blurb:
+      "A deeper clean every four to five years, stripping the boiler down to clear what a standard service can't reach.",
+    href: "/services/boiler-strip-down-service",
+    icon: "Cog",
+  },
+  {
     title: "Landlord gas safety certificates",
     blurb:
       "CP12 certificates for landlords, plus gas safety checks for homeowners.",
@@ -72,6 +79,7 @@ export const SERVICES = [
 
 export const SERVICE_OPTIONS = [
   "Boiler servicing",
+  "Boiler strip-down service",
   "Landlord gas safety certificate (CP12)",
   "Heating system repair",
   "Boiler or heating installation",

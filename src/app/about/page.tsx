@@ -11,6 +11,7 @@ import {
   Wrench,
   CookingPot,
   Hammer,
+  GraduationCap,
   type LucideIcon,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -203,6 +204,34 @@ export default function AboutPage() {
           <h2 className="mt-2 font-display text-2xl font-bold md:text-3xl">What you can expect</h2>
           <ValuesGrid />
         </div>
+      </section>
+
+      {/* Manufacturer training */}
+      <section className="section bg-surface" aria-labelledby="training-h">
+        <Reveal className="container-page grid gap-8 lg:grid-cols-[44fr_56fr] lg:items-center lg:gap-14">
+          <div>
+            <p className="eyebrow">Training</p>
+            <h2 id="training-h" className="mt-2 font-display text-2xl font-bold md:text-3xl">
+              Trained by the manufacturers
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              Boilers change, and the best way to work on one properly is to learn it from the
+              people who build it. I keep my manufacturer training up to date, and I service and
+              repair all the major makes.
+            </p>
+          </div>
+
+          <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-7 md:p-8">
+            <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-primary/10 text-primary">
+              <GraduationCap className="h-6 w-6" aria-hidden />
+            </span>
+            <h3 className="mt-4 font-display text-lg font-semibold">Vaillant approved partner</h3>
+            <p className="mt-2 leading-relaxed text-muted">
+              I&apos;ve completed Vaillant&apos;s training course and I&apos;m an approved Vaillant
+              partner, so their boilers get worked on by someone trained on the current range.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <LogoStrip />

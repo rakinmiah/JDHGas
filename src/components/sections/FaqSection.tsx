@@ -9,10 +9,12 @@ export function FaqSection({
   items,
   heading = "Common questions",
   jsonLd = true,
+  tone = "surface",
 }: {
   items: Faq[];
   heading?: string;
   jsonLd?: boolean;
+  tone?: "surface" | "sunken";
 }) {
   const [open, setOpen] = useState<number | null>(null);
   const data = {
@@ -25,7 +27,7 @@ export function FaqSection({
     })),
   };
   return (
-    <section className="section bg-surface" aria-labelledby="faq-h">
+    <section className={`section ${tone === "sunken" ? "bg-sunken" : "bg-surface"}`} aria-labelledby="faq-h">
       <div className="container-page max-w-3xl">
         <p className="eyebrow">FAQ</p>
         <h2 id="faq-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">{heading}</h2>

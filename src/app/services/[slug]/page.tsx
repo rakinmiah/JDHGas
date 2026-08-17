@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, Hammer, type LucideIcon } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, Hammer, Cog, Volume2, Timer, Thermometer, RotateCcw, TrendingUp, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { PageHero } from "@/components/sections/PageHero";
@@ -29,8 +29,12 @@ const AREAS = [
   "Lancing",
 ];
 
+/** Icons a service block's cards can reference by name. */
+const CARD_ICONS: Record<string, LucideIcon> = { Volume2, Timer, Thermometer, RotateCcw, TrendingUp, Flame, Cog };
+
 const ICON_BY_SLUG: Record<string, LucideIcon> = {
   "boiler-servicing": Flame,
+  "boiler-strip-down-service": Cog,
   "gas-safety-certificate": ClipboardCheck,
   "boiler-repairs": Wrench,
   "boiler-heating-installation": Hammer,
@@ -77,7 +81,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const others = SERVICE_CONTENT.filter((o) => o.slug !== s.slug);
   const listBlock = s.blocks.find((b) => b.bullets && b.bullets.length);
-  const proseBlocks = s.blocks.filter((b) => b !== listBlock);
+  const cardBlocks = s.blocks.filter((b) => b.cards?.length);
+  const proseBlocks = s.blocks.filter((b) => !b.bullets?.length && !b.cards?.length);
+
+  // Card blocks add a section between the main block and everything below it, so
+  // the surface/sunken alternation downstream flips to keep the P2 rhythm intact.
+  const flip = cardBlocks.length > 0;
+  const areasTone = flip ? "bg-surface" : "bg-sunken";
+  const othersTone = flip ? "bg-surface" : "bg-sunken";
+  const reviewsTone = flip ? "sunken" : "surface";
+  const faqTone = flip ? "sunken" : "surface";
 
   return (
     <>
@@ -152,8 +165,43 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {/* Card blocks (e.g. "signs you need one") — their own alternating section */}
+      {cardBlocks.map((b) => (
+        <section key={b.heading} className="section bg-sunken" aria-labelledby="signs-h">
+          <Reveal className="container-page">
+            <h2 id="signs-h" className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+              {b.heading}
+            </h2>
+            {b.body && (
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{b.body}</p>
+            )}
+            <ul
+              className={`mt-9 grid gap-5 sm:grid-cols-2 ${
+                b.cards!.length % 4 === 0 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+              }`}
+            >
+              {b.cards!.map((c) => {
+                const Icon = (c.icon && CARD_ICONS[c.icon]) || Cog;
+                return (
+                  <li
+                    key={c.title}
+                    className="rounded-[var(--radius-lg)] border border-border-subtle bg-surface p-6 shadow-[var(--shadow-sm)]"
+                  >
+                    <span className="grid h-11 w-11 place-items-center rounded-[var(--radius-md)] bg-flame/10 text-flame">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <h3 className="mt-4 font-display text-base font-semibold text-ink">{c.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{c.body}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+        </section>
+      ))}
+
       {/* Areas I cover — text + chips alongside the live coverage map */}
-      <section className="section bg-sunken" aria-labelledby="area-h">
+      <section className={`section ${areasTone}`} aria-labelledby="area-h">
         <Reveal className="container-page grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <p className="eyebrow">Service area</p>
@@ -189,13 +237,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </Reveal>
       </section>
 
-      <Reviews tone="surface" />
+      <Reviews tone={reviewsTone} />
 
       {/* Other services — cards */}
-      <section className="section bg-sunken">
+      <section className={`section ${othersTone}`}>
         <div className="container-page">
           <h2 className="font-display text-2xl font-bold md:text-3xl">Other services</h2>
-          <Reveal as="ul" className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal as="ul" className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((o) => {
               const Icon = ICON_BY_SLUG[o.slug] ?? Flame;
               return (
@@ -221,7 +269,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <FaqSection items={[...s.faqs]} />
+      <FaqSection items={[...s.faqs]} tone={faqTone} />
       <ContactSection />
     </>
   );

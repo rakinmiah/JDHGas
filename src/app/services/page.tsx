@@ -23,6 +23,10 @@ export const metadata: Metadata = {
 
 /** Real job photos fronting each service card. */
 const PHOTO_BY_SLUG: Record<string, { src: string; alt: string }> = {
+  "boiler-strip-down-service": {
+    src: "/images/work/heat-exchanger-clean.jpg",
+    alt: "A boiler heat exchanger cleaned during a strip-down service",
+  },
   "gas-safety-certificate": {
     src: "/images/work/manometer.jpg",
     alt: "Gas pressure test during a landlord gas safety check",
@@ -65,9 +69,9 @@ export default async function ServicesHub() {
       />
 
       <section className="section bg-surface" aria-label="Our services">
-        <Reveal as="ul" className="container-page grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal as="ul" className="container-page grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {/* Featured — boiler servicing */}
-          <li className="sm:col-span-2 lg:col-span-4">
+          <li className="sm:col-span-2 lg:col-span-3">
             <Link
               href={`/services/${featured.slug}`}
               className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lg)] lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:p-8"

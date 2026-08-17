@@ -1,6 +1,14 @@
 import type { Faq } from "@/components/sections/FaqSection";
 
-export type ServiceBlock = { heading: string; body?: string; bullets?: string[] };
+export type ServiceCard = { title: string; body: string; icon?: string };
+
+export type ServiceBlock = {
+  heading: string;
+  body?: string;
+  bullets?: string[];
+  /** Rendered as its own alternating section of icon cards. */
+  cards?: ServiceCard[];
+};
 
 export type ServiceContent = {
   slug: string;
@@ -56,6 +64,78 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       { q: "How long does a boiler service take?", a: "A standard boiler service usually takes 30–60 minutes, depending on the make and how accessible the boiler is. I won't rush it. A proper service is worth doing well." },
       { q: "How often should a boiler be serviced?", a: "Once every 12 months by a Gas Safe registered engineer. It keeps the boiler safe and efficient, and most manufacturer warranties require an annual service to stay valid." },
       { q: "Do I need a service to keep my warranty valid?", a: "In most cases yes. Boiler manufacturers usually require proof of an annual service to honour the warranty. I'll leave you with a record of the work either way." },
+      { q: "What is a strip-down service?", a: "It's a deeper clean that goes further than the annual service. I open the boiler up, clean the heat exchanger and burner properly and replace the seals and electrodes that wear with heat. It's usually worth doing every four to five years alongside your annual service." },
+    ],
+  },
+  {
+    slug: "boiler-strip-down-service",
+    navTitle: "Boiler strip-down service",
+    eyebrow: "Strip-down service",
+    h1: "Boiler strip-down service in Burgess Hill",
+    metaTitle: "Boiler Strip-Down Service in Burgess Hill | JDH Gas Services",
+    metaDescription:
+      "A full boiler strip-down service in Burgess Hill by Gas Safe engineer Jamie Hannah. Deep clean of the heat exchanger and burner, with worn seals and electrodes replaced.",
+    lead: "A strip-down service goes further than an annual service. I take the boiler apart, clean the heat exchanger and burner properly, and replace the seals and electrodes that wear down with heat over the years. It's usually recommended every four to five years as per manufacturer's instructions, alongside your annual service, to keep an older boiler running efficiently and prolong its life.",
+    image: "/images/work/strip-down-service.jpg",
+    imageAlt:
+      "Jamie Hannah, Gas Safe registered engineer, cleaning the internals of a stripped-down boiler",
+    serviceType: "Boiler Strip-Down Service",
+    blocks: [
+      {
+        heading: "How it differs from your annual service",
+        body: "Your annual service is a safety and efficiency check: I inspect, test and take readings to catch problems early. A strip-down goes further. I open the boiler up, clean the parts a standard service can't reach, and replace the consumables that wear out with heat. You still need the annual service every 12 months. This sits alongside it, every four or five years.",
+      },
+      {
+        heading: "What's involved",
+        body: "It's a longer, more hands-on job than a standard service, and it's done in a set order so nothing gets missed.",
+        bullets: [
+          "Draining down and safely isolating the boiler",
+          "Recharging the expansion vessel back to the right pressure",
+          "Removing the fan and gas valve assembly",
+          "Taking out the burner and cleaning the main heat exchanger properly",
+          "Replacing the heat exchanger seal, combustion seals and gaskets",
+          "Replacing the spark electrode and flame sensing device",
+          "Removing and cleaning the condensate trap",
+          "A full annual service on top: combustion readings, gas pressures, controls and safety devices",
+        ],
+      },
+      {
+        heading: "Signs your boiler might be due one",
+        body: "Boilers rarely fail overnight. They get gradually worse, and most people put up with it far longer than they need to.",
+        cards: [
+          {
+            title: "Banging or kettling",
+            body: "Rumbling, banging or whistling usually means buildup on the heat exchanger.",
+            icon: "Volume2",
+          },
+          {
+            title: "Frequent resets",
+            body: "A boiler that keeps locking out can point to a worn electrode or flame sensor.",
+            icon: "RotateCcw",
+          },
+          {
+            title: "Rising energy bills",
+            body: "Creeping up with no real change in how you use the heating.",
+            icon: "TrendingUp",
+          },
+          {
+            title: "Sooting or dark marks",
+            body: "Any discolouration around the boiler casing is worth looking at.",
+            icon: "Flame",
+          },
+        ],
+      },
+      {
+        heading: "Booking it in",
+        body: "The easiest way is alongside your annual service, so it's one visit. Late summer and autumn are ideal, before the heating goes on for winter. Not sure if yours is due? Send me the make, model and rough age and I'll give you an honest answer.",
+      },
+    ],
+    faqs: [
+      { q: "Do I still need an annual service if I've had a strip-down?", a: "Yes. Your boiler still needs a Gas Safe service every 12 months, and most manufacturer warranties depend on it. A strip-down is extra care every few years, not a replacement for the annual check." },
+      { q: "Will a strip-down fix a noisy boiler?", a: "Often, yes. Banging and kettling noises are usually caused by buildup on the heat exchanger, and cleaning it properly clears that. Sometimes the noise is coming from sludge in the wider system instead, which needs a different fix. I'll check before recommending anything." },
+      { q: "How do I know if my boiler needs one?", a: "Age is the main thing. If it's four or five years old or more and has never had one, it's worth considering, especially if you've noticed noises, slower heating or rising bills. Send me the make and model and I'll tell you straight." },
+      { q: "Is it worth doing on an older boiler?", a: "Not always, and I'd rather be honest about it. If a boiler is near the end of its life or parts are getting hard to find, you may be better putting the money towards a replacement. I'll give you my honest view before you commit to anything." },
+      { q: "What's the difference between this and a powerflush?", a: "A strip-down cleans the boiler itself. A powerflush cleans the pipework and radiators, clearing sludge out of the wider system. They fix different problems, and a boiler that keeps struggling sometimes needs the system looking at rather than the boiler. I'll tell you which one you actually need." },
     ],
   },
   {
@@ -164,7 +244,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       },
       {
         heading: "Repair or replace? I'll tell you straight",
-        body: "Not every old boiler needs replacing. If yours can be repaired and it's worth it, I'll say so, rather than sell you one you don't need. And if a new boiler is the better value, I'll recommend what suits your home, not the priciest option.",
+        body: "Not every old boiler needs replacing. If yours can be repaired and it's worth it, I'll say so, rather than sell you one you don't need. And if a new boiler is the better value, I'll recommend what suits your home, not the priciest option. I'm a Vaillant approved partner, trained on their current range, and I fit the other major makes too.",
       },
       {
         heading: "A clear quote, and a warranty that stays valid",

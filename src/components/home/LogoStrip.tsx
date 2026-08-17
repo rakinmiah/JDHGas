@@ -1,8 +1,10 @@
 import { Reveal } from "@/components/ui/Reveal";
 
-const LOGOS = [
+type Logo = { name: string; src: string; h: string; badge?: string };
+
+const LOGOS: Logo[] = [
   { name: "Worcester Bosch", src: "/brands/worcester.png", h: "h-12" },
-  { name: "Vaillant", src: "/brands/vaillant.svg", h: "h-16" },
+  { name: "Vaillant", src: "/brands/vaillant.svg", h: "h-16", badge: "Approved partner" },
   { name: "Ideal Heating", src: "/brands/ideal.svg", h: "h-14" },
   { name: "Baxi", src: "/brands/baxi.svg", h: "h-10" },
   { name: "Bosch", src: "/brands/bosch.svg", h: "h-10" },
@@ -40,7 +42,14 @@ export function LogoStrip({ compact = false }: { compact?: boolean } = {}) {
           }`}
         >
           {LOGOS.map((logo) => (
-            <li key={logo.name} className="flex items-center">
+            <li key={logo.name} className="flex flex-col items-center">
+              {/* Invisible twin of the badge keeps badged logos optically level
+                  with the rest of the row (no absolute positioning, wrap-safe). */}
+              {logo.badge && (
+                <span aria-hidden className="invisible mb-3 text-[10px] font-semibold uppercase leading-none tracking-[0.16em]">
+                  {logo.badge}
+                </span>
+              )}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo.src}
@@ -51,6 +60,11 @@ export function LogoStrip({ compact = false }: { compact?: boolean } = {}) {
                   compact ? "scale-90" : ""
                 }`}
               />
+              {logo.badge && (
+                <span className="mt-3 text-[10px] font-semibold uppercase leading-none tracking-[0.16em] text-flame">
+                  {logo.badge}
+                </span>
+              )}
             </li>
           ))}
         </ul>
