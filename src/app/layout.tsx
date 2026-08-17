@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { TopBar } from "@/components/layout/TopBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -10,17 +10,21 @@ import { Analytics } from "@/components/analytics/Analytics";
 import { Clarity } from "@/components/analytics/Clarity";
 import { CookieBanner } from "@/components/analytics/CookieBanner";
 
-const display = Manrope({
+// Self-hosted variable fonts (see src/fonts/). next/font/google downloads
+// from fonts.gstatic.com at build time, and Google rotating font versions
+// against a stale build cache 404'd and failed the Vercel build. Local files
+// remove the network dependency entirely.
+const display = localFont({
+  src: "../fonts/manrope-latin.woff2",
   variable: "--font-display-src",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: "600 800",
   display: "swap",
 });
 
-const body = Inter({
+const body = localFont({
+  src: "../fonts/inter-latin.woff2",
   variable: "--font-body-src",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400 600",
   display: "swap",
 });
 
