@@ -134,7 +134,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="postcode" className={labelCls}>Postcode</label>
-          <input id="postcode" name="postcode" autoComplete="postal-code" required className={inputCls} aria-invalid={!!err("postcode")} aria-describedby={err("postcode") ? "postcode-e" : undefined} />
+          <input id="postcode" name="postcode" autoComplete="postal-code" className={inputCls} aria-invalid={!!err("postcode")} aria-describedby={err("postcode") ? "postcode-e" : undefined} />
           {err("postcode") && <p id="postcode-e" className="mt-1 text-sm text-[#DC2626]">{err("postcode")}</p>}
         </div>
       </div>

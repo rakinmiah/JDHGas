@@ -18,6 +18,7 @@ export function PageHero({
   rating,
   reviewCount,
   reviews,
+  primaryCta = "call",
 }: {
   eyebrow: string;
   title: string;
@@ -28,20 +29,33 @@ export function PageHero({
   rating?: string;
   reviewCount?: number;
   reviews?: DisplayReview[];
+  /** Which contact CTA leads. WhatsApp is the site's top lead channel, so
+      pages where repair intent dominates can put it first. */
+  primaryCta?: "call" | "whatsapp";
 }) {
+  const callBtn = (
+    <Button
+      href={SITE.phoneHref}
+      className={primaryCta === "call" ? "w-full md:w-auto" : "flex-1 md:flex-none"}
+      aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
+    >
+      <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
+    </Button>
+  );
+  const whatsappBtn = (
+    <Button
+      href={SITE.whatsappHref}
+      variant="whatsapp"
+      className={primaryCta === "whatsapp" ? "w-full md:w-auto" : "flex-1 md:flex-none"}
+    >
+      WhatsApp
+    </Button>
+  );
   const buttons = (
     <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
-      <Button
-        href={SITE.phoneHref}
-        className="w-full md:w-auto"
-        aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
-      >
-        <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
-      </Button>
+      {primaryCta === "whatsapp" ? whatsappBtn : callBtn}
       <div className="flex gap-3 md:contents">
-        <Button href={SITE.whatsappHref} variant="whatsapp" className="flex-1 md:flex-none">
-          WhatsApp
-        </Button>
+        {primaryCta === "whatsapp" ? callBtn : whatsappBtn}
         <Button href="#enquiry" variant="secondary" className="flex-1 md:flex-none">
           Get a quote
         </Button>

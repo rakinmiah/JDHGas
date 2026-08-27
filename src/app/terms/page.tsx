@@ -5,6 +5,9 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms of Service | JDH Gas Services",
   description: "The terms that apply when you use the JDH Gas Services website and book our work.",
+  // noindex: these pages were consuming brand-SERP sitelink slots that should
+  // go to service pages (Aug 2026 data panel). Still linked in the footer.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/terms" },
 };
 

@@ -107,6 +107,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         crumbs={[{ label: "Services", href: "/services" }, { label: s.navTitle, href: `/services/${s.slug}` }]}
         image={s.image}
         imageAlt={s.imageAlt}
+        // Repair visitors are the site's best converters and WhatsApp is the
+        // top lead channel, so it leads on this page (GA4, Aug 2026 panel).
+        primaryCta={s.slug === "boiler-repairs" ? "whatsapp" : "call"}
       />
 
       {/* Sticky context column + numbered scrolling list */}

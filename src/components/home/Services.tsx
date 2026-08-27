@@ -16,6 +16,16 @@ export function Services() {
         <h2 id="services-h" className="mt-2 font-display text-3xl font-bold md:text-4xl">
           What I can help with
         </h2>
+        {/* Exact-anchor crosslinks: the homepage holds most of the site's link
+            equity, so these pass both authority and relevance to the money
+            pages Google keeps ranking the homepage for instead. */}
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+          I'm based in Burgess Hill and cover Mid Sussex for{" "}
+          <Link href="/services/boiler-servicing" className="font-semibold text-primary hover:text-primary-hover">boiler servicing in Burgess Hill</Link>,{" "}
+          <Link href="/services/gas-safety-certificate" className="font-semibold text-primary hover:text-primary-hover">landlord gas safety certificates (CP12)</Link>,{" "}
+          <Link href="/services/boiler-repairs" className="font-semibold text-primary hover:text-primary-hover">boiler and heating repairs</Link> and{" "}
+          <Link href="/services/boiler-heating-installation" className="font-semibold text-primary hover:text-primary-hover">new boiler installation</Link>.
+        </p>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {/* Featured — boiler servicing: a wide ink banner carrying the £85 hook */}

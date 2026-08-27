@@ -4,6 +4,9 @@ import { LegalShell } from "@/components/sections/LegalShell";
 export const metadata: Metadata = {
   title: "Cookie Policy | JDH Gas Services",
   description: "How JDH Gas Services uses cookies on this website and how to manage your choices.",
+  // noindex: these pages were consuming brand-SERP sitelink slots that should
+  // go to service pages (Aug 2026 data panel). Still linked in the footer.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/cookie-policy" },
 };
 

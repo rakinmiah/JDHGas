@@ -73,13 +73,57 @@ const num = (v) => Number(v ?? 0);
 const pct = (cur, prev) =>
   prev === 0 ? (cur > 0 ? "new" : "—") : `${cur >= prev ? "+" : ""}${Math.round(((cur - prev) / prev) * 100)}%`;
 
-const [curTotal, prevTotal, topQueries, topPages, prevPages] = await Promise.all([
-  gsc(CUR, []),
-  gsc(PREV, []),
-  gsc(CUR, ["query"]),
-  gsc(CUR, ["page"]),
-  gsc(PREV, ["page"]),
-]);
+const MOBILE_ONLY = {
+  dimensionFilterGroups: [
+    { filters: [{ dimension: "device", operator: "equals", expression: "MOBILE" }] },
+  ],
+};
+const [curTotal, prevTotal, topQueries, topPages, prevPages, curMobile, prevMobile, curQDev] =
+  await Promise.all([
+    gsc(CUR, []),
+    gsc(PREV, []),
+    gsc(CUR, ["query"]),
+    gsc(CUR, ["page"]),
+    gsc(PREV, ["page"]),
+    gsc(CUR, [], MOBILE_ONLY),
+    gsc(PREV, [], MOBILE_ONLY),
+    gsc(CUR, ["query", "device"], { rowLimit: 250 }),
+  ]);
+
+// Bot heuristic (Aug 2026 data panel): rank-tracker queries are desktop-only
+// and never click. A query is treated as bot-dominated when its impressions
+// are >=90% desktop AND it earned zero clicks in the window. Roughly half of
+// raw impressions fail this test, so raw impressions are reported second.
+const botShare = (() => {
+  const byQ = {};
+  for (const r of curQDev) {
+    const [q, dev] = r.keys;
+    byQ[q] ||= { imp: 0, desk: 0, clicks: 0 };
+    byQ[q].imp += r.impressions;
+    byQ[q].clicks += r.clicks;
+    if (dev === "DESKTOP") byQ[q].desk += r.impressions;
+  }
+  let bot = 0, all = 0;
+  for (const v of Object.values(byQ)) {
+    all += v.imp;
+    if (v.clicks === 0 && v.imp >= 5 && v.desk / v.imp >= 0.9) bot += v.imp;
+  }
+  return all ? bot / all : 0;
+})();
+const botQueries = new Set(
+  Object.entries(
+    curQDev.reduce((a, r) => {
+      const q = r.keys[0];
+      a[q] ||= { imp: 0, desk: 0, clicks: 0 };
+      a[q].imp += r.impressions;
+      a[q].clicks += r.clicks;
+      if (r.keys[1] === "DESKTOP") a[q].desk += r.impressions;
+      return a;
+    }, {}),
+  )
+    .filter(([, v]) => v.clicks === 0 && v.imp >= 5 && v.desk / v.imp >= 0.9)
+    .map(([q]) => q),
+);
 
 const KEY_EVENTS = ["phone_click", "whatsapp_click", "enquiry_submit"];
 const [curEvents, prevEvents, curSessions, prevSessions] = await Promise.all([
@@ -98,15 +142,24 @@ const pt = prevTotal[0] ?? {};
 console.log(`# JDH Gas growth report — ${CUR.startDate} → ${CUR.endDate}`);
 console.log(`(vs previous week ${PREV.startDate} → ${PREV.endDate}; GSC lags ~2 days, so ranges end ${day(3)})\n`);
 
+const cm = curMobile[0] ?? {};
+const pm = prevMobile[0] ?? {};
 console.log(`## Search (Google Search Console)`);
 console.log(`- Clicks: ${num(ct.clicks)} (${pct(num(ct.clicks), num(pt.clicks))})`);
-console.log(`- Impressions: ${num(ct.impressions)} (${pct(num(ct.impressions), num(pt.impressions))})`);
+console.log(`- Mobile impressions (cleanest human signal): ${num(cm.impressions)} (${pct(num(cm.impressions), num(pm.impressions))})`);
+console.log(
+  `- Raw impressions: ${num(ct.impressions)} (${pct(num(ct.impressions), num(pt.impressions))}) — ~${Math.round(botShare * 100)}% of these are rank-tracker bot queries; do not present raw impressions to the client`,
+);
 console.log(`\n### Top queries`);
-for (const r of topQueries.slice(0, 15)) {
+let shown = 0;
+for (const r of topQueries) {
+  if (botQueries.has(r.keys[0])) continue; // desktop-only, zero-click rank-tracker pattern
   console.log(
     `- "${r.keys[0]}" — ${r.clicks} clicks / ${r.impressions} impr / avg pos ${r.position.toFixed(1)}`,
   );
+  if (++shown >= 15) break;
 }
+if (shown === 0) console.log(`- (no human-plausible queries this week)`);
 console.log(`\n### Pages earning impressions`);
 const prevByPage = Object.fromEntries(prevPages.map((r) => [r.keys[0], r]));
 for (const r of topPages.slice(0, 15)) {

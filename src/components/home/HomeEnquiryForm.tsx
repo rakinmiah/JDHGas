@@ -104,12 +104,9 @@ export function HomeEnquiryForm() {
   }
 
   function goNext() {
-    if (step === 2) {
-      if (!value("postcode")) {
-        setErrors((p) => ({ ...p, postcode: "Please add your postcode." }));
-        return;
-      }
-    }
+    // Postcode is asked for but no longer blocks progress: the form loses
+    // roughly half its starters (GA4), and Jamie can ask on reply. Name and
+    // phone on the final step remain the only hard requirements.
     setStep((s) => Math.min(TOTAL, s + 1));
   }
 
