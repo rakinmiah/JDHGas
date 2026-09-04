@@ -178,7 +178,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               Not sure what&rsquo;s wrong yet?
             </h2>
             <p className="mt-2 max-w-2xl leading-relaxed text-muted">
-              My plain-English guides cover the common faults, what&rsquo;s safe to check
+              My help guides cover the common faults, what is safe to check
               yourself, and when to call.
             </p>
             <ul className="mt-5 flex flex-wrap gap-3">

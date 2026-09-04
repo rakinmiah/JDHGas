@@ -64,7 +64,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Where the water usually goes",
-        body: "The common culprits are a weeping radiator valve, a pinhole in pipework under the floor, or a failing expansion vessel inside the boiler. A tired relief valve letting water out through the overflow pipe outside is another regular. Some of these are cheap fixes. All of them need someone qualified to find and sort properly.",
+        body: "The common culprits are a weeping radiator valve, a pinhole in pipework under the floor, or a failing expansion vessel inside the boiler. A tired relief valve letting water out through the overflow pipe outside is another regular. Some are inexpensive fixes. All of them need a qualified engineer to locate and repair properly.",
       },
     ],
     checksHeading: "How to top the pressure back up",
@@ -106,15 +106,15 @@ export const HELP_PAGES: HelpPage[] = [
       "No hot water but the heating works, or neither? The checks worth doing before you call anyone, and the faults that need a Gas Safe engineer to fix.",
     eyebrow: "Boiler help",
     h1: "No hot water?",
-    lead: "Start with the daft-sounding checks. A good share of no-hot-water calls turn out to be a tripped switch, a timer knocked out of whack, or a prepayment meter that's run out. Five minutes of checking can save you a callout. If it's none of those, the likely faults below are engineer jobs.",
+    lead: "Start with the simple checks. A good share of no-hot-water calls turn out to be a tripped switch, a timer that has lost its settings, or a prepayment meter that has run out. Five minutes of checking can save you a callout. If it's none of those, the likely faults below are engineer jobs.",
     causes: [
       {
         heading: "Hot water gone but heating still works (or the other way round)",
-        body: "On a combi boiler that split usually points at the diverter valve, the part that switches the boiler between heating the radiators and heating your tap water. They wear out, and it's a common repair on boilers past their tenth birthday. On a system with a hot water cylinder, a failed motorised valve or cylinder thermostat does the same trick.",
+        body: "On a combi boiler that split usually points at the diverter valve, the part that switches the boiler between heating the radiators and heating your tap water. They wear out, and it's a common repair on boilers more than ten years old. On a system with a hot water cylinder, a failed motorised valve or cylinder thermostat has the same effect.",
       },
       {
         heading: "No heating and no hot water at all",
-        body: "If the boiler is dead or locked out, work through the checks below before assuming the worst. Power, gas, pressure and a frozen condensate pipe in winter cover most of it. If the boiler is on but locked out with a fault code, note the code down before you reset: it tells me a lot before I even arrive.",
+        body: "If the boiler is dead or locked out, work through the checks below before assuming the worst. Power, gas, pressure and a frozen condensate pipe in winter cover most of it. If the boiler is on but locked out with a fault code, note the code down before you reset: it tells me a lot before I arrive.",
       },
     ],
     checksHeading: "Worth checking before you call",
@@ -131,7 +131,7 @@ export const HELP_PAGES: HelpPage[] = [
       "Water runs hot then cold then hot at the tap. Classic diverter valve or heat exchanger trouble on a combi.",
       "The boiler fires for a few seconds then cuts out every time.",
       "You have a cylinder and it's lukewarm at best. Could be the valve, the stat, or the immersion backup masking a boiler fault.",
-      "Anything that involves opening the boiler case. That's Gas Safe work by law, not a DIY job.",
+      "Anything that involves opening the boiler case. That is Gas Safe work by law.",
     ],
     faqs: [
       {
@@ -165,7 +165,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Cold at the bottom or middle: sludge",
-        body: "Sludge is rust and debris from inside your radiators and pipes. It's heavier than water, settles at the bottom, and blocks the flow. It builds for years, quietly making every room slower to heat and your gas bill bigger. The fix is a chemical or power flush of the system, plus a magnetic filter to stop it coming back. That's my kind of job, not a bleed key's.",
+        body: "Sludge is rust and debris from inside your radiators and pipes. It's heavier than water, settles at the bottom, and blocks the flow. It builds for years, quietly making every room slower to heat and your gas bill bigger. The fix is a chemical or power flush of the system, plus a magnetic filter to stop it coming back. That is a job for an engineer, not a bleed key.",
       },
       {
         heading: "One radiator cold, or the whole house slow",
@@ -183,7 +183,7 @@ export const HELP_PAGES: HelpPage[] = [
     stopAndCall: [
       "The cold patch is at the bottom or middle. That's sludge, and bleeding won't touch it.",
       "You're having to bleed the same radiator every few weeks. Air shouldn't keep getting in, and constant topping up feeds corrosion.",
-      "The water that comes out when bleeding is black or brown. That's the sludge announcing itself.",
+      "The water that comes out when bleeding is black or brown. That is sludge.",
       "Radiators upstairs are hot but downstairs are cold, or the reverse. Circulation or balancing, an engineer job either way.",
       "Every room heats slowly and the boiler seems to work hard. A flush and filter often transforms an older system.",
     ],
@@ -194,7 +194,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         q: "How much does it cost to fix radiators cold at the bottom?",
-        a: "It varies with system size and how blocked things are, so I don't quote blind. Message me a photo and a rough idea of your setup and I'll give you a straight price before any work.",
+        a: "It varies with system size and how blocked things are, so I don't quote without seeing it. Message me a photo and a rough idea of your setup and I'll give you a straight price before any work.",
       },
       {
         q: "Is sludge actually damaging or just annoying?",
@@ -211,7 +211,7 @@ export const HELP_PAGES: HelpPage[] = [
       "Kettling, banging, gurgling or whistling from your boiler: what each noise usually means, what's safe to check, and when to get a Gas Safe engineer in.",
     eyebrow: "Boiler help",
     h1: "Boiler making banging, gurgling or whistling noises?",
-    lead: "Boilers are never silent, but they shouldn't rumble like a kettle or bang like someone's in the airing cupboard with a hammer. The noise is a symptom, and different noises point at different faults. None of them tend to fix themselves, and most get dearer the longer they're left.",
+    lead: "Boilers are never silent, but they shouldn't rumble like a kettle or bang when they start up. The noise is a symptom, and different noises point at different faults. None of them fix themselves, and most become more expensive the longer they are left.",
     causes: [
       {
         heading: "Rumbling or whistling like a kettle",
@@ -227,7 +227,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Humming or vibrating",
-        body: "Often the pump running too fast or working loose, sometimes a vibrating pipe clip. Not usually urgent, but a pump on its way out is better replaced on your schedule than on a cold Friday night.",
+        body: "Often the pump running too fast or working loose, sometimes a vibrating pipe clip. Not usually urgent, but a pump on its way out is better replaced on your schedule than during a cold snap.",
       },
     ],
     checksHeading: "Safe things to check first",
@@ -253,8 +253,8 @@ export const HELP_PAGES: HelpPage[] = [
         a: "A single knock is often pipes expanding as they warm. Repeated banging at startup can be air, a pump fault, or delayed ignition, and that last one definitely wants a Gas Safe engineer's eyes on it.",
       },
       {
-        q: "Can I use a noise as an excuse to skip the annual service?",
-        a: "The other way round: most noisy-boiler calls I attend would have been caught at a service before they got loud. An annual service is from £85 and quieter in every sense.",
+        q: "Will an annual service catch these noises early?",
+        a: "Usually, yes. Most noisy-boiler calls I attend would have been caught at a service before they got loud. An annual service is from £85 for new customers.",
       },
     ],
     whatsappText: "Hi Jamie, my boiler is making a strange noise. ",
@@ -267,7 +267,7 @@ export const HELP_PAGES: HelpPage[] = [
       "A leaking boiler wants attention the same day. What to switch off, what the leak usually is, and why you shouldn't run a boiler that's dripping.",
     eyebrow: "Boiler help",
     h1: "Boiler leaking water?",
-    lead: "Water where it shouldn't be is the one boiler problem I'd ask you not to sit on. Water and the electrics inside a boiler are a bad mix, and a small drip can be hiding a bigger fault. The good news: most leaks are fixable parts, not a death sentence for the boiler.",
+    lead: "Water where it shouldn't be is the one boiler problem I would ask you not to leave. Water and the electrics inside a boiler are a bad mix, and a small drip can be hiding a bigger fault. The good news: most leaks come down to replaceable parts rather than the end of the boiler.",
     causes: [
       {
         heading: "Where boiler leaks come from",
@@ -275,7 +275,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Why you shouldn't just catch it in a bowl",
-        body: "Leaking water tracks onto electrical components, rusts the boiler from the inside, and can bring ceilings down if the boiler is upstairs. A bowl buys you a day at best. Boilers that run while leaking have a habit of turning a cheap seal into an expensive board.",
+        body: "Leaking water tracks onto electrical components, rusts the boiler from the inside, and can bring ceilings down if the boiler is upstairs. A bowl buys you a day at best. A boiler left running while it leaks can turn a cheap seal into an expensive circuit board.",
       },
     ],
     checksHeading: "What to do right now",
@@ -287,7 +287,7 @@ export const HELP_PAGES: HelpPage[] = [
       "Message or call me with the photo. Leaks go to the top of my list.",
     ],
     stopAndCall: [
-      "Any leak from the boiler itself, even a slow drip. This whole page is a when-to-call.",
+      "Any leak from the boiler itself, even a slow drip, is a reason to call.",
       "Water coming through a ceiling below the boiler: switch off and call now.",
       "The outside overflow pipe drips constantly, not just occasionally.",
       "The boiler still runs but pressure keeps vanishing. That's a leak you can't see yet.",
@@ -316,7 +316,7 @@ export const HELP_PAGES: HelpPage[] = [
       "Boiler locked out in freezing weather with a gurgle and a fault code? The outside condensate pipe is probably frozen. How to thaw it safely and stop it recurring.",
     eyebrow: "Winter help",
     h1: "Boiler stopped in cold weather? Check the condensate pipe",
-    lead: "Every proper cold snap, this is the fault that fills my phone. Modern boilers drain a little acidic water through a plastic pipe, and where that pipe runs outside it can freeze solid. The boiler senses the blockage and shuts down to protect itself. The fix really is a kettle of warm water.",
+    lead: "Every cold snap, this is the fault I get called about most. Modern boilers drain a little acidic water through a plastic pipe, and where that pipe runs outside it can freeze solid. The boiler senses the blockage and shuts down to protect itself. The fix is usually a jug of warm water.",
     causes: [
       {
         heading: "How to know this is your problem",
@@ -335,12 +335,12 @@ export const HELP_PAGES: HelpPage[] = [
       "The boiler won't reset after thawing, or shows a different fault code.",
       "The pipe is out of safe reach from the ground.",
       "It freezes again every cold night. Lagging or rerouting the pipe fixes it for good, and it's a quick job.",
-      "You're not confident which pipe is which. No shame in that, better a message than a cracked pipe.",
+      "You're not confident which pipe is which. A quick message is better than a cracked pipe.",
     ],
     faqs: [
       {
         q: "What does a condensate pipe do?",
-        a: "A modern condensing boiler recovers extra heat from its flue gases, which produces a small, steady trickle of mildly acidic water. The condensate pipe drains that away, usually to a drain inside or outside. It's normal and means the boiler is doing its efficient thing.",
+        a: "A modern condensing boiler recovers extra heat from its flue gases, which produces a small, steady trickle of mildly acidic water. The condensate pipe drains that away, usually to a drain inside or outside. It is normal and means the boiler is running efficiently.",
       },
       {
         q: "How do I stop the condensate pipe freezing again?",
@@ -360,8 +360,8 @@ export const HELP_PAGES: HelpPage[] = [
     metaDescription:
       "What Vaillant fault codes F22, F23, F24, F27, F28, F29, F54 and F75 mean, which ones you can safely sort yourself, and when to call a Gas Safe engineer.",
     eyebrow: "Vaillant help",
-    h1: "Vaillant fault codes, in plain English",
-    lead: "I'm a Vaillant approved partner and I work on these boilers most weeks, so here are the codes I actually get called about. A couple you can safely sort yourself in ten minutes. The rest are the boiler telling you it needs a professional, and repeatedly pressing reset won't change its mind.",
+    h1: "Vaillant fault codes explained",
+    lead: "I'm a Vaillant approved partner and I work on these boilers most weeks, so these are the codes I get called about most. A couple you can safely sort yourself in ten minutes. The rest mean the boiler needs a professional, and repeated resets won't change that.",
     causes: [
       {
         heading: "Before you do anything",
@@ -408,13 +408,13 @@ export const HELP_PAGES: HelpPage[] = [
       {
         code: "F75",
         meaning: "The pump ran but the boiler didn't sense the pressure change. Pump or pressure sensor.",
-        advice: "The best-known ecoTEC code. Sometimes eased briefly by topping pressure up, but the sensor or pump needs replacing properly. Book it in before it strands you.",
+        advice: "The best-known ecoTEC code. Sometimes eased briefly by topping pressure up, but the sensor or pump needs replacing properly. Book it in before it leaves you without heating.",
       },
     ],
     stopAndCall: [
       "Any code that comes back after one reset.",
       "F27, F54, or anything gas-related. These are never DIY.",
-      "Codes you don't see listed here: message me the code and I'll tell you straight what it means.",
+      "Codes you don't see listed here: message me the code and I'll tell you what it means.",
       "A boiler locking out repeatedly with no code at all.",
     ],
     faqs: [

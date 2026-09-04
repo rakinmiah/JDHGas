@@ -9,7 +9,7 @@ import { HELP_PAGES, helpUrl } from "@/lib/help-content";
 export const metadata: Metadata = {
   title: "Boiler & Heating Help Guides | JDH Gas Services",
   description:
-    "Plain-English boiler help from a Gas Safe engineer: losing pressure, no hot water, cold radiators, fault codes and more. What to try, and when to call.",
+    "Boiler and heating help from a Gas Safe engineer: losing pressure, no hot water, cold radiators, fault codes and more. What to check, and when to call.",
   alternates: { canonical: "/help" },
 };
 
@@ -18,8 +18,8 @@ export default function HelpHub() {
     <>
       <PageHero
         eyebrow="Help guides"
-        title="Boiler problems, in plain English"
-        intro="What's actually wrong, the checks that are safe to do yourself, and an honest line on when it's an engineer job. No jargon, no scare tactics, and never any DIY gas work."
+        title="Boiler and heating help guides"
+        intro="Common boiler and heating faults explained: what is likely to be wrong, the checks that are safe to do yourself, and when to call a Gas Safe engineer. No jargon and no DIY gas work."
         crumbs={[{ label: "Help", href: "/help" }]}
         primaryCta="whatsapp"
       />

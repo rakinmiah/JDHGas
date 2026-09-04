@@ -129,7 +129,7 @@ export default async function HelpPage({ params }: { params: Promise<{ slug: str
             <div className="relative">
               <BrandMark className="h-12 w-12" />
               <h2 id="call-h" className="mt-5 font-display text-2xl font-bold tracking-tight text-inverse md:text-3xl">
-                When to stop and get me in
+                When to stop and call me
               </h2>
               <ul className="mt-5 space-y-3">
                 {p.stopAndCall.map((s) => (

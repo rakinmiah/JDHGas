@@ -26,6 +26,7 @@ export const TWITTER_IMAGE = { url: "/twitter-image", width: 1200, height: 630, 
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Help", href: "/help" },
   { label: "Areas", href: "/areas" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
