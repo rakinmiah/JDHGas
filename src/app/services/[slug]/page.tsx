@@ -12,6 +12,7 @@ import { ContactSection } from "@/components/home/ContactSection";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { Reveal } from "@/components/ui/Reveal";
 import { SERVICE_CONTENT, getService } from "@/lib/services-content";
+import { HELP_PAGES } from "@/lib/help-content";
 import { ServiceAreaPersonalizer } from "@/components/personalization/AreaPersonalization";
 import { SITE, OG_IMAGE, TWITTER_IMAGE } from "@/lib/site";
 
@@ -167,6 +168,35 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           )}
         </div>
       </section>
+
+      {/* Repair searches often start as symptom searches, so the repairs page
+          crosslinks the help guides (the strategy's conversion pairing). */}
+      {s.slug === "boiler-repairs" && (
+        <section className="section bg-sunken" aria-labelledby="help-links-h">
+          <div className="container-page">
+            <h2 id="help-links-h" className="font-display text-xl font-bold">
+              Not sure what&rsquo;s wrong yet?
+            </h2>
+            <p className="mt-2 max-w-2xl leading-relaxed text-muted">
+              My plain-English guides cover the common faults, what&rsquo;s safe to check
+              yourself, and when to call.
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-3">
+              {HELP_PAGES.map((h) => (
+                <li key={h.slug}>
+                  <Link
+                    href={`/help/${h.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-border-strong bg-surface px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {h.navTitle}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Card blocks (e.g. "signs you need one") — their own alternating section */}
       {cardBlocks.map((b) => (

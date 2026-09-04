@@ -12,6 +12,7 @@ const AREA_LINKS = [
 ];
 
 const PAGES = [
+  { label: "Boiler help guides", href: "/help" },
   { label: "About Jamie", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
