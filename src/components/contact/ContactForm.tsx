@@ -6,6 +6,7 @@ import { Upload, X, CheckCircle2, Phone } from "lucide-react";
 import { SERVICE_OPTIONS, SITE } from "@/lib/site";
 import { compressImage } from "@/lib/compress-image";
 import { trackEvent } from "@/lib/analytics";
+import { AWAY, isAway } from "@/lib/away";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Errors = Record<string, string>;
@@ -99,10 +100,17 @@ export function ContactForm() {
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
         <h2 className="mt-4 font-display text-2xl font-bold">Thanks, I&apos;ve got your message.</h2>
-        <p className="mx-auto mt-2 max-w-md text-muted">
-          I&apos;ll be in touch shortly. Need me sooner? Call{" "}
-          <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
-        </p>
+        {isAway() ? (
+          <p className="mx-auto mt-2 max-w-md text-muted">
+            I&apos;m away until {AWAY.untilLabel}, so I&apos;ll reply when I&apos;m back.
+            There&apos;s no need to send it again. If you smell gas, call 0800 111 999.
+          </p>
+        ) : (
+          <p className="mx-auto mt-2 max-w-md text-muted">
+            I&apos;ll be in touch shortly. Need me sooner? Call{" "}
+            <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
+          </p>
+        )}
       </div>
     );
   }

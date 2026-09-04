@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { SITE } from "@/lib/site";
+import { AWAY, isAway } from "@/lib/away";
 
 export const runtime = "nodejs";
 
@@ -83,6 +84,41 @@ export async function POST(req: Request) {
         }),
       });
       if (!res.ok) throw new Error(`Resend ${res.status}`);
+
+      // Away auto-reply: only when the customer left an email, only inside the
+      // window, and never allowed to fail the enquiry itself.
+      if (email && isAway()) {
+        const fromDay = new Date(AWAY.from + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" });
+        const reply = [
+          `Hi ${name},`,
+          ``,
+          `Thanks for getting in touch with JDH Gas Services. I'm away from ${fromDay} until ${AWAY.untilLabel} and I'm not booking jobs in until I'm back. I'll reply to every message when I return, so there's no need to send it again.`,
+          ``,
+          `If you smell gas, call the National Gas Emergency line free on 0800 111 999 straight away.`,
+          ``,
+          `If your problem can't wait, the Gas Safe Register at www.gassaferegister.co.uk lists registered engineers near you.`,
+          ``,
+          `Jamie Hannah`,
+          `JDH Gas Services, Burgess Hill`,
+          `Gas Safe registered ${SITE.gasSafe}`,
+          `${SITE.phoneDisplay}`,
+        ].join("\n");
+        try {
+          const auto = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+            body: JSON.stringify({
+              from: process.env.CONTACT_FROM_EMAIL || "JDH Gas Website <enquiries@jdhgas.co.uk>",
+              to: [email],
+              subject: `Thanks for your enquiry: Jamie is away until ${AWAY.untilLabel}`,
+              text: reply,
+            }),
+          });
+          if (!auto.ok) console.error("[contact] away auto-reply failed:", auto.status);
+        } catch (e) {
+          console.error("[contact] away auto-reply failed:", e);
+        }
+      }
     } catch (e) {
       console.error("[contact] email send failed:", e);
       return NextResponse.json(

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { AwayBar } from "@/components/layout/AwayBar";
 
 export function TopBar() {
   return (
+    <AwayBar>
     <Link
       href="/contact?service=servicing"
       className="group block bg-ink text-inverse"
@@ -21,5 +23,6 @@ export function TopBar() {
         </span>
       </div>
     </Link>
+    </AwayBar>
   );
 }

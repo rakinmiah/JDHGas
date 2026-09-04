@@ -17,6 +17,7 @@ import {
   Phone,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { AWAY, isAway } from "@/lib/away";
 import { compressImage } from "@/lib/compress-image";
 import { trackEvent } from "@/lib/analytics";
 
@@ -174,10 +175,17 @@ export function HomeEnquiryForm() {
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
         <h3 className="mt-4 font-display text-2xl font-bold">Thanks, your quote request is in.</h3>
-        <p className="mx-auto mt-2 max-w-md text-muted">
-          I&apos;ll get back to you shortly with a price. Need me sooner? Call{" "}
-          <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
-        </p>
+        {isAway() ? (
+          <p className="mx-auto mt-2 max-w-md text-muted">
+            I&apos;m away until {AWAY.untilLabel}, so I&apos;ll reply with a price when I&apos;m back.
+            There&apos;s no need to send it again. If you smell gas, call 0800 111 999.
+          </p>
+        ) : (
+          <p className="mx-auto mt-2 max-w-md text-muted">
+            I&apos;ll get back to you shortly with a price. Need me sooner? Call{" "}
+            <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
+          </p>
+        )}
       </div>
     );
   }
