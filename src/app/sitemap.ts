@@ -6,6 +6,9 @@ import { HELP_PAGES } from "@/lib/help-content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  // /terms and /cookie-policy are noindexed (Aug 2026 data panel) so they must
+  // not be submitted here: sitemap + noindex together trigger GSC's
+  // "excluded by noindex" indexing-issue emails.
   const staticRoutes = [
     "",
     "/services",
@@ -14,8 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/reviews",
     "/contact",
     "/privacy-policy",
-    "/terms",
-    "/cookie-policy",
   ];
   const serviceRoutes = SERVICE_CONTENT.map((s) => `/services/${s.slug}`);
   const helpRoutes = ["/help", ...HELP_PAGES.map((h) => `/help/${h.slug}`)];
