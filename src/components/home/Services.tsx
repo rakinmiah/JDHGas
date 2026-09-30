@@ -28,7 +28,7 @@ export function Services() {
         </p>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Featured — boiler servicing: a wide ink banner carrying the £85 hook */}
+          {/* Featured — boiler servicing: a wide ink banner carrying the £95 hook */}
           <Reveal as="li" className="sm:col-span-2 lg:col-span-3">
             <Link
               href={featured.href}
@@ -45,7 +45,7 @@ export function Services() {
               </div>
               <div className="relative flex shrink-0 flex-col items-start gap-4 lg:items-end">
                 <span className="inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-4 py-1.5 text-sm font-bold text-ink">
-                  New customers from £85
+                  New customers from £95
                 </span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-inverse">
                   Learn more

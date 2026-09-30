@@ -225,7 +225,7 @@ export default async function LocalTownPage({
                       <div className="relative">
                         <BrandMark className="h-12 w-12" />
                         <span className="mt-5 inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-3.5 py-1 text-sm font-bold text-ink">
-                          New customers £85
+                          New customers £95
                         </span>
                         <p className="mt-4 leading-relaxed text-inverse/80">
                           A full Gas Safe service: no rushing, no skipped steps. Your annual check
