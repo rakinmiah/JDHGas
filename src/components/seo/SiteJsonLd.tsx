@@ -8,7 +8,7 @@ export async function SiteJsonLd() {
     "@type": "HVACBusiness",
     "@id": `${SITE.url}/#business`,
     name: SITE.name,
-    image: `${SITE.url}/images/jamie-portrait.jpg`,
+    image: `${SITE.url}/images/jamie-van-wide.jpg`,
     logo: `${SITE.url}/shield-logo.png`,
     url: `${SITE.url}/`,
     telephone: "+447544063330",

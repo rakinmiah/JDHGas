@@ -25,11 +25,11 @@ export function MeetJamie() {
           <Reveal className="relative mx-auto mt-5 w-full max-w-sm md:mx-0 md:mt-0 md:max-w-none">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] md:aspect-[3/4] lg:aspect-[4/5]">
               <Image
-                src="/images/jamie-portrait.jpg"
-                alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services"
+                src="/images/jamie-with-van.jpg"
+                alt="Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services, standing beside his JDH Gas van"
                 fill
                 sizes="(max-width: 768px) 90vw, 46vw"
-                className="object-cover object-[50%_25%]"
+                className="object-cover object-[50%_35%]"
               />
             </div>
             {/* On-the-job inset — real work, Gas Safe patch on show */}

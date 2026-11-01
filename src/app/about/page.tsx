@@ -38,6 +38,7 @@ const personSchema = {
   "@id": `${SITE.url}/about#jamie`,
   name: "Jamie Hannah",
   jobTitle: "Gas Safe Registered Engineer",
+  image: `${SITE.url}/images/jamie-with-van.jpg`,
   worksFor: { "@id": `${SITE.url}/#business` },
   knowsAbout: [
     "Boiler servicing",
@@ -78,14 +79,14 @@ export default function AboutPage() {
           <div className="order-1 md:order-2">
             <div className="mx-auto max-w-md md:mx-0 md:max-w-none">
               <p className="eyebrow mb-4 md:hidden">About</p>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-[28rem]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle md:aspect-auto md:h-[28rem]">
                 <Image
-                  src="/images/jamie-portrait.jpg"
-                  alt="Jamie Hannah, Gas Safe registered engineer and owner of JDH Gas Services"
+                  src="/images/jamie-van-wide.jpg"
+                  alt="Jamie Hannah, Gas Safe registered engineer and owner of JDH Gas Services, standing next to his JDH Gas van"
                   fill
                   priority
                   sizes="(max-width: 768px) 92vw, 50vw"
-                  className="object-cover object-[45%_48%]"
+                  className="object-cover object-[60%_75%]"
                 />
               </div>
             </div>

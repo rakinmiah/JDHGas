@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, Mail, Clock, MapPin, ShieldCheck, Star } from "lucide-react";
 import { WhatsAppGlyph } from "@/components/ui/icons";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -23,14 +24,28 @@ export default async function ContactPage() {
       <section className="border-b border-border-subtle bg-sunken">
         <div className="container-page py-10 md:py-14">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
-          <p className="eyebrow mt-6">Get in touch</p>
-          <h1 className="mt-2 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
-            Book a job or ask me anything
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Send a quick enquiry, add a photo of your boiler or appliance if you can, and I&apos;ll
-            get back to you with a clear answer or quote. Prefer to talk? Call or WhatsApp me.
-          </p>
+          <div className="mt-6 grid gap-8 md:grid-cols-[44fr_56fr] md:items-center md:gap-10 lg:gap-14">
+            <div>
+              <p className="eyebrow">Get in touch</p>
+              <h1 className="mt-2 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
+                Book a job or ask me anything
+              </h1>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+                Send a quick enquiry, add a photo of your boiler or appliance if you can, and I&apos;ll
+                get back to you with a clear answer or quote. Prefer to talk? Call or WhatsApp me.
+              </p>
+            </div>
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle">
+              <Image
+                src="/images/jdh-van.jpg"
+                alt="The JDH Gas Services van, with Jamie's phone number, email and website on the side"
+                fill
+                preload
+                sizes="(max-width: 768px) 92vw, 56vw"
+                className="object-cover object-[50%_70%]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
