@@ -12,7 +12,7 @@ Read this first, then `AGENTS.md`. Deeper reference lives in `design-system/`,
 **JDH Gas Services** — Jamie Hannah, a sole-trader **Gas Safe registered engineer
 (reg. 977838)** based in **Burgess Hill, West Sussex**. Homeowners + landlords.
 
-- Services: boiler servicing (£85 first service for new customers), landlord gas
+- Services: boiler servicing (£105 first service for new customers), landlord gas
   safety certificates (CP12), boiler & heating repairs, boiler/heating
   installation, gas hob & cooker installs.
 - Phone **07544 063330** (calls + WhatsApp). Most leads arrive by phone/WhatsApp,
