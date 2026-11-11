@@ -46,9 +46,9 @@ html {
      and reliably. Smooth-scroll is deliberately NOT set: animating the long
      jump to the footer form fights the lazy-loading images and reveal
      animations above it, and the scroll gets cancelled mid-flight.
-     scroll-padding-top clears the sticky header (TopBar + SiteHeader ≈ 100px)
+     scroll-padding-top clears the sticky header (SiteHeader, 64px)
      so the form heading isn't hidden underneath. */
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 5.5rem;
 }
 
 @layer base {

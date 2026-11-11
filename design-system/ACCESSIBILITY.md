@@ -6,7 +6,7 @@ System-wide rules inherited by every page. Conformance target: **WCAG 2.2 AA**. 
 In `layout.tsx`: `<a href="#main">Skip to content</a>`, `sr-only` until focused, then visible (`focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[600] focus:bg-ink focus:text-inverse`). Target: `<main id="main">`. Keep on every page (it's in the layout).
 
 ## Landmarks
-- `<header>` (banner) = TopBar + SiteHeader · `<nav aria-label="Primary">` inside.
+- `<header>` (banner) = SiteHeader · `<nav aria-label="Primary">` inside.
 - `<main id="main">` = page content (one per page).
 - `<footer role="contentinfo">` = SiteFooter · `<nav aria-label="Footer">` inside.
 - Content sections use `<section aria-labelledby="…-h">`. Use ARIA roles only where HTML5 doesn't fit (e.g. the mobile menu `role="dialog"`).

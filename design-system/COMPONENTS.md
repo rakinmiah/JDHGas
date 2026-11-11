@@ -204,7 +204,10 @@ Every input has a `<label>`. Errors associated via `aria-describedby`. Required 
 
 ---
 
-## TopBar (offer strip)
+## TopBar (offer strip) — REMOVED Nov 2026
+Removed with the boiler service price: with no offer to promote it only competed with the header and hero CTAs. Don't reintroduce a site-wide strip without a real, current offer.
+
+<!-- previous spec kept below for reference -->
 
 **Purpose** — sticky promotional strip above the header.
 **Layer** — region · **Status** — stable · **Source** — `src/components/layout/TopBar.tsx`.

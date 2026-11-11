@@ -3,7 +3,7 @@
 The one-shot kit. Each page below lists: **purpose · section stack (patterns/components) · H1 · schema · acceptance gate.** Build only from `COMPONENTS.md` + `PATTERNS.md`; copy follows `VOICE.md`; structure follows `ACCESSIBILITY.md`.
 
 **Universal rules (every page):**
-- Wrapped by the shared chrome: `TopBar` + `SiteHeader` (sticky) + `<main id="main">` + `SiteFooter` (already in `layout.tsx`).
+- Wrapped by the shared chrome: `SiteHeader` (sticky) + `<main id="main">` + `SiteFooter` (already in `layout.tsx`).
 - Exactly **one H1**, in the page hero (P5). Section heads are H2; sub-sections H3; no skipped levels.
 - Every page exports its own `metadata` (title ≤60, description ≤160, `alternates.canonical`). Sub-pages override the layout default.
 - Section rhythm per **P2**; close with an ink CTA (**P6**) unless the page is legal/utility.

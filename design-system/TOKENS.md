@@ -115,7 +115,7 @@ The homepage hard-codes motion values via framer-motion + Tailwind `transition` 
 | Base content | auto | sections |
 | Map card isolate | `z-0` + `isolation:isolate` | ServiceArea map (contains Leaflet's internal z-indexes) |
 | Hero copy card | `z-10` | overlaps mobile hero image |
-| Sticky header wrapper | `z-[200]` | TopBar + SiteHeader |
+| Sticky header wrapper | `z-[200]` | SiteHeader |
 | Mobile menu overlay | `z-[300]` | SiteHeader dialog |
 | Skip link (focused) | `z-[600]` | layout |
 

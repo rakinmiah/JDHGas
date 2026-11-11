@@ -61,7 +61,7 @@ Two-column (P3): one column a framed media card (`rounded-lg border bg-sunken p-
 ## Layer taxonomy
 - **Primitive:** Button, Icon, Eyebrow, Reveal, IconSquare, Pill/Chip, Badge, Stack/Inline/Cluster/Grid.
 - **Composite:** Card/FeatureBanner, ReviewCard, RatingBlock, TrustPoint, AccordionItem, FormField/PhotoUpload, AreaChip.
-- **Region:** TopBar, SiteHeader, SiteFooter, Hero/PageHero, all `*Section`s, CoverageMap, EnquiryForm.
+- **Region:** SiteHeader, SiteFooter, Hero/PageHero, all `*Section`s, CoverageMap, EnquiryForm.
 A component that doesn't fit is a smell — resolve before shipping.
 
 ## Nesting rules

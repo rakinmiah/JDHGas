@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { TopBar } from "@/components/layout/TopBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
@@ -77,7 +76,6 @@ export default function RootLayout({
           Skip to content
         </a>
         <div className="sticky top-0 z-[200]">
-          <TopBar />
           <SiteHeader />
         </div>
         <main id="main" className="flex-1">
