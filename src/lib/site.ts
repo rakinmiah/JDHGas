@@ -190,7 +190,7 @@ export const REVIEWS = [
 export const FAQS = [
   {
     q: "How much is a boiler service?",
-    a: "A boiler service for new customers starts at £105. It's a full Gas Safe check. For repairs or a gas safety certificate, just call or WhatsApp and I'll give you a clear quote first.",
+    a: "It depends on your boiler and what it needs, so just call or WhatsApp and I'll give you a clear price before booking. It's a full Gas Safe check, and the same goes for repairs or a gas safety certificate: a clear quote first.",
   },
   {
     q: "Do I really need my boiler serviced every year?",

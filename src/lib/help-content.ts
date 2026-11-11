@@ -254,7 +254,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         q: "Will an annual service catch these noises early?",
-        a: "Usually, yes. Most noisy-boiler calls I attend would have been caught at a service before they got loud. An annual service is from £105 for new customers.",
+        a: "Usually, yes. Most noisy-boiler calls I attend would have been caught at a service before they got loud.",
       },
     ],
     whatsappText: "Hi Jamie, my boiler is making a strange noise. ",

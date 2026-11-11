@@ -75,9 +75,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     provider: { "@id": `${SITE.url}/#business` },
     areaServed: ["Burgess Hill", "Haywards Heath", "Hassocks", "Cuckfield", "Hove", "Portslade", "Lancing"],
     description: s.metaDescription,
-    ...(s.offerPrice
-      ? { offers: { "@type": "Offer", price: s.offerPrice, priceCurrency: "GBP", description: "First boiler service for new customers" } }
-      : {}),
   };
 
   const others = SERVICE_CONTENT.filter((o) => o.slug !== s.slug);

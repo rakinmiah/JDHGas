@@ -117,16 +117,6 @@ export default async function LocalTownPage({
       // type for Google review snippets (flagged by Search Console). Review
       // markup lives on the HVACBusiness entity in SiteJsonLd instead; the
       // town reviews remain as visible page content.
-      ...(svc.offerPrice
-        ? {
-            offers: {
-              "@type": "Offer",
-              price: svc.offerPrice,
-              priceCurrency: "GBP",
-              description: "First boiler service for new customers",
-            },
-          }
-        : {}),
     })),
   };
 
@@ -225,7 +215,7 @@ export default async function LocalTownPage({
                       <div className="relative">
                         <BrandMark className="h-12 w-12" />
                         <span className="mt-5 inline-flex items-center whitespace-nowrap rounded-[var(--radius-pill)] bg-flame px-3.5 py-1 text-sm font-bold text-ink">
-                          New customers £105
+                          Book a boiler service
                         </span>
                         <p className="mt-4 leading-relaxed text-inverse/80">
                           A full Gas Safe service: no rushing, no skipped steps. Your annual check
