@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <LegalShell title="Privacy Policy" href="/privacy-policy" updated="26 June 2026">
+    <LegalShell title="Privacy Policy" href="/privacy-policy" updated="18 November 2026">
       <p>
         This privacy policy explains how <strong>JDH Gas Services</strong> (&ldquo;I&rdquo;, &ldquo;me&rdquo;, &ldquo;my&rdquo;)
         collects and uses your personal information when you use this website or get in touch. JDH
@@ -46,6 +46,8 @@ export default function PrivacyPolicy() {
       <ul>
         <li><strong>Resend</strong>: delivers enquiry emails to me.</li>
         <li><strong>Vercel</strong>: hosts this website.</li>
+        <li><strong>QuoteLion (GrowthLion, a trading name of Off The Tools Ltd)</strong>: runs the online booking calendar on the booking page (/book). If you book a boiler service there, the details you enter are collected and processed by them to arrange your visit.</li>
+        <li><strong>CARTO and OpenStreetMap</strong>: supply the background images on our coverage maps. Your browser fetches them directly, so they receive your IP address, as any website you load does. They don&apos;t set cookies.</li>
         <li><strong>Google Analytics</strong>: provides anonymous website usage statistics. It uses cookies only if you accept them; if you decline, it still collects anonymous, cookieless measurements that don&apos;t identify you.</li>
         <li><strong>Microsoft Clarity</strong>: provides anonymised heatmaps and session insights, only if you accept. It masks all text and form fields, so nothing you type is recorded, and it does not identify you.</li>
       </ul>

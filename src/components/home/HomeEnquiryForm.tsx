@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Flame,
   ClipboardCheck,
@@ -19,6 +20,7 @@ import {
 import { SITE } from "@/lib/site";
 import { compressImage } from "@/lib/compress-image";
 import { trackEvent } from "@/lib/analytics";
+import { BOOK_HREF } from "@/lib/booking";
 
 const SERVICES = [
   { value: "Boiler servicing", label: "Boiler servicing", icon: Flame },
@@ -239,6 +241,15 @@ export function HomeEnquiryForm() {
       <div className={step === 2 ? "" : "hidden"}>
         <h3 className="font-display text-lg font-semibold">About the job</h3>
         <div className="mt-4 space-y-5">
+          {service === "Boiler servicing" && (
+            <p className="rounded-[var(--radius-md)] border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-sm leading-relaxed text-ink">
+              <span className="font-semibold">Just need your annual service?</span> You can{" "}
+              <Link href={BOOK_HREF} className="font-semibold text-primary underline underline-offset-2 hover:text-primary-hover">
+                book it online
+              </Link>{" "}
+              and pick your arrival window.
+            </p>
+          )}
           <div>
             <label htmlFor="postcode" className={labelCls}>Postcode</label>
             <input id="postcode" name="postcode" autoComplete="postal-code" className={inputCls} aria-invalid={!!errors.postcode} />

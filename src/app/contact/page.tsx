@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail, Clock, MapPin, ShieldCheck, Star } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, Clock, MapPin, ShieldCheck, Star, CalendarCheck, ArrowRight } from "lucide-react";
 import { WhatsAppGlyph } from "@/components/ui/icons";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CoverageMap } from "@/components/home/CoverageMap";
 import { SITE } from "@/lib/site";
+import { BOOK_HREF } from "@/lib/booking";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const metadata: Metadata = {
@@ -63,6 +65,26 @@ export default async function ContactPage() {
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+            {/* Online booking (boiler servicing only) */}
+            <Link
+              href={BOOK_HREF}
+              className="group flex items-start gap-4 rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-5 transition-colors hover:border-primary"
+            >
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-md)] bg-surface text-primary shadow-[var(--shadow-sm)]">
+                <CalendarCheck className="h-5 w-5" aria-hidden />
+              </span>
+              <span>
+                <span className="block font-display text-base font-semibold text-ink">Booking a boiler service?</span>
+                <span className="mt-1 block text-sm leading-relaxed text-muted">
+                  Skip the form: book online and pick your arrival window.
+                </span>
+                <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                  Book online
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                </span>
+              </span>
+            </Link>
+
             {/* Ink contact panel */}
             <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-ink p-6 text-inverse shadow-[var(--shadow-md)] md:p-7">
               <div

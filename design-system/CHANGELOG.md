@@ -3,7 +3,10 @@
 All notable changes to the JDH Gas design system. Semver: MAJOR breaking · MINOR new component · PATCH token/variant tweak.
 
 ## [Unreleased]
-- Nothing yet.
+### Added
+- **`/book` + BookingWidget**: embedded QuoteLion/BookLion booking for the annual boiler service (iframe resize handshake, GA4 intent events). `PageHero` gains `primaryCta="book"`; MobileActionBar also stops at `[data-mobile-bar-stop]`.
+### Fixed
+- **CoverageMap tiles**: CARTO needs a key now (`NEXT_PUBLIC_CARTO_BASEMAPS_KEY`), with an OpenStreetMap fallback; hairline tile seams on 2x/3x screens removed (`will-change` on the tile container).
 
 ## [1.0.1] — 2026-05-26
 ### Fixed

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, Hammer, Cog, Volume2, Timer, Thermometer, RotateCcw, TrendingUp, type LucideIcon } from "lucide-react";
+import { ArrowRight, CalendarCheck, MapPin, Phone, Flame, ClipboardCheck, Wrench, CookingPot, Hammer, Cog, Volume2, Timer, Thermometer, RotateCcw, TrendingUp, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { PageHero } from "@/components/sections/PageHero";
@@ -15,6 +15,7 @@ import { SERVICE_CONTENT, getService } from "@/lib/services-content";
 import { HELP_PAGES } from "@/lib/help-content";
 import { ServiceAreaPersonalizer } from "@/components/personalization/AreaPersonalization";
 import { SITE, OG_IMAGE, TWITTER_IMAGE } from "@/lib/site";
+import { BOOK_HREF } from "@/lib/booking";
 
 const AREAS = [
   "Burgess Hill",
@@ -107,7 +108,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         imageAlt={s.imageAlt}
         // Repair visitors are the site's best converters and WhatsApp is the
         // top lead channel, so it leads on this page (GA4, Aug 2026 panel).
-        primaryCta={s.slug === "boiler-repairs" ? "whatsapp" : "call"}
+        // Boiler servicing is the one job bookable online, so booking leads there.
+        primaryCta={s.slug === "boiler-repairs" ? "whatsapp" : s.slug === "boiler-servicing" ? "book" : "call"}
       />
 
       {/* Sticky context column + numbered scrolling list */}
@@ -142,9 +144,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         {b.body && <p className="mt-3 leading-relaxed text-inverse/80">{b.body}</p>}
                       </div>
                     ))}
+                    {s.slug === "boiler-servicing" && (
+                      <Button href={BOOK_HREF} className="mt-7 w-full">
+                        <CalendarCheck className="h-5 w-5" aria-hidden /> Book online
+                      </Button>
+                    )}
                     <Button
                       href={SITE.phoneHref}
-                      className="mt-7 w-full"
+                      variant={s.slug === "boiler-servicing" ? "ghostInverse" : "primary"}
+                      className={`w-full ${s.slug === "boiler-servicing" ? "mt-3" : "mt-7"}`}
                       aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
                     >
                       <Phone className="h-5 w-5" aria-hidden /> Call to book

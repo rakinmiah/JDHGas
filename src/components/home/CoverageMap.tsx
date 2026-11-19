@@ -12,6 +12,25 @@ type Town = {
 
 const BASE = { name: "Burgess Hill", lat: 50.9577, lng: -0.1281 };
 
+// Background map tiles. Since autumn 2026 CARTO's basemaps need a free API key:
+// without one, every tile comes back as an "API KEY REQUIRED" watermark (still
+// HTTP 200, so Leaflet can't tell it failed). Business use is free up to 1M tile
+// requests a month, far beyond this site's traffic. The key is public by design
+// (it travels in every tile URL); restrict it to jdhgas.co.uk in CARTO's
+// dashboard. Until it's set (local dev, or before it's added in Vercel), fall
+// back to OpenStreetMap's own tiles: no key, but meant for light use only.
+const CARTO_KEY = process.env.NEXT_PUBLIC_CARTO_BASEMAPS_KEY;
+const OSM_CREDIT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const TILES = CARTO_KEY
+  ? {
+      url: `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(CARTO_KEY)}`,
+      attribution: `${OSM_CREDIT}, &copy; <a href="https://carto.com/attributions">CARTO</a>`,
+    }
+  : {
+      url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution: OSM_CREDIT,
+    };
+
 // The towns with live area pages. Markers link through to each page.
 // Keep in sync with LOCAL_TOWNS in src/lib/local-pages.ts as more towns launch.
 const TOWNS: Town[] = [
@@ -50,12 +69,7 @@ export function CoverageMap() {
       });
       L.control.zoom({ position: "topright" }).addTo(map);
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 19,
-        subdomains: "abcd",
-      }).addTo(map);
+      L.tileLayer(TILES.url, { attribution: TILES.attribution, maxZoom: 19 }).addTo(map);
 
       // town markers
       for (const t of TOWNS) {
@@ -105,7 +119,13 @@ export function CoverageMap() {
   return (
     <div
       ref={ref}
-      className="relative z-0 isolate h-full w-full rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-container]:rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-tile-pane]:[filter:saturate(1.15)]"
+      // will-change on the tile container: the map often sits at a fractional
+      // x position (fr grid columns), which left hairline seams between tiles on
+      // 2x/3x screens. A composited layer is snapped to whole device pixels.
+      className={`relative z-0 isolate h-full w-full rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-container]:rounded-[calc(var(--radius-lg)-0.25rem)] [&_.leaflet-tile-container]:will-change-transform ${
+        // CARTO Voyager is pale, so it gets a little colour; OSM's tiles don't need it.
+        CARTO_KEY ? "[&_.leaflet-tile-pane]:[filter:saturate(1.15)]" : ""
+      }`}
       role="img"
       aria-label="Map of the service area centred on Burgess Hill, covering Haywards Heath, Hassocks, Hurstpierpoint, Henfield, Lewes, Hove and Portslade"
     />

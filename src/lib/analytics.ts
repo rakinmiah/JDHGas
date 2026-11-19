@@ -11,6 +11,14 @@
 //   whatsapp_click   a WhatsApp CTA was pressed   (any wa.me link, site-wide)
 //   phone_click      a call CTA was pressed       (any tel: link, site-wide)
 //   enquiry_submit   an enquiry form was sent      ({ form: "contact" | "home_enquiry" })
+//
+// Online booking (/book, the QuoteLion widget) adds intent signals. They are
+// NOT conversions: the widget never tells us a booking was completed, so
+// confirmed bookings only exist in QuoteLion / ServiceM8.
+//
+//   booking_start          first step change inside the booking widget
+//   booking_step           every step change ({ step: 1, 2, 3… screens deep })
+//   booking_open_external  the "open it in a new tab" fallback link
 
 declare global {
   interface Window {

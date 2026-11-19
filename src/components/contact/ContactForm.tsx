@@ -2,10 +2,12 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Upload, X, CheckCircle2, Phone } from "lucide-react";
 import { SERVICE_OPTIONS, SITE } from "@/lib/site";
 import { compressImage } from "@/lib/compress-image";
 import { trackEvent } from "@/lib/analytics";
+import { BOOK_HREF } from "@/lib/booking";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Errors = Record<string, string>;
@@ -146,6 +148,15 @@ export function ContactForm() {
           {SERVICE_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
         </select>
         {err("service") && <p id="service-e" className="mt-1 text-sm text-[#DC2626]">{err("service")}</p>}
+        {service === "Boiler servicing" && (
+          <p className="mt-2 rounded-[var(--radius-md)] border border-primary/20 bg-primary/5 px-3.5 py-2.5 text-sm leading-relaxed text-ink">
+            <span className="font-semibold">Just need your annual service?</span> You can{" "}
+            <Link href={BOOK_HREF} className="font-semibold text-primary underline underline-offset-2 hover:text-primary-hover">
+              book it online
+            </Link>{" "}
+            and pick your arrival window.
+          </p>
+        )}
       </div>
 
       <div>

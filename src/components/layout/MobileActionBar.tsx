@@ -8,8 +8,9 @@ import { SITE } from "@/lib/site";
 /**
  * Thumb-reach Call / WhatsApp bar, mobile only. Slides up once the visitor has
  * scrolled past the hero, and tucks away again as they reach the closing
- * enquiry section (id="enquiry") or the very bottom of the page, so it never
- * covers the footer. Fixed + transform, so it adds no layout shift. Clicks are
+ * enquiry section (id="enquiry"), any element marked `data-mobile-bar-stop`
+ * (the booking widget, whose own buttons it would cover) or the very bottom
+ * of the page, so it never covers the footer. Fixed + transform, so it adds no layout shift. Clicks are
  * picked up by the site-wide GA4 listener (phone_click / whatsapp_click).
  */
 export function MobileActionBar() {
@@ -17,7 +18,7 @@ export function MobileActionBar() {
 
   useEffect(() => {
     const onScroll = () => {
-      const enquiry = document.getElementById("enquiry");
+      const enquiry = document.querySelector("#enquiry, [data-mobile-bar-stop]");
       const enquiryClose = enquiry
         ? enquiry.getBoundingClientRect().top < window.innerHeight * 0.85
         : false;

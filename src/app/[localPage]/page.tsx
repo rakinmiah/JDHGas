@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Star, Wrench, Hammer, CookingPot, type LucideIcon } from "lucide-react";
+import { ArrowRight, CalendarCheck, MapPin, Phone, Star, Wrench, Hammer, CookingPot, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { PageHero } from "@/components/sections/PageHero";
@@ -30,6 +30,7 @@ import {
 } from "@/lib/local-pages";
 import type { ServiceContent } from "@/lib/services-content";
 import { SITE, OG_IMAGE, TWITTER_IMAGE } from "@/lib/site";
+import { BOOK_HREF } from "@/lib/booking";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const dynamicParams = false;
@@ -221,9 +222,13 @@ export default async function LocalTownPage({
                           A full Gas Safe service: no rushing, no skipped steps. Your annual check
                           keeps the boiler safe, efficient and within its warranty.
                         </p>
+                        <Button href={BOOK_HREF} className="mt-6 w-full">
+                          <CalendarCheck className="h-5 w-5" aria-hidden /> Book online
+                        </Button>
                         <Button
                           href={SITE.phoneHref}
-                          className="mt-6 w-full"
+                          variant="ghostInverse"
+                          className="mt-3 w-full"
                           aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
                         >
                           <Phone className="h-5 w-5" aria-hidden /> Call to book

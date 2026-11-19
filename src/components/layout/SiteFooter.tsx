@@ -12,6 +12,7 @@ const AREA_LINKS = [
 ];
 
 const PAGES = [
+  { label: "Book a boiler service", href: "/book" },
   { label: "Boiler help guides", href: "/help" },
   { label: "About Jamie", href: "/about" },
   { label: "Reviews", href: "/reviews" },

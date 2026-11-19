@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, CalendarCheck } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
@@ -7,6 +7,7 @@ import { GasSafeBadge } from "@/components/ui/GasSafeBadge";
 import { HeroSocialProof } from "@/components/sections/HeroSocialProof";
 import type { DisplayReview } from "@/lib/google-reviews";
 import { SITE } from "@/lib/site";
+import { BOOK_HREF } from "@/lib/booking";
 
 export function PageHero({
   eyebrow,
@@ -29,17 +30,28 @@ export function PageHero({
   rating?: string;
   reviewCount?: number;
   reviews?: DisplayReview[];
-  /** Which contact CTA leads. WhatsApp is the site's top lead channel, so
-      pages where repair intent dominates can put it first. */
-  primaryCta?: "call" | "whatsapp";
+  /** Which CTA leads. WhatsApp is the site's top lead channel, so pages where
+      repair intent dominates can put it first; "book" leads with online
+      booking (boiler servicing, the one job bookable online). */
+  primaryCta?: "call" | "whatsapp" | "book";
 }) {
+  const booking = primaryCta === "book";
   const callBtn = (
     <Button
       href={SITE.phoneHref}
+      variant={booking ? "secondary" : "primary"}
       className={primaryCta === "call" ? "w-full md:w-auto" : "flex-1 md:flex-none"}
       aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
     >
-      <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phoneDisplay}
+      <Phone className="h-5 w-5" aria-hidden />
+      {booking ? (
+        <>
+          <span className="md:hidden">Call</span>
+          <span className="hidden md:inline">Call {SITE.phoneDisplay}</span>
+        </>
+      ) : (
+        <>Call {SITE.phoneDisplay}</>
+      )}
     </Button>
   );
   const whatsappBtn = (
@@ -51,7 +63,17 @@ export function PageHero({
       WhatsApp
     </Button>
   );
-  const buttons = (
+  const buttons = booking ? (
+    <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+      <Button href={BOOK_HREF} className="w-full md:w-auto">
+        <CalendarCheck className="h-5 w-5" aria-hidden /> Book online
+      </Button>
+      <div className="flex gap-3 md:contents">
+        {callBtn}
+        {whatsappBtn}
+      </div>
+    </div>
+  ) : (
     <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
       {primaryCta === "whatsapp" ? whatsappBtn : callBtn}
       <div className="flex gap-3 md:contents">

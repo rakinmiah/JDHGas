@@ -156,6 +156,7 @@ button, **not a completed call** — it's a floor, and GBP map-pack calls are in
 | `NEXT_PUBLIC_GA_ID` | GA4 (public by design; defaults in code). |
 | `NEXT_PUBLIC_CLARITY_ID` | Clarity (public by design; defaults in code). |
 | `GOOGLE_SITE_VERIFICATION` | Optional GSC meta tag. |
+| `NEXT_PUBLIC_CARTO_BASEMAPS_KEY` | Coverage-map tiles (CARTO Voyager). Free key, business use free to 1M tiles/month. Without it the maps fall back to OpenStreetMap tiles. Public by design; restrict to jdhgas.co.uk in CARTO's dashboard. Redeploy after setting. |
 
 ---
 
@@ -228,6 +229,26 @@ Ellerton). Map pins + postcode prefixes updated (RH17 → Cuckfield; RH13 → "l
    that's the doorway-page pattern we've deliberately avoided.
 5. **Photo library:** ~10 unused job photos in `Imagery/`. No page currently lacks a
    hero, so they're stock. A "Recent work" gallery is the obvious use if wanted.
+6. **Online booking (live 19 Nov 2026).** `/book` embeds Jamie's QuoteLion/BookLion
+   widget (`src/lib/booking.ts`, `components/booking/BookingWidget.tsx`), a reimplementation
+   of QuoteLion's official inline embed (`iframe[data-booklion-inline]` + their
+   `quotelion.co.uk/widget/booklion.js`: same v1 protocol, canonical origin
+   `https://quotelion.co.uk`). Their floating "Book now" button snippet was deliberately not
+   used (fixed bottom-right at max z-index over the mobile Call/WhatsApp bar, forced styling,
+   shows on every page). Only the annual boiler service is bookable there. **Still for Jamie
+   to change in QuoteLion:** the business name "Jamie Hannah" → "JDH Gas Services"; the
+   "Fixed Price, paid when you book" label (the widget's own copy says payment comes later
+   by ServiceM8 invoice); and the flow shows prices (service configured at £139 with a £99
+   deposit; radiator add-on +£60), which the site itself no longer does.
+   The widget never reports a completed booking, so GA4 sees `booking_start`/`booking_step`
+   only; real bookings are in QuoteLion/ServiceM8.
+7. **Coverage map tiles (broken 18 Nov 2026, fixed 19 Nov).** CARTO now requires a free API
+   key; without one every tile is an "API KEY REQUIRED" watermark (HTTP 200, so nothing errors).
+   `CoverageMap` uses CARTO only when `NEXT_PUBLIC_CARTO_BASEMAPS_KEY` is set and otherwise
+   falls back to OpenStreetMap's own tiles (fine for light use, softer on retina). Rakin
+   requests the key at carto.com/basemaps/apikey, restricts it to jdhgas.co.uk, adds it in
+   Vercel and redeploys. Check: a live tile over 2049 bytes means the key works (the
+   watermark is exactly 2049).
 
 ---
 

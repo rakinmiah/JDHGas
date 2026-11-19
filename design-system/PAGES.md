@@ -68,6 +68,13 @@ The one-shot kit. Each page below lists: **purpose · section stack (patterns/co
 **Schema:** `BreadcrumbList` + `ContactPage`; business contact already in `SiteJsonLd`.
 **Acceptance:** ✓ full form posts to `/api/contact` with photo upload ✓ all fields labelled, errors associated ✓ Call/WhatsApp/email present as real links ✓ honeypot retained ✓ one H1 ✓ axe clean.
 
+## /book — Online booking (boiler servicing)
+**Purpose:** self-serve booking for the one job bookable online (annual boiler service), via Jamie's QuoteLion/BookLion widget.
+**Stack:** sunken hero (breadcrumbs, H1 "Book a boiler service", lead, GasSafeBadge + two trust points; desktop-only "Need something else?" card) → **ink section with `BookingWidget`** (iframe + `booklion:init` handshake, auto-height from `booklion:resize`, scroll-to-top on `booklion:scroll`) → footer. **No ContactSection**: a second form would compete with the booking. The section carries `data-mobile-bar-stop` so the sticky mobile Call/WhatsApp bar never covers the widget's buttons.
+**SEO:** `noindex, follow` (a tool, not content; `/services/boiler-servicing` is the page that ranks) and not in the sitemap.
+**Entry points:** boiler servicing page (hero leads with "Book online" via `PageHero primaryCta="book"`, plus the sticky side panel), town-page servicing card, both enquiry forms when "Boiler servicing" is picked, the contact-page aside, and the footer.
+**Analytics:** `booking_start` / `booking_step` / `booking_open_external` are intent signals only; the widget sends no completion event, so confirmed bookings live in QuoteLion/ServiceM8.
+
 ## /privacy-policy, /terms, /cookie-policy — Legal
 **Purpose:** compliance; plain-language.
 **Stack:** PageHero (eyebrow "Legal", H1 = doc title, last-updated line) → `.legal` typographic block (H2/H3, paragraphs, lists, links per the `.legal` styles in `globals.css`). No marketing CTA; a quiet "questions? contact" link is fine.
