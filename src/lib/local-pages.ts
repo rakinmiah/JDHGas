@@ -75,7 +75,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "RH16",
     nearby: ["Lindfield", "Cuckfield", "Wivelsfield"],
     intro:
-      "Need a boiler serviced, a landlord certificate or a gas engineer in Haywards Heath? I'm Jamie Hannah, a Gas Safe registered engineer based a short drive away in Burgess Hill, covering all of Haywards Heath, from the Victorian terraces around the station and Bentswood to the newer homes near the Princess Royal Hospital. Same engineer every visit, honest advice and a proper job done. Call 07544 063330 to book.",
+      `Need a boiler serviced, a landlord certificate or a gas engineer in Haywards Heath? I'm Jamie Hannah, a Gas Safe registered engineer based a short drive away in Burgess Hill, covering all of Haywards Heath, from the Victorian terraces around the station and Bentswood to the newer homes near the Princess Royal Hospital. Same engineer every visit, honest advice and a proper job done. Call ${SITE.phoneDisplay} to book.`,
     areas: [
       "the station & Boltro Road",
       "Bentswood",
@@ -119,7 +119,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN6",
     nearby: ["Keymer", "Ditchling", "Hurstpierpoint"],
     intro:
-      "Looking for a gas engineer in Hassocks? I'm Jamie Hannah, Gas Safe registered and based just up the road in Burgess Hill, so Hassocks is one of my closest patches: usually a quick trip to Stonepound crossroads, Adastra Park or out towards Keymer. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer each time. Call 07544 063330.",
+      `Looking for a gas engineer in Hassocks? I'm Jamie Hannah, Gas Safe registered and based just up the road in Burgess Hill, so Hassocks is one of my closest patches: usually a quick trip to Stonepound crossroads, Adastra Park or out towards Keymer. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer each time. Call ${SITE.phoneDisplay}.`,
     areas: [
       "Stonepound crossroads",
       "Adastra Park",
@@ -162,7 +162,7 @@ export const LOCAL_TOWNS: Town[] = [
     nearby: ["Portslade", "Brighton"],
     coast: true,
     intro:
-      "Need a Gas Safe engineer in Hove? I'm Jamie Hannah, based in Burgess Hill and covering Hove as part of my coastal patch. Hove's mix of mansion flats, Victorian conversions and family homes keeps the work varied, from awkward flat installs to straightforward combi services. Boiler servicing, landlord CP12s and repairs, done properly with honest advice. Call 07544 063330 to book.",
+      `Need a Gas Safe engineer in Hove? I'm Jamie Hannah, based in Burgess Hill and covering Hove as part of my coastal patch. Hove's mix of mansion flats, Victorian conversions and family homes keeps the work varied, from awkward flat installs to straightforward combi services. Boiler servicing, landlord CP12s and repairs, done properly with honest advice. Call ${SITE.phoneDisplay} to book.`,
     serviceAngles: {
       "gas-safety-certificate":
         "Hove has one of the busiest rental markets on the coast, so I make landlord CP12s easy: digital certificates by email, free renewal reminders, and access arranged directly with tenants or your agent.",
@@ -198,7 +198,7 @@ export const LOCAL_TOWNS: Town[] = [
     nearby: ["Hove", "Southwick"],
     coast: true,
     intro:
-      "After a gas engineer in Portslade? I'm Jamie Hannah, Gas Safe registered in Burgess Hill, covering Portslade, from the old village up to the seafront, alongside neighbouring Hove. Boiler servicing, landlord certificates, repairs and installs, all done by the same engineer with honest advice and a tidy finish. Call 07544 063330.",
+      `After a gas engineer in Portslade? I'm Jamie Hannah, Gas Safe registered in Burgess Hill, covering Portslade, from the old village up to the seafront, alongside neighbouring Hove. Boiler servicing, landlord certificates, repairs and installs, all done by the same engineer with honest advice and a tidy finish. Call ${SITE.phoneDisplay}.`,
     serviceAngles: {
       "gas-safety-certificate":
         "Landlord CP12 certificates across Portslade and BN41: a digital copy by email, free renewal reminders and access sorted with your tenants.",
@@ -229,7 +229,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN6",
     nearby: ["Hassocks", "Sayers Common", "Albourne"],
     intro:
-      "Looking for a Gas Safe engineer in Hurstpierpoint? I'm Jamie Hannah, based just over in Burgess Hill, so Hurstpierpoint is one of my closest patches: an easy run to the High Street, Western Road or out towards Sayers Common. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer each visit. Call 07544 063330.",
+      `Looking for a Gas Safe engineer in Hurstpierpoint? I'm Jamie Hannah, based just over in Burgess Hill, so Hurstpierpoint is one of my closest patches: an easy run to the High Street, Western Road or out towards Sayers Common. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer each visit. Call ${SITE.phoneDisplay}.`,
     areas: ["the High Street", "Western Road", "Cuckfield Road"],
     serviceAngles: {
       "gas-safety-certificate":
@@ -273,7 +273,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN7",
     nearby: ["Ringmer", "Kingston", "Ditchling"],
     intro:
-      "Need a Gas Safe engineer in Lewes? I'm Jamie Hannah, covering the county town from my Burgess Hill base. Lewes runs from steep-street period houses near the Castle and Cliffe to the newer estates out towards Landport and Nevill, so I see everything from older system boilers to modern combis. Boiler servicing, landlord CP12s, repairs and installs: same engineer, honest advice, tidy work. Call 07544 063330.",
+      `Need a Gas Safe engineer in Lewes? I'm Jamie Hannah, covering the county town from my Burgess Hill base. Lewes runs from steep-street period houses near the Castle and Cliffe to the newer estates out towards Landport and Nevill, so I see everything from older system boilers to modern combis. Boiler servicing, landlord CP12s, repairs and installs: same engineer, honest advice, tidy work. Call ${SITE.phoneDisplay}.`,
     areas: ["the Castle & Cliffe", "Landport", "Nevill", "Wallands"],
     serviceAngles: {
       "gas-safety-certificate":
@@ -309,7 +309,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN5",
     nearby: ["Small Dole", "Woodmancote", "Partridge Green"],
     intro:
-      "After a Gas Safe engineer in Henfield? I'm Jamie Hannah, covering Henfield and the surrounding villages from nearby Burgess Hill. From the High Street and village cottages to the newer closes off the Brighton Road, I look after boilers and heating of every age. Servicing, landlord certificates, repairs and installs, all done properly by the same engineer with a tidy finish. Call 07544 063330.",
+      `After a Gas Safe engineer in Henfield? I'm Jamie Hannah, covering Henfield and the surrounding villages from nearby Burgess Hill. From the High Street and village cottages to the newer closes off the Brighton Road, I look after boilers and heating of every age. Servicing, landlord certificates, repairs and installs, all done properly by the same engineer with a tidy finish. Call ${SITE.phoneDisplay}.`,
     areas: ["the High Street", "Brighton Road", "Small Dole", "Woodmancote"],
     serviceAngles: {
       "gas-safety-certificate":
@@ -341,7 +341,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "RH12",
     nearby: ["Southwater", "Broadbridge Heath", "Roffey"],
     intro:
-      "Need a gas engineer in Horsham? I'm Jamie Hannah, Gas Safe registered and based in Burgess Hill, covering Horsham as the north-west edge of my patch. From the older terraces around the town centre and Roffey to the newer developments at Highwood and Kilnwood Vale, I look after boiler servicing, landlord CP12s, repairs and installs: same engineer every visit, honest advice and tidy work. Call 07544 063330 to book.",
+      `Need a gas engineer in Horsham? I'm Jamie Hannah, Gas Safe registered and based in Burgess Hill, covering Horsham as the north-west edge of my patch. From the older terraces around the town centre and Roffey to the newer developments at Highwood and Kilnwood Vale, I look after boiler servicing, landlord CP12s, repairs and installs: same engineer every visit, honest advice and tidy work. Call ${SITE.phoneDisplay} to book.`,
     areas: [
       "the town centre & Carfax",
       "Roffey",
@@ -392,7 +392,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "RH17",
     nearby: ["Haywards Heath", "Lindfield", "Ansty"],
     intro:
-      "Need a Gas Safe engineer in Cuckfield? I'm Jamie Hannah, based just down the road in Burgess Hill, looking after boilers and heating across Cuckfield's village homes and the newer properties towards Haywards Heath. Older cottages often have boilers tucked into awkward cupboards and lofts, which is no problem for a proper, unhurried service. Boiler servicing, landlord certificates, repairs and installs. Call 07544 063330.",
+      `Need a Gas Safe engineer in Cuckfield? I'm Jamie Hannah, based just down the road in Burgess Hill, looking after boilers and heating across Cuckfield's village homes and the newer properties towards Haywards Heath. Older cottages often have boilers tucked into awkward cupboards and lofts, which is no problem for a proper, unhurried service. Boiler servicing, landlord certificates, repairs and installs. Call ${SITE.phoneDisplay}.`,
     serviceAngles: {
       "gas-safety-certificate":
         "I issue landlord CP12 certificates across Cuckfield and the wider RH17 area: a digital copy by email, a reminder when it's due, and I'll sort access with your tenants.",
@@ -417,7 +417,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN6",
     nearby: ["Hassocks", "Keymer", "Westmeston"],
     intro:
-      "After a gas engineer in Ditchling? I'm Jamie Hannah, Gas Safe registered in nearby Burgess Hill, and Ditchling's period cottages and village homes are right on my regular route out towards the Downs. For an annual boiler service, a landlord certificate or a repair, you get the same engineer every time and an honest, tidy job. Call 07544 063330 to book.",
+      `After a gas engineer in Ditchling? I'm Jamie Hannah, Gas Safe registered in nearby Burgess Hill, and Ditchling's period cottages and village homes are right on my regular route out towards the Downs. For an annual boiler service, a landlord certificate or a repair, you get the same engineer every time and an honest, tidy job. Call ${SITE.phoneDisplay} to book.`,
     serviceAngles: {
       "gas-safety-certificate":
         "Landlord CP12 certificates across Ditchling and BN6, with a digital copy by email and a free reminder when your renewal's due.",
@@ -442,7 +442,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "RH16",
     nearby: ["Haywards Heath", "Cuckfield"],
     intro:
-      "Looking for a Gas Safe engineer in Lindfield? I'm Jamie Hannah, based a short drive away in Burgess Hill. Lindfield's conservation-area homes and High Street properties are only minutes from Haywards Heath and well within my patch. Boiler servicing, landlord certificates, repairs and installs, done properly by the same engineer each visit. Call 07544 063330.",
+      `Looking for a Gas Safe engineer in Lindfield? I'm Jamie Hannah, based a short drive away in Burgess Hill. Lindfield's conservation-area homes and High Street properties are only minutes from Haywards Heath and well within my patch. Boiler servicing, landlord certificates, repairs and installs, done properly by the same engineer each visit. Call ${SITE.phoneDisplay}.`,
     serviceAngles: {
       "gas-safety-certificate":
         "CP12 landlord certificates across Lindfield and RH16: straightforward, digital, with a free renewal reminder.",
@@ -467,7 +467,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "RH17",
     nearby: ["Haywards Heath", "Burgess Hill", "Ditchling"],
     intro:
-      "Need a boiler engineer in Wivelsfield? I'm Jamie Hannah, Gas Safe registered just down the road in Burgess Hill, so Wivelsfield and Wivelsfield Green are part of my everyday coverage. Boiler servicing, landlord CP12s, repairs and new installs: same engineer every time, honest advice, proper work. Call 07544 063330 to get booked in.",
+      `Need a boiler engineer in Wivelsfield? I'm Jamie Hannah, Gas Safe registered just down the road in Burgess Hill, so Wivelsfield and Wivelsfield Green are part of my everyday coverage. Boiler servicing, landlord CP12s, repairs and new installs: same engineer every time, honest advice, proper work. Call ${SITE.phoneDisplay} to get booked in.`,
     serviceAngles: {
       "gas-safety-certificate":
         "Landlord gas safety certificates across Wivelsfield and Wivelsfield Green, with a digital copy by email and a free renewal reminder.",
@@ -493,7 +493,7 @@ export const LOCAL_TOWNS: Town[] = [
     postcode: "BN6",
     nearby: ["Hassocks", "Ditchling"],
     intro:
-      "Looking for a gas engineer in Keymer? I'm Jamie Hannah, Gas Safe registered and based nearby in Burgess Hill. Keymer blends straight into Hassocks at the foot of the Downs, so it's one of my closest and quickest areas to reach. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer. Call 07544 063330.",
+      `Looking for a gas engineer in Keymer? I'm Jamie Hannah, Gas Safe registered and based nearby in Burgess Hill. Keymer blends straight into Hassocks at the foot of the Downs, so it's one of my closest and quickest areas to reach. Boiler servicing, landlord certificates, repairs and installs, all done properly by the same engineer. Call ${SITE.phoneDisplay}.`,
     serviceAngles: {
       "gas-safety-certificate":
         "CP12 landlord certificates across Keymer and BN6: flexible tenant access, a same-day digital certificate where I can, and a free renewal reminder.",
@@ -527,7 +527,7 @@ export const WAVE_2_TOWNS: Town[] = [
     nearby: ["Shoreham-by-Sea", "Sompting"],
     coast: true,
     intro:
-      "Looking for a Gas Safe engineer in Lancing? I'm Jamie Hannah, based in Burgess Hill and covering Lancing, between Shoreham and Worthing, as the western edge of my coastal patch. Boiler servicing, landlord CP12s, repairs and installs, done properly by the same engineer every time. Call 07544 063330 to book in.",
+      `Looking for a Gas Safe engineer in Lancing? I'm Jamie Hannah, based in Burgess Hill and covering Lancing, between Shoreham and Worthing, as the western edge of my coastal patch. Boiler servicing, landlord CP12s, repairs and installs, done properly by the same engineer every time. Call ${SITE.phoneDisplay} to book in.`,
     serviceAngles: {
       "gas-safety-certificate":
         "CP12 landlord certificates across Lancing and BN15, with a digital certificate by email and a free renewal reminder.",
@@ -649,7 +649,7 @@ export function townMetaTitle(town: Town): string {
 
 /** Town-page meta description. */
 export function townMetaDescription(town: Town): string {
-  return `Gas Safe engineer covering ${town.name} (${town.postcode}): boiler servicing, gas safety certificates, repairs & installs. Rated 5.0. Call 07544 063330.`;
+  return `Gas Safe engineer covering ${town.name} (${town.postcode}): boiler servicing, gas safety certificates, repairs & installs. Rated 5.0. Call ${SITE.phoneDisplay}.`;
 }
 
 /** Absolute URL for a town page, used in canonical + JSON-LD. */

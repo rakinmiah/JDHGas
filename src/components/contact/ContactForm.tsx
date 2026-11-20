@@ -91,7 +91,7 @@ export function ContactForm() {
         setStatus("error");
       }
     } catch {
-      setFormError("Something went wrong sending that. Please call or WhatsApp me on " + SITE.phoneDisplay + ".");
+      setFormError(`Something went wrong sending that. Please call me on ${SITE.phoneDisplay} or WhatsApp me.`);
       setStatus("error");
     }
   }

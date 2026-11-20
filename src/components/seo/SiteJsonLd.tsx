@@ -11,7 +11,7 @@ export async function SiteJsonLd() {
     image: `${SITE.url}/images/jamie-van-wide.jpg`,
     logo: `${SITE.url}/shield-logo.png`,
     url: `${SITE.url}/`,
-    telephone: "+447544063330",
+    telephone: SITE.phoneHref.replace("tel:", ""),
     email: SITE.email,
     priceRange: "££",
     areaServed: [

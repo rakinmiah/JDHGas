@@ -5,6 +5,8 @@ All notable changes to the JDH Gas design system. Semver: MAJOR breaking · MINO
 ## [Unreleased]
 ### Added
 - **`/book` + BookingWidget**: embedded QuoteLion/BookLion booking for the annual boiler service (iframe resize handshake, GA4 intent events). `PageHero` gains `primaryCta="book"`; MobileActionBar also stops at `[data-mobile-bar-stop]`.
+### Changed
+- **Main phone number is now the landline 01444 670 101** (`SITE.phoneDisplay`/`phoneHref`, so every call CTA, the schema and meta descriptions follow). The mobile 07544 063330 becomes `SITE.mobileDisplay`/`mobileHref`, a small backup line on `/contact` and in the footer; WhatsApp stays on the mobile.
 ### Fixed
 - **CoverageMap tiles**: CARTO needs a key now (`NEXT_PUBLIC_CARTO_BASEMAPS_KEY`), with an OpenStreetMap fallback; hairline tile seams on 2x/3x screens removed (`will-change` on the tile container).
 

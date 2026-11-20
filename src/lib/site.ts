@@ -2,8 +2,14 @@ export const SITE = {
   name: "JDH Gas Services",
   engineer: "Jamie Hannah",
   url: "https://www.jdhgas.co.uk",
-  phoneDisplay: "07544 063330",
-  phoneHref: "tel:+447544063330",
+  // The main number (office landline, Nov 2026). Every call button, the schema
+  // and the NAP use this: it's the one Jamie wants most people to ring.
+  phoneDisplay: "01444 670 101",
+  phoneHref: "tel:+441444670101",
+  // Jamie's mobile, now the backup: shown quietly on /contact and in the footer
+  // only. WhatsApp stays on it (a landline can't take WhatsApp).
+  mobileDisplay: "07544 063330",
+  mobileHref: "tel:+447544063330",
   whatsappHref: "https://wa.me/447544063330",
   email: "info@jdhgas.co.uk",
   gasSafe: "977838",
@@ -206,6 +212,6 @@ export const FAQS = [
   },
   {
     q: "How do I book?",
-    a: "Call 07544 063330, WhatsApp, or send a quick message and I'll get back to you. I work Monday to Friday and will always confirm a time that suits you.",
+    a: `Call ${SITE.phoneDisplay}, WhatsApp, or send a quick message and I'll get back to you. I work Monday to Friday and will always confirm a time that suits you.`,
   },
 ] as const;

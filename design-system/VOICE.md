@@ -42,7 +42,7 @@ The **honest local tradesman** — plain-spoken, reassuring, no fluff. Confident
 
 ## Numbers
 - Spell out **one–nine**; numerals **10+**. Exception: prices and the £75 offer are always numerals.
-- **Currency:** `£75` (no decimals unless pence). **Phone:** display `07544 063330`; `tel:+447544063330`.
+- **Currency:** `£75` (no decimals unless pence). **Phone:** main line display `01444 670 101`; `tel:+441444670101` (always from `SITE.phoneDisplay`/`phoneHref`, never hard-coded). Backup mobile `07544 063330` only where `SITE.mobileDisplay` is already used; it is also the WhatsApp number, so never write "WhatsApp me on" next to the landline.
 - Times/days: "Monday to Friday".
 
 ## Tone by context
@@ -58,5 +58,5 @@ The **honest local tradesman** — plain-spoken, reassuring, no fluff. Confident
 - H1 "Your local gas & heating engineer in Burgess Hill." → first-person-adjacent, sentence case, no em dash ✓
 - Subline "…done properly by a local engineer you can actually get hold of." → plain, human ✓
 - Service blurb "Annual servicing that keeps your boiler running safely and your warranty valid." → no triad, ≤18 words ✓
-- CTA "WhatsApp me" / "Call 07544 063330" → allowed verbs ✓
+- CTA "WhatsApp me" / "Call 01444 670 101" → allowed verbs ✓
 - Success "Thanks — I've got your message." → attribution-style dash permitted in confirmation ✓

@@ -38,7 +38,7 @@ Lead with the direct one-sentence answer, then 30–60 words elaboration, then d
 - Image alt text: describe the photo honestly first; absorb a keyword only if accurate. Use the real job photos, not stock.
 - Cite authoritative sources for legal/safety claims (Gas Safe Register, GOV.UK gas safety regs) — links build YMYL trust.
 - Dates: show "last updated" on the CP12 page (regs can change); footer year auto-derives from build.
-- NAP (name / Burgess Hill–RH15 / 07544 063330) identical everywhere, matching the Google Business Profile.
+- NAP (name / Burgess Hill–RH15 / 01444 670 101, the main line since Nov 2026) identical everywhere, matching the Google Business Profile.
 
 ## Freshness & kill policy
 - Review service + town pages annually (prices, hours, reviews, regs current). Refresh CP12 page whenever gas-safety regulation changes.

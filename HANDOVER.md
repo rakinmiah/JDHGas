@@ -16,8 +16,10 @@ Read this first, then `AGENTS.md`. Deeper reference lives in `design-system/`,
   enquiry; the old new-customer offer is gone), landlord gas
   safety certificates (CP12), boiler & heating repairs, boiler/heating
   installation, gas hob & cooker installs.
-- Phone **07544 063330** (calls + WhatsApp). Most leads arrive by phone/WhatsApp,
-  not the form.
+- Phone **01444 670 101** (office landline, the main number since 20 Nov 2026: every call
+  button, the schema and the NAP). The mobile **07544 063330** is now the backup, shown
+  quietly on `/contact` and in the footer only, and stays the **WhatsApp** number (a
+  landline can't take WhatsApp). Most leads arrive by phone/WhatsApp, not the form.
 - Google Business Profile: **5.0 from ~59 reviews**, **#1 in the local map pack**
   for "boiler service burgess hill".
 - Rakin (the user) builds and runs the site; Jamie is the client.
@@ -249,6 +251,14 @@ Ellerton). Map pins + postcode prefixes updated (RH17 → Cuckfield; RH13 → "l
    requests the key at carto.com/basemaps/apikey, restricts it to jdhgas.co.uk, adds it in
    Vercel and redeploys. Check: a live tile over 2049 bytes means the key works (the
    watermark is exactly 2049).
+8. **New main number 01444 670 101 (site switched 20 Nov 2026).** `SITE.phoneDisplay/phoneHref`
+   is the landline; `SITE.mobileDisplay/mobileHref` is the backup; `whatsappHref` stays on
+   the mobile. **Still to do off-site:** Jamie sets 01444 670 101 as the **primary phone on
+   the Google Business Profile** (mobile as an additional phone), then the citations
+   (Checkatrade/Yell/MyBuilder etc.) to match, so the NAP agrees everywhere. `phone_click`
+   already carries `phone_number`, so the landline/mobile split is measurable once that
+   parameter is registered as a GA4 custom dimension. The van livery still shows the mobile,
+   which is fine: it's still a working line.
 
 ---
 

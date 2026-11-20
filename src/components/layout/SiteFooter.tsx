@@ -60,6 +60,14 @@ export function SiteFooter() {
               <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold hover:text-flame">
                 <Phone className="h-4 w-4" aria-hidden /> {SITE.phoneDisplay}
               </a>
+              {/* Backup line: indented under the main number, deliberately quiet. */}
+              <a
+                href={SITE.mobileHref}
+                className="-mt-1 pl-6 text-xs text-steel transition-colors hover:text-flame"
+                aria-label={`Call the JDH Gas mobile on ${SITE.mobileDisplay}`}
+              >
+                Mobile {SITE.mobileDisplay}
+              </a>
               <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-flame">
                 <Mail className="h-4 w-4" aria-hidden /> {SITE.email}
               </a>

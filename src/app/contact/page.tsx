@@ -13,7 +13,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 export const metadata: Metadata = {
   title: "Contact | JDH Gas Services, Burgess Hill Gas Engineer",
   description:
-    "Call 07544 063330, WhatsApp or message Jamie at JDH Gas Services in Burgess Hill for boiler servicing, repairs and gas safety certificates.",
+    `Call ${SITE.phoneDisplay}, WhatsApp or message Jamie at JDH Gas Services in Burgess Hill for boiler servicing, repairs and gas safety certificates.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -101,6 +101,17 @@ export default async function ContactPage() {
                         Call <span className="font-bold">{SITE.phoneDisplay}</span>
                       </span>
                     </a>
+                    {/* The mobile is the backup line: kept small, under the main number. */}
+                    <p className="mt-1 pl-8 text-xs font-normal text-steel">
+                      Or try my mobile:{" "}
+                      <a
+                        href={SITE.mobileHref}
+                        className="font-semibold text-inverse/85 transition-colors hover:text-flame"
+                        aria-label={`Call the JDH Gas mobile on ${SITE.mobileDisplay}`}
+                      >
+                        {SITE.mobileDisplay}
+                      </a>
+                    </p>
                   </li>
                   <li>
                     <a href={SITE.whatsappHref} target="_blank" rel="noopener" className={rowCls}>

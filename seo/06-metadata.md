@@ -22,11 +22,11 @@
 | `/about` | About Jamie Hannah \| JDH Gas Services, Burgess Hill | Meet Jamie Hannah, the Gas Safe registered engineer behind JDH Gas Services in Burgess Hill. Honest, careful work — prevention over cure. |
 | `/reviews` | Reviews \| JDH Gas Services, Burgess Hill | What Burgess Hill & Mid Sussex customers say about JDH Gas Services — 5.0 stars from 24 Google reviews. Honest, thorough, Gas Safe work. |
 | `/gallery` | Our Work \| JDH Gas Services, Burgess Hill | Recent boiler servicing, repairs & gas installations by JDH Gas Services across Burgess Hill & Mid Sussex. Real jobs by a Gas Safe engineer. |
-| `/contact` | Contact \| JDH Gas Services, Burgess Hill Gas Engineer | Call 07544 063330, WhatsApp or message Jamie at JDH Gas Services in Burgess Hill for boiler servicing, repairs & gas safety certificates. |
+| `/contact` | Contact \| JDH Gas Services, Burgess Hill Gas Engineer | Call 01444 670 101, WhatsApp or message Jamie at JDH Gas Services in Burgess Hill for boiler servicing, repairs & gas safety certificates. |
 | `/privacy-policy` | Privacy Policy \| JDH Gas Services | How JDH Gas Services collects and uses your data when you enquire. Read our privacy policy. | (robots: index,follow) |
 | `/terms` | Terms of Service \| JDH Gas Services | The terms that apply when you use the JDH Gas Services website and book our work. | (index,follow) |
 | `/cookie-policy` | Cookie Policy \| JDH Gas Services | How JDH Gas Services uses cookies on this website and how to manage your choices. | (index,follow) |
-| `/404` | Page Not Found \| JDH Gas Services | (noindex) That page doesn't exist. Head back to the homepage or call JDH Gas on 07544 063330. |
+| `/404` | Page Not Found \| JDH Gas Services | (noindex) That page doesn't exist. Head back to the homepage or call JDH Gas on 01444 670 101. |
 
 _Town phase-2 pages (ditchling, wivelsfield, lindfield, keymer) reuse the `/areas/<town>` title pattern: "Gas Engineer in <Town> | JDH Gas Services" — only build with unique localised descriptions._
 
