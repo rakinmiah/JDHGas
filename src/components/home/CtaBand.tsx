@@ -7,10 +7,10 @@ export function CtaBand() {
     <section className="bg-ink text-inverse" aria-labelledby="cta-h">
       <div className="container-page py-16 text-center md:py-20">
         <h2 id="cta-h" className="font-display text-3xl font-bold text-inverse md:text-4xl">
-          Ready to book? Tell me about the job.
+          Ready to book? Tell us about the job.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-inverse/80">
-          Call or WhatsApp me and I&apos;ll get back to you quickly with honest advice and a clear
+          Call or WhatsApp us and we&apos;ll get back to you quickly with honest advice and a clear
           price.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">

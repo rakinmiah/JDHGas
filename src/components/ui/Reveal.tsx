@@ -8,17 +8,23 @@ export function Reveal({
   delay = 0,
   className = "",
   as = "div",
+  staticBelowLg = false,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   as?: "div" | "li" | "section" | "ol" | "ul" | "article" | "figure";
+  /** Show instantly below 1024px (the homepage's mobile motion policy). The
+   *  !important classes beat framer's inline opacity/transform. */
+  staticBelowLg?: boolean;
 }) {
   const reduce = useReducedMotion();
   const MotionTag = motion[as];
   return (
     <MotionTag
-      className={className}
+      className={
+        staticBelowLg ? `${className} max-lg:opacity-100! max-lg:transform-none!` : className
+      }
       initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       /* amount must not be a fraction: lists taller than the viewport can

@@ -87,11 +87,11 @@ export function ContactForm() {
         setErrors(json.errors);
         setStatus("error");
       } else {
-        setFormError(json.error || "Something went wrong. Please call or WhatsApp me.");
+        setFormError(json.error || "Something went wrong. Please call or WhatsApp us.");
         setStatus("error");
       }
     } catch {
-      setFormError(`Something went wrong sending that. Please call me on ${SITE.phoneDisplay} or WhatsApp me.`);
+      setFormError(`Something went wrong sending that. Please call us on ${SITE.phoneDisplay} or WhatsApp us.`);
       setStatus("error");
     }
   }
@@ -100,9 +100,9 @@ export function ContactForm() {
     return (
       <div className="rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
-        <h2 className="mt-4 font-display text-2xl font-bold">Thanks, I&apos;ve got your message.</h2>
+        <h2 className="mt-4 font-display text-2xl font-bold">Thanks, we&apos;ve got your message.</h2>
         <p className="mx-auto mt-2 max-w-md text-muted">
-          I&apos;ll be in touch shortly. Need me sooner? Call{" "}
+          We&apos;ll be in touch shortly. Need us sooner? Call{" "}
           <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
         </p>
       </div>
@@ -161,13 +161,13 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelCls}>Message <span className="font-normal text-muted">(optional)</span></label>
-        <textarea id="message" name="message" rows={4} className={inputCls} placeholder="Tell me a bit about the job: make/model of boiler, the problem, anything useful." />
+        <textarea id="message" name="message" rows={4} className={inputCls} placeholder="Tell us a bit about the job: make/model of boiler, the problem, anything useful." />
       </div>
 
       {/* Photo upload */}
       <div>
         <span className={labelCls}>Add a photo of the work <span className="font-normal text-muted">(optional)</span></span>
-        <p className="mt-1 text-sm text-muted">A picture of your boiler or appliance helps me quote accurately.</p>
+        <p className="mt-1 text-sm text-muted">A picture of your boiler or appliance helps us quote accurately.</p>
         {!photoPreview ? (
           <label htmlFor="photo" className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-[var(--radius-lg)] border-2 border-dashed border-border-strong bg-sunken px-4 py-8 text-center transition-colors hover:border-primary">
             <Upload className="h-7 w-7 text-primary" aria-hidden />
@@ -190,7 +190,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex items-start gap-3">
-        <input id="consent" name="consent" type="checkbox" value="yes" required className="mt-1 h-5 w-5 shrink-0 rounded border-border-strong accent-[#2563eb]" aria-describedby={err("consent") ? "consent-e" : undefined} />
+        <input id="consent" name="consent" type="checkbox" value="yes" required className="mt-1 h-5 w-5 shrink-0 rounded border-border-strong accent-primary" aria-describedby={err("consent") ? "consent-e" : undefined} />
         <label htmlFor="consent" className="text-sm text-muted">
           I&apos;m happy for JDH Gas to contact me about my enquiry. See our{" "}
           <a href="/privacy-policy" className="font-medium text-primary underline-offset-2 hover:underline">privacy policy</a>.

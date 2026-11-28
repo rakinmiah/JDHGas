@@ -13,7 +13,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 export const metadata: Metadata = {
   title: "Contact | JDH Gas Services, Burgess Hill Gas Engineer",
   description:
-    `Call ${SITE.phoneDisplay}, WhatsApp or message Jamie at JDH Gas Services in Burgess Hill for boiler servicing, repairs and gas safety certificates.`,
+    `Call ${SITE.phoneDisplay}, WhatsApp or message JDH Gas Services in Burgess Hill for boiler servicing, repairs and gas safety certificates.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -30,17 +30,17 @@ export default async function ContactPage() {
             <div>
               <p className="eyebrow">Get in touch</p>
               <h1 className="mt-2 font-display text-4xl font-extrabold tracking-tight md:text-5xl">
-                Book a job or ask me anything
+                Book a job or ask us anything
               </h1>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-                Send a quick enquiry, add a photo of your boiler or appliance if you can, and I&apos;ll
-                get back to you with a clear answer or quote. Prefer to talk? Call or WhatsApp me.
+                Send a quick enquiry, add a photo of your boiler or appliance if you can, and we&apos;ll
+                get back to you with a clear answer or quote. Prefer to talk? Call or WhatsApp us.
               </p>
             </div>
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] ring-1 ring-border-subtle">
               <Image
                 src="/images/jdh-van.jpg"
-                alt="The JDH Gas Services van, with Jamie's phone number, email and website on the side"
+                alt="The JDH Gas Services van, with the phone number, email and website on the side"
                 fill
                 preload
                 sizes="(max-width: 768px) 92vw, 56vw"
@@ -56,7 +56,7 @@ export default async function ContactPage() {
           <div>
             <h2 className="font-display text-2xl font-bold md:text-3xl">Send an enquiry</h2>
             <p className="mt-2 max-w-xl text-muted">
-              Fill this in and I&apos;ll come back to you with a clear answer or quote. A photo of the
+              Fill this in and we&apos;ll come back to you with a clear answer or quote. A photo of the
               job helps if you&apos;ve got one.
             </p>
             <div className="mt-6">
@@ -103,7 +103,7 @@ export default async function ContactPage() {
                     </a>
                     {/* The mobile is the backup line: kept small, under the main number. */}
                     <p className="mt-1 pl-8 text-xs font-normal text-steel">
-                      Or try my mobile:{" "}
+                      Or try our mobile:{" "}
                       <a
                         href={SITE.mobileHref}
                         className="font-semibold text-inverse/85 transition-colors hover:text-flame"
@@ -115,7 +115,7 @@ export default async function ContactPage() {
                   </li>
                   <li>
                     <a href={SITE.whatsappHref} target="_blank" rel="noopener" className={rowCls}>
-                      <WhatsAppGlyph className="h-5 w-5 shrink-0" /> WhatsApp me
+                      <WhatsAppGlyph className="h-5 w-5 shrink-0" /> WhatsApp us
                     </a>
                   </li>
                   <li>

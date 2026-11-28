@@ -47,6 +47,16 @@ export function Analytics() {
   useEffect(() => {
     function onClick(e: MouseEvent) {
       const el = e.target as HTMLElement | null;
+      // Declarative events: any element with data-track="event_name" fires
+      // that event, with its other data-* attributes as parameters
+      // (e.g. data-track="needs_card_click" data-need="repair"). It does not
+      // return early, so a tagged WhatsApp or phone link still fires its
+      // lead event below too.
+      const tagged = el?.closest?.<HTMLElement>("[data-track]");
+      if (tagged?.dataset.track) {
+        const { track, ...params } = tagged.dataset;
+        trackEvent(track, params);
+      }
       const tel = el?.closest?.('a[href^="tel:"]');
       if (tel) {
         trackEvent("phone_click", {

@@ -1,36 +1,47 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail } from "lucide-react";
-import { InstagramGlyph, WhatsAppGlyph } from "@/components/ui/icons";
+import { ArrowUpRight } from "lucide-react";
+import { CookieSettingsButton } from "@/components/analytics/CookieSettingsButton";
 import { SITE, SERVICES } from "@/lib/site";
 import { LOCAL_TOWNS } from "@/lib/local-pages";
 
-const AREA_LINKS = [
-  { label: "All areas", href: "/areas" },
+/**
+ * Site footer (rebuilt 27 Nov 2026): a plain column layout, the way an
+ * established firm's footer reads. Brand and contact on the left, then
+ * Services, Areas and Company columns; a bottom bar with the Gas Safe number
+ * (one tap to the register), the legal links and cookie settings. Replaced
+ * the dot-separated link rows and the round icon buttons.
+ */
+
+const COMPANY = [
+  { label: "About us", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Help and advice", href: "/help" },
+  { label: "Book a boiler service", href: "/book" },
+  { label: "Contact", href: "/contact" },
+];
+
+const AREAS = [
   { label: "Burgess Hill", href: "/" },
   ...LOCAL_TOWNS.map((t) => ({ label: t.name, href: `/${t.slug}` })),
 ];
 
-const PAGES = [
-  { label: "Book a boiler service", href: "/book" },
-  { label: "Boiler help guides", href: "/help" },
-  { label: "About Jamie", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
-  { label: "Contact", href: "/contact" },
-];
+const heading = "text-xs font-semibold uppercase tracking-[0.16em] text-navy-muted";
+const linkCls = "text-[14.5px] text-white/85 transition-colors hover:text-white hover:underline hover:underline-offset-4";
 
-function LinkRow({ label, links }: { label?: string; links: { label: string; href: string }[] }) {
+function Column({ title, links, cols = 1 }: { title: string; links: { label: string; href: string }[]; cols?: 1 | 2 }) {
   return (
-    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-      {label && <span className="font-semibold text-inverse">{label}</span>}
-      {links.map((l, i) => (
-        <span key={l.href} className="flex items-baseline gap-x-2.5">
-          {i > 0 && <span className="text-white/25" aria-hidden>·</span>}
-          <Link href={l.href} className="text-steel transition-colors hover:text-flame">
-            {l.label}
-          </Link>
-        </span>
-      ))}
+    <div>
+      <p className={heading}>{title}</p>
+      <ul className={`mt-4 grid gap-x-6 gap-y-2.5 ${cols === 2 ? "grid-cols-2" : ""}`}>
+        {links.map((l) => (
+          <li key={l.href}>
+            <Link href={l.href} className={linkCls}>
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -38,64 +49,89 @@ function LinkRow({ label, links }: { label?: string; links: { label: string; hre
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-white/10 bg-ink-soft text-inverse" role="contentinfo">
-      <div className="container-page py-12">
-        {/* 1 — brand + contact */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-sm">
-            <div className="flex items-center gap-2 font-display text-lg font-extrabold">
+    <footer className="bg-navy text-white" role="contentinfo">
+      <div className="container-page pb-8 pt-14 lg:pt-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,4fr)_minmax(0,3fr)_minmax(0,4fr)_minmax(0,2.5fr)] lg:gap-12">
+          {/* Brand and contact */}
+          <div>
+            <Link href="/" className="inline-flex items-center gap-2.5 font-display text-lg font-extrabold tracking-[-0.02em]">
               <Image src="/shield-logo.png" alt="" width={40} height={40} className="h-9 w-9 object-contain" />
-              JDH <span className="text-flame">Gas</span>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-steel">
-              Gas Safe registered gas and heating engineer, covering Burgess Hill, Mid Sussex and
-              down to the coast.
+              JDH Gas Services
+            </Link>
+            <p className="mt-4 max-w-xs text-[14.5px] leading-relaxed text-navy-muted">
+              Boiler servicing, repairs and installs in {SITE.locality} and Mid Sussex.
             </p>
-            <p className="mt-3 text-sm text-steel">Gas Safe Registered · {SITE.gasSafe}</p>
+            <ul className="mt-6 space-y-2 text-[14.5px]">
+              <li>
+                <a href={SITE.phoneHref} className="font-display text-xl font-extrabold tracking-[-0.02em] hover:underline hover:underline-offset-4">
+                  {SITE.phoneDisplay}
+                </a>
+                <span className="ml-2 text-navy-muted">Mon to Fri</span>
+              </li>
+              <li>
+                <a href={SITE.mobileHref} className="text-white/85 hover:text-white hover:underline hover:underline-offset-4">
+                  Mobile {SITE.mobileDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${SITE.email}`} className="text-white/85 hover:text-white hover:underline hover:underline-offset-4">
+                  {SITE.email}
+                </a>
+              </li>
+              <li className="flex gap-4 pt-1">
+                <a href={SITE.whatsappHref} target="_blank" rel="noopener" className="text-white/85 hover:text-white hover:underline hover:underline-offset-4">
+                  WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+                <a href={SITE.instagram} target="_blank" rel="noopener" className="text-white/85 hover:text-white hover:underline hover:underline-offset-4">
+                  Instagram<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <div className="shrink-0">
-            <p className="text-sm font-semibold uppercase tracking-wide text-steel">Get in touch</p>
-            <div className="mt-3 flex flex-col gap-2 text-sm">
-              <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold hover:text-flame">
-                <Phone className="h-4 w-4" aria-hidden /> {SITE.phoneDisplay}
-              </a>
-              {/* Backup line: indented under the main number, deliberately quiet. */}
-              <a
-                href={SITE.mobileHref}
-                className="-mt-1 pl-6 text-xs text-steel transition-colors hover:text-flame"
-                aria-label={`Call the JDH Gas mobile on ${SITE.mobileDisplay}`}
-              >
-                Mobile {SITE.mobileDisplay}
-              </a>
-              <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-flame">
-                <Mail className="h-4 w-4" aria-hidden /> {SITE.email}
-              </a>
-            </div>
-            <div className="mt-4 flex gap-3">
-              <a href={SITE.whatsappHref} target="_blank" rel="noopener" aria-label="WhatsApp" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
-                <WhatsAppGlyph className="h-5 w-5" />
-              </a>
-              <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-white/20">
-                <InstagramGlyph className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
+          <Column title="Services" links={SERVICES.map((s) => ({ label: s.title, href: s.href }))} />
+          <Column title="Areas we cover" links={AREAS} cols={2} />
+          <Column title="Company" links={COMPANY} />
         </div>
 
-        {/* 2 — compact link clusters (SEO) */}
-        <nav aria-label="Footer" className="mt-10 space-y-3 border-t border-white/10 pt-8 text-sm">
-          <LinkRow label="Services" links={SERVICES.map((s) => ({ label: s.title, href: s.href }))} />
-          <LinkRow label="Areas covered" links={AREA_LINKS} />
-          <LinkRow links={PAGES} />
-        </nav>
-
-        {/* 3 — legal */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} JDH Gas Services. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-flame">Privacy policy</Link>
-            <Link href="/terms" className="hover:text-flame">Terms</Link>
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col gap-4 border-t border-navy-line pt-6 text-[13px] text-navy-muted lg:flex-row lg:items-center lg:justify-between">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>© {year} JDH Gas Services</span>
+            <span aria-hidden>·</span>
+            <span>Gas Safe registered {SITE.gasSafe}</span>
+            <a
+              href={SITE.registerUrl}
+              target="_blank"
+              rel="noopener"
+              data-track="register_check_click"
+              data-location="footer"
+              aria-label={`Check Gas Safe registration ${SITE.gasSafe} on the Gas Safe Register (opens in a new tab)`}
+              className="inline-flex items-center gap-0.5 font-semibold text-white hover:underline hover:underline-offset-4"
+            >
+              Check the register <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+            </a>
+            {SITE.companyNumber && (
+              <>
+                <span aria-hidden>·</span>
+                <span>Company no. {SITE.companyNumber}</span>
+              </>
+            )}
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link href="/areas" className="hover:text-white hover:underline hover:underline-offset-4">
+              All areas
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-white hover:underline hover:underline-offset-4">
+              Privacy policy
+            </Link>
+            <Link href="/terms" className="hover:text-white hover:underline hover:underline-offset-4">
+              Terms
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-white hover:underline hover:underline-offset-4">
+              Cookie policy
+            </Link>
+            <CookieSettingsButton className="text-left hover:text-white hover:underline hover:underline-offset-4" />
           </div>
         </div>
       </div>

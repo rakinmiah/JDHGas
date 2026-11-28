@@ -1,12 +1,12 @@
 import { Hero } from "@/components/home/Hero";
-import { Services } from "@/components/home/Services";
-import { MeetJamie } from "@/components/home/MeetJamie";
-import { WhyChoose } from "@/components/home/WhyChoose";
 import { LogoStrip } from "@/components/home/LogoStrip";
-import { Reviews } from "@/components/home/Reviews";
-import { ServiceArea } from "@/components/home/ServiceArea";
+import { ServicesV1 } from "@/components/home/ServicesDev";
+import { WhosComing } from "@/components/home/WhosComing";
+import { Reviews, AreaBand } from "@/components/home/HomeSections";
+import { HelpBento } from "@/components/home/HelpBento";
 import { Faq } from "@/components/home/Faq";
 import { ContactSection } from "@/components/home/ContactSection";
+import { SECTION_Y } from "@/components/home/rhythm";
 import { FAQS } from "@/lib/site";
 
 function FaqJsonLd() {
@@ -31,15 +31,18 @@ export default function Home() {
   return (
     <>
       <FaqJsonLd />
-      <Hero />
-      <Services />
+      {/* Order (28 Nov 2026): hero, makes, services, reviews (with the
+          booking line), area, what to look for when we arrive, help, then the
+          FAQ and the enquiry form close the page. */}
+      <Hero fullBleed mobile="overlay" />
+      <LogoStrip light />
+      <ServicesV1 />
       <Reviews />
-      <WhyChoose />
-      <LogoStrip />
-      <MeetJamie />
-      <ServiceArea />
+      <AreaBand layout="head" />
+      <WhosComing variant="portrait" />
+      <HelpBento count={5} noPhoto="photos" />
       <Faq />
-      <ContactSection />
+      <ContactSection sectionY={SECTION_Y} />
     </>
   );
 }

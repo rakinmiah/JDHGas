@@ -17,9 +17,38 @@ export const SITE = {
   locality: "Burgess Hill",
   region: "West Sussex",
   postcodeArea: "RH15",
-  rating: { value: "5.0", count: 41 },
+  // Offline fallback only: the live rating and count come from the Places API
+  // (getGoogleReviews). Never display this count directly. Updated to the live
+  // figure on 24 Nov 2026.
+  rating: { value: "5.0", count: 113 },
   hours: "Mon–Fri",
+  // Gas Safe Register: the site blocks automated requests, so this is the
+  // homepage. Swap for a deep "check an engineer" URL once one is confirmed
+  // by hand (website-plan/rebrand/HOMEPAGE-PLAN.md, A5).
+  registerUrl: "https://www.gassaferegister.co.uk/",
+  hseCheckUrl: "https://www.hse.gov.uk/gas/gas-safe-register-check.htm",
+
+  // Gated facts. Each renders nothing (or its honest fallback) until Jamie
+  // confirms it. Claim IDs refer to website-plan/rebrand/00-intake.md.
+  prices: {
+    servicingFrom: null as number | null, // C15
+    cp12From: null as number | null, // C16
+  },
+  companyNumber: null as string | null, // C21
+  tradingSince: null as number | null, // C21
+  claims: {
+    noServicePlan: false, // C17: true only once Jamie confirms he sells no plan
+  },
 } as const;
+
+/** WhatsApp links with a starter message, so a repair enquiry arrives with
+ *  what Jamie needs to quote (a photo and the fault code). */
+export const WHATSAPP_REPAIR_HREF = `${SITE.whatsappHref}?text=${encodeURIComponent(
+  "Hi JDH Gas, my boiler or heating isn’t working. Here’s a photo of the boiler and any fault code:",
+)}`;
+export const WHATSAPP_PHOTO_HREF = `${SITE.whatsappHref}?text=${encodeURIComponent(
+  "Hi Jamie, here’s a photo of my boiler:",
+)}`;
 
 // File-convention share images (app/opengraph-image.tsx + app/twitter-image.tsx),
 // resolved against metadataBase. Pages that set their own `openGraph`/`twitter`
@@ -29,8 +58,8 @@ const SHARE_IMAGE_ALT = `${SITE.name}: Gas Safe registered engineer in Burgess H
 export const OG_IMAGE = { url: "/opengraph-image", width: 1200, height: 630, alt: SHARE_IMAGE_ALT };
 export const TWITTER_IMAGE = { url: "/twitter-image", width: 1200, height: 630, alt: SHARE_IMAGE_ALT };
 
+// "Home" is not listed: the logo is the home link.
 export const NAV = [
-  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Help", href: "/help" },
   { label: "Areas", href: "/areas" },
@@ -193,25 +222,46 @@ export const REVIEWS = [
   },
 ] as const;
 
-export const FAQS = [
+/** A phrase inside an FAQ answer that renders as a link (the JSON-LD gets plain text). */
+export type FaqLink = { text: string; href: string; track?: string };
+export type HomeFaq = { q: string; a: string; links?: FaqLink[] };
+
+/** Homepage FAQ, answer-first (seo/handoff-to-website.md). Q1 has two final
+ *  states: with Jamie's confirmed "from" price, or the honest fallback. */
+export const FAQS: HomeFaq[] = [
   {
     q: "How much is a boiler service?",
-    a: "It depends on your boiler and what it needs, so just call or WhatsApp and I'll give you a clear price before booking. It's a full Gas Safe check, and the same goes for repairs or a gas safety certificate: a clear quote first.",
+    a:
+      SITE.prices.servicingFrom != null
+        ? `A boiler service starts from £${SITE.prices.servicingFrom}. The exact price depends on your boiler, and you'll know it before you book. If anything needs repairing, you get a clear quote before any extra work.`
+        : "It depends on your boiler. Call or WhatsApp us and we'll give you a price before you book. If anything needs fixing, you'll get a quote before we do any extra work.",
   },
   {
-    q: "Do I really need my boiler serviced every year?",
-    a: "Yes. An annual service is the best way to keep your boiler safe and within its warranty. A boiler can look fine while faults build up out of sight, so a yearly check catches them early. Prevention over cure.",
+    q: "Do I need my boiler serviced every year?",
+    a: "Yes. A yearly service keeps your boiler safe and running well, and most boiler warranties need one. A boiler can seem fine while problems build up inside.",
   },
   {
-    q: "What is a CP12 / landlord gas safety certificate?",
-    a: "A CP12 is the Landlord Gas Safety Certificate. By law, landlords must have every gas appliance, pipe and flue in a rented property checked every 12 months by a Gas Safe registered engineer. I provide CP12s across Mid Sussex, and homeowners can have a gas safety check too.",
+    q: "What is a CP12?",
+    a: "It's the landlord gas safety certificate. By law, landlords need the gas appliances and pipework in a rented home checked every year, give tenants a copy within 28 days and keep it for two years.",
+  },
+  {
+    q: "How do I check you're Gas Safe registered?",
+    a: `Our registration number is ${SITE.gasSafe}, and you can check it on the Gas Safe Register.`,
+    links: [
+      { text: "check it on the Gas Safe Register", href: SITE.registerUrl, track: "faq" },
+    ],
   },
   {
     q: "Which areas do you cover?",
-    a: "I'm based in Burgess Hill and cover Mid Sussex and down to the coast, including Haywards Heath, Hassocks, Cuckfield, Hove, Portslade and Lancing. Not sure if I reach you? Just ask.",
+    a: "Burgess Hill and the rest of Mid Sussex, down to the coast at Hove and Portslade. Not sure? Check your postcode on our areas page.",
+    links: [{ text: "areas page", href: "/areas" }],
   },
   {
     q: "How do I book?",
-    a: `Call ${SITE.phoneDisplay}, WhatsApp, or send a quick message and I'll get back to you. I work Monday to Friday and will always confirm a time that suits you.`,
+    a: `Book a boiler service online, or call ${SITE.phoneDisplay} or WhatsApp us for anything else. We work Monday to Friday.`,
+    links: [
+      { text: "Book a boiler service online", href: "/book" },
+      { text: SITE.phoneDisplay, href: SITE.phoneHref },
+    ],
   },
-] as const;
+];

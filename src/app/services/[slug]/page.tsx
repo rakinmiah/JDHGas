@@ -308,7 +308,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       <FaqSection items={[...s.faqs]} tone={faqTone} />
-      <ContactSection />
+      {/* A grey FAQ (flip) would run into the grey contact section: rule it off. */}
+      <ContactSection ruled={flip} />
     </>
   );
 }

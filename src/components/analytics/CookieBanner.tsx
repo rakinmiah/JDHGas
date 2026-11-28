@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export const CONSENT_KEY = "jdh-cookie-consent";
 export const CONSENT_EVENT = "jdh-consent-change";
+export const CONSENT_OPEN_EVENT = "jdh-consent-open";
 
 /**
  * Cookie consent banner. Analytics cookies (GA4) aren't loaded until the
@@ -21,6 +22,10 @@ export function CookieBanner() {
     } catch {
       /* localStorage unavailable — don't block the site */
     }
+    // The footer's "Cookie settings" button reopens the banner.
+    const reopen = () => setShow(true);
+    window.addEventListener(CONSENT_OPEN_EVENT, reopen);
+    return () => window.removeEventListener(CONSENT_OPEN_EVENT, reopen);
   }, []);
 
   function choose(value: "granted" | "denied") {
@@ -40,11 +45,11 @@ export function CookieBanner() {
       role="dialog"
       aria-modal="false"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-[500] border-t border-white/10 bg-ink text-inverse shadow-[var(--shadow-lg)]"
+      className="fixed inset-x-0 bottom-0 z-(--z-banner) border-t border-white/10 bg-ink text-inverse shadow-[var(--shadow-lg)]"
     >
       <div className="container-page flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between md:gap-6">
         <p className="max-w-2xl text-sm leading-relaxed text-inverse/85">
-          I use Google Analytics cookies to see how the site is used and improve it. Nothing is set
+          We use Google Analytics cookies to see how the site is used and improve it. Nothing is set
           unless you accept. See the{" "}
           <Link href="/cookie-policy" className="font-semibold text-inverse underline underline-offset-2 hover:text-flame">
             cookie policy

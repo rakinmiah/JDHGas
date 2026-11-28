@@ -36,8 +36,8 @@ const TOTAL = 3;
 
 const labelCls = "block text-sm font-semibold text-ink";
 const inputCls =
-  "mt-1.5 w-full rounded-[var(--radius-md)] border border-border-strong bg-surface px-3.5 py-2.5 text-base outline-none transition-colors focus:border-primary";
-const errCls = "mt-1 text-sm text-[#DC2626]";
+  "mt-1.5 w-full rounded-[var(--radius-md)] border border-border-input bg-surface px-3.5 py-2.5 text-base outline-none transition-colors focus:border-primary";
+const errCls = "mt-1 text-sm text-feedback-danger";
 
 // which step a server-side field error belongs to
 const FIELD_STEP: Record<string, number> = {
@@ -162,11 +162,11 @@ export function HomeEnquiryForm() {
         );
         setStep(firstStep);
       } else {
-        setFormError(json.error || "Something went wrong. Please call or WhatsApp me.");
+        setFormError(json.error || "Something went wrong. Please call or WhatsApp us.");
         setStatus("error");
       }
     } catch {
-      setFormError(`Something went wrong sending that. Please call me on ${SITE.phoneDisplay} or WhatsApp me.`);
+      setFormError(`Something went wrong sending that. Please call us on ${SITE.phoneDisplay} or WhatsApp us.`);
       setStatus("error");
     }
   }
@@ -177,7 +177,7 @@ export function HomeEnquiryForm() {
         <CheckCircle2 className="mx-auto h-12 w-12 text-whatsapp" aria-hidden />
         <h3 className="mt-4 font-display text-2xl font-bold">Thanks, your quote request is in.</h3>
         <p className="mx-auto mt-2 max-w-md text-muted">
-          I&apos;ll get back to you shortly with a price. Need me sooner? Call{" "}
+          We&apos;ll get back to you shortly with a price. Need us sooner? Call{" "}
           <a href={SITE.phoneHref} className="font-semibold text-primary">{SITE.phoneDisplay}</a>.
         </p>
       </div>
@@ -219,7 +219,7 @@ export function HomeEnquiryForm() {
                 key={s.value}
                 onClick={() => pickService(s.value)}
                 className={`flex items-center gap-3 rounded-[var(--radius-md)] border p-3.5 text-left transition-colors ${
-                  on ? "border-primary bg-primary/5" : "border-border-strong hover:border-primary"
+                  on ? "border-primary bg-primary/5" : "border-border-input hover:border-primary"
                 }`}
               >
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[var(--radius-md)] bg-sunken text-primary">
@@ -278,7 +278,7 @@ export function HomeEnquiryForm() {
               >
                 <Upload className="h-6 w-6 text-primary" aria-hidden />
                 <span className="text-sm font-medium text-ink">Tap to add a photo</span>
-                <span className="text-xs text-muted">JPG or PNG, up to 10MB</span>
+                <span className="text-xs text-muted">JPG or PNG, up to 20MB</span>
               </label>
             ) : (
               <div className="mt-2 flex items-center gap-3 rounded-[var(--radius-lg)] border border-border-subtle bg-sunken p-3">
@@ -329,10 +329,10 @@ export function HomeEnquiryForm() {
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <input id="consent" name="consent" type="checkbox" value="yes" className="mt-1 h-5 w-5 shrink-0 rounded border-border-strong accent-[#2563eb]" />
+            <input id="consent" name="consent" type="checkbox" value="yes" className="mt-1 h-5 w-5 shrink-0 rounded border-border-strong accent-primary" />
             <label htmlFor="consent" className="text-sm text-muted">
               I&apos;m happy for JDH Gas to contact me about my quote. See our{" "}
-              <a href="/privacy-policy" className="font-medium text-primary underline-offset-2 hover:underline">privacy policy</a>.
+              <Link href="/privacy-policy" className="font-medium text-primary underline-offset-2 hover:underline">privacy policy</Link>.
             </label>
           </div>
           {errors.consent && <p className={errCls}>{errors.consent}</p>}

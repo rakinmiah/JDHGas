@@ -13,11 +13,17 @@ export function HeroSocialProof({
   rating,
   count,
   reviews = [],
+  tone = "light",
 }: {
   rating: string;
   count: number;
   reviews?: DisplayReview[];
+  /** "inverse" for navy surfaces (the homepage hero). */
+  tone?: "light" | "inverse";
 }) {
+  const inverse = tone === "inverse";
+  const ring = inverse ? "ring-ink" : "ring-surface";
+  const strong = inverse ? "text-inverse" : "text-ink";
   const withPhotos = reviews.filter((r) => r.photo);
   const avatars = (withPhotos.length > 0 ? withPhotos : reviews).slice(0, 7);
 
@@ -29,7 +35,7 @@ export function HeroSocialProof({
             <span
               key={`${r.name}-${i}`}
               style={{ backgroundColor: r.color, zIndex: avatars.length - i }}
-              className={`grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full font-display text-sm font-bold text-white ring-2 ring-surface ${
+              className={`grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full font-display text-sm font-bold text-white ring-2 ${ring} ${
                 i > 0 ? "-ml-2.5" : ""
               }`}
             >
@@ -49,7 +55,7 @@ export function HeroSocialProof({
             </span>
           ))}
           {count > avatars.length && (
-            <span className="z-0 -ml-2.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink font-display text-xs font-bold text-inverse ring-2 ring-surface">
+            <span className={`z-0 -ml-2.5 grid h-10 w-10 shrink-0 place-items-center rounded-full font-display text-xs font-bold text-inverse ring-2 ${ring} ${inverse ? "bg-primary" : "bg-ink"}`}>
               +{count - avatars.length}
             </span>
           )}
@@ -65,15 +71,15 @@ export function HeroSocialProof({
             <Star key={i} className="h-4.5 w-4.5 fill-gas-safe text-gas-safe" />
           ))}
         </span>
-        <span className="font-display text-lg font-bold text-ink">{rating}</span>
-        <span className="text-sm text-muted">on</span>
+        <span className={`font-display text-lg font-bold ${strong}`}>{rating}</span>
+        <span className={`text-sm ${inverse ? "text-steel" : "text-muted"}`}>on</span>
         <GoogleG className="h-4.5 w-4.5 shrink-0" />
-        <span className="font-display text-base font-bold text-ink">Google</span>
+        <span className={`font-display text-base font-bold ${strong}`}>Google</span>
       </Link>
-      <p className="mt-2 flex items-center gap-2 text-sm font-medium text-text">
+      <p className={`mt-2 flex items-center gap-2 text-sm font-medium ${inverse ? "text-inverse/85" : "text-text"}`}>
         <span className="h-2 w-2 shrink-0 rounded-full bg-whatsapp" aria-hidden />
         <span>
-          Trusted by <span className="font-bold text-ink">{count}+</span> customers
+          Trusted by <span className={`font-bold ${strong}`}>{count}+</span> customers
           <span className="hidden sm:inline"> across Burgess Hill &amp; Mid Sussex</span>
         </span>
       </p>

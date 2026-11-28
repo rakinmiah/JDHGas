@@ -37,7 +37,7 @@ export function MobileActionBar() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-[300] border-t border-border-subtle bg-surface/95 px-3 pb-[max(0.625rem,env(safe-area-inset-bottom))] pt-2.5 shadow-[0_-6px_20px_rgba(15,23,42,0.1)] backdrop-blur transition-transform duration-300 md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-(--z-sticky) border-t border-rule bg-surface px-3 pb-[max(0.625rem,env(safe-area-inset-bottom))] pt-2.5 transition-transform duration-300 md:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!show}
@@ -45,7 +45,7 @@ export function MobileActionBar() {
       <div className="flex gap-2.5">
         <Button
           href={SITE.phoneHref}
-          className="flex-1"
+          className="flex-1 bg-navy! hover:bg-navy!"
           aria-label={`Call JDH Gas on ${SITE.phoneDisplay}`}
         >
           <Phone className="h-5 w-5" aria-hidden /> Call

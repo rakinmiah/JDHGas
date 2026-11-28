@@ -13,7 +13,7 @@ type Props = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] px-5 py-3 text-base font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 min-h-[44px]";
+  "inline-flex items-center justify-center gap-2 rounded-[4px] px-5 py-3 text-base font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 min-h-[44px]";
 
 const variants: Record<Variant, string> = {
   primary:

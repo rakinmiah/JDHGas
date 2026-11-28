@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please enter a valid email address.";
   if (!postcode) errors.postcode = "Please enter your postcode.";
   if (!service) errors.service = "Please choose a service.";
-  if (!consent) errors.consent = "Please tick the box so I can reply to you.";
+  if (!consent) errors.consent = "Please tick the box so we can reply to you.";
 
   const photo = form.get("photo");
   let photoMeta: { name: string; type: string; size: number } | null = null;
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
     } catch (e) {
       console.error("[contact] email send failed:", e);
       return NextResponse.json(
-        { ok: false, error: "Sorry, something went wrong sending that. Please call or WhatsApp me." },
+        { ok: false, error: "Sorry, something went wrong sending that. Please call or WhatsApp us." },
         { status: 502 }
       );
     }

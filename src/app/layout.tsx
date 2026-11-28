@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Gas Engineer in Burgess Hill | JDH Gas Services",
   description:
-    "Jamie Hannah, your Gas Safe registered engineer in Burgess Hill. Boiler servicing, repairs & landlord gas safety certificates. Call or WhatsApp today.",
+    "Gas Safe registered gas & heating engineer in Burgess Hill. Boiler servicing, repairs, installs & landlord gas safety certificates. Call or WhatsApp today.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "JDH Gas Services",
     title: "Gas Engineer in Burgess Hill | JDH Gas Services",
     description:
-      "Gas Safe registered engineer Jamie Hannah. Boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
+      "JDH Gas Services: Gas Safe registered boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
     url: SITE_URL,
     locale: "en_GB",
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gas Engineer in Burgess Hill | JDH Gas Services",
     description:
-      "Gas Safe registered engineer Jamie Hannah. Boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
+      "JDH Gas Services: Gas Safe registered boiler servicing, repairs & gas safety certificates across Burgess Hill & Mid Sussex.",
   },
   // Google Search Console verification — set GOOGLE_SITE_VERIFICATION to the
   // token from GSC's "HTML tag" method to verify ownership (no-op until set).
@@ -71,11 +71,11 @@ export default function RootLayout({
         <SiteJsonLd />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[600] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-inverse"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-(--z-skip) focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-inverse"
         >
           Skip to content
         </a>
-        <div className="sticky top-0 z-[200]">
+        <div className="sticky top-0 z-(--z-sticky)">
           <SiteHeader />
         </div>
         <main id="main" className="flex-1">

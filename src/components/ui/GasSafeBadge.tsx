@@ -7,14 +7,24 @@ import { SITE } from "@/lib/site";
  * If Jamie supplies the official Gas Safe Register logo pack, the shield icon
  * can be swapped for the real mark here in one place.
  */
-export function GasSafeBadge({ className = "" }: { className?: string }) {
+export function GasSafeBadge({
+  className = "",
+  tone = "light",
+}: {
+  className?: string;
+  /** "inverse" for navy surfaces (the homepage hero). */
+  tone?: "light" | "inverse";
+}) {
+  const inverse = tone === "inverse";
   return (
     <p
-      className={`inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-gas-safe/40 bg-gas-safe/10 px-3.5 py-1.5 text-sm font-semibold text-ink ${className}`}
+      className={`inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-gas-safe/40 bg-gas-safe/10 px-3.5 py-1.5 text-sm font-semibold ${
+        inverse ? "text-inverse" : "text-ink"
+      } ${className}`}
     >
       <ShieldCheck className="h-4.5 w-4.5 shrink-0 text-gas-safe" aria-hidden />
       Gas Safe Registered
-      <span className="font-medium text-muted">No. {SITE.gasSafe}</span>
+      <span className={`font-medium ${inverse ? "text-steel" : "text-muted"}`}>No. {SITE.gasSafe}</span>
     </p>
   );
 }

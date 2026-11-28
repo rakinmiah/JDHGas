@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const STEPS = [
   { icon: Phone, title: "Get in touch", text: "Call, WhatsApp or get a quick quote. A photo of the boiler helps if you've got one." },
-  { icon: Clock, title: "I arrive on time", text: "When I say I'll be there, I'm there. And I leave your home as clean as I found it." },
+  { icon: Clock, title: "We arrive on time", text: "When we say we'll be there, we're there. And we leave your home as clean as we found it." },
   { icon: ShieldCheck, title: "A proper, thorough job", text: "Done by the book, with no rushing off to the next job." },
   { icon: BadgePoundSterling, title: "Honest price, explained", text: "A fair price up front, and straight advice on what needs doing now and what can wait." },
 ];
@@ -41,7 +41,7 @@ export function WhyChoose() {
             From first message to job done
           </h2>
           <p className="mt-3 max-w-xl text-lg text-muted">
-            Booking me is simple. No call centres, no runaround. Here&apos;s how it goes.
+            Booking is simple. No call centres, no runaround. Here&apos;s how it goes.
           </p>
         </Reveal>
 
@@ -58,7 +58,7 @@ export function WhyChoose() {
             />
             {!reduce && (
               <motion.span
-                className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(37,99,235,0.2)]"
+                className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(42,92,240,0.2)]"
                 style={{ left: fill }}
               />
             )}

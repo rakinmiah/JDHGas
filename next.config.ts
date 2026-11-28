@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // AVIF first, WebP fallback (the default is WebP only).
+    formats: ["image/avif", "image/webp"],
+  },
   async redirects() {
     return [
       // /areas is now the area hub page. Any old /areas/<town> URLs fold into it.

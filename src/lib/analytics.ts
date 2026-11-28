@@ -19,6 +19,12 @@
 //   booking_start          first step change inside the booking widget
 //   booking_step           every step change ({ step: 1, 2, 3… screens deep })
 //   booking_open_external  the "open it in a new tab" fallback link
+//
+// Homepage intent signals (also not conversions), fired declaratively by the
+// data-track listener in Analytics.tsx:
+//
+//   needs_card_click       a row in the hero's "What do you need?" card ({ need })
+//   register_check_click   a link to the Gas Safe Register ({ location })
 
 declare global {
   interface Window {

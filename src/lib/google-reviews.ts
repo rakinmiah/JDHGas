@@ -8,6 +8,9 @@ export type DisplayReview = {
   text: string;
   /** Reviewer's public Google profile photo (absent on the fallback set). */
   photo?: string;
+  /** The review itself on Google Maps (Places API `googleMapsUri`); absent on
+   *  the fallback set, where cards link to the Google reviews listing. */
+  url?: string;
 };
 
 export type ReviewsData = {
@@ -99,6 +102,7 @@ export async function getGoogleReviews(): Promise<ReviewsData> {
           // "/a/…" — those should fall back to our own initials instead.
           photo:
             author.photoUri && author.photoUri.includes("/a-/") ? author.photoUri : undefined,
+          url: typeof rv.googleMapsUri === "string" ? rv.googleMapsUri : undefined,
         };
       })
       .filter((r: DisplayReview) => r.text);

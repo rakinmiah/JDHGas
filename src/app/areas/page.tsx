@@ -201,7 +201,8 @@ export default async function AreasHub() {
       {/* Boiler-make wall — slim ink variant */}
       <LogoStrip compact />
 
-      <Reviews tone="sunken" />
+      {/* White, so it doesn't sit grey-on-grey against the contact section. */}
+      <Reviews tone="surface" />
       <ContactSection />
     </>
   );

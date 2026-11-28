@@ -1,44 +1,122 @@
 @import "tailwindcss";
 
-/* JDH Gas — design tokens (from website-plan/06-tokens.md). Light theme only. */
+/* JDH Gas — design tokens. Light theme only. Brand colours are taken from
+   the shield logo and the van livery (navy body, electric-blue flame, sky-blue
+   lettering, silver bevel); see design-system/TOKENS.md. */
 @theme {
   /* Brand */
-  --color-ink: #0b1220;
-  --color-primary: #1b46c2;
-  --color-primary-hover: #15368f;
-  --color-flame: #f2731b;
-  --color-steel: #8da2bc;
+  --color-ink: #0f1f4b;
+  --color-primary: #0f1f4b;
+  --color-primary-hover: #24356f;
+  /* "flame" = the logo's light-blue flame tip / the van lettering. The accent
+     on navy surfaces (icons, eyebrows, badges). Not for text on white. */
+  --color-flame: #ff6b1a;
+  --color-steel: #b4bccf;
   --color-gas-safe: #ffd200;
   --color-whatsapp: #127c3f;
   --color-whatsapp-hover: #0e6a34;
 
+  /* Rebrand direction 3 (website-plan/rebrand/homepage-draft/palettes.html):
+     white, one solid navy, neutral greys, Ember for actions only. Flat: no
+     gradients, washes or glows. Used by the new homepage hero and services;
+     the rest of the site still uses the tokens above until it's migrated. */
+  --color-navy: #0f1f4b;
+  --color-navy-line: #24356f;
+  --color-navy-muted: #b4bccf;
+  --color-grey: #eef0f3;
+  --color-rule: #d6dae0;
+  --color-neutral: #5a5f66;
+  /* Ember: action colour. Navy text on it (5.6:1). White text fails (2.9:1). */
+  --color-action: #ff6b1a;
+  --color-action-hover: #ff8240;
+  /* Ember as text on white (5.5:1) */
+  --color-action-text: #b84309;
+
   /* Semantic surfaces / text */
   --color-surface: #ffffff;
-  --color-sunken: #f4f7fb;
-  --color-ink-soft: #142036;
-  --color-border-subtle: #e4e9f0;
-  --color-border-strong: #c9d2de;
-  --color-text: #0b1220;
-  --color-muted: #51607a;
-  --color-inverse: #f5f8fc;
+  --color-sunken: #eef0f3;
+  --color-ink-soft: #24356f;
+  --color-border-subtle: #e3e6ea;
+  --color-border-strong: #d6dae0;
+  --color-text: #0f1f4b;
+  --color-muted: #5a5f66;
+  --color-inverse: #ffffff;
+  /* Input, select and textarea borders: 3.45:1 on white (WCAG 1.4.11).
+     border-strong (1.53:1) is decorative only, never a control boundary. */
+  --color-border-input: #8a8f96;
+
+  /* Feedback (text colour on its paired -surface background, all AA) */
+  --color-feedback-success: #127c3f;
+  --color-feedback-success-surface: #e8f5ee;
+  --color-feedback-warning: #8a5300;
+  --color-feedback-warning-surface: #fff4e0;
+  --color-feedback-danger: #b42318;
+  --color-feedback-danger-surface: #fdecea;
+  --color-feedback-info: #0f1f4b;
+  --color-feedback-info-surface: #eef0f3;
 
   /* Fonts (wired from next/font in layout) */
   --font-display: var(--font-display-src), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-body-src), ui-sans-serif, system-ui, sans-serif;
 
-  /* Radius */
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-pill: 999px;
+  /* Radius, by size: the bigger the object, the bigger the radius */
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px; /* cards: needs card, bento cards, engineer card, form card */
+  --radius-panel: 8px; /* inset panels: 28px → 48px */
+  --radius-pill: 4px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.06), 0 1px 3px rgba(11, 18, 32, 0.08);
-  --shadow-md: 0 4px 12px rgba(11, 18, 32, 0.08), 0 2px 4px rgba(11, 18, 32, 0.06);
-  --shadow-lg: 0 12px 32px rgba(11, 18, 32, 0.12);
+  --shadow-sm: 0 1px 2px rgba(6, 23, 58, 0.06), 0 1px 3px rgba(6, 23, 58, 0.08);
+  --shadow-md: 0 4px 12px rgba(6, 23, 58, 0.08), 0 2px 4px rgba(6, 23, 58, 0.06);
+  --shadow-lg: 0 12px 32px rgba(6, 23, 58, 0.12);
+  /* For a white card sitting on a dark photo or navy panel */
+  --shadow-id: 0 24px 48px rgba(3, 10, 28, 0.45), 0 2px 6px rgba(3, 10, 28, 0.3);
+
+  /* Type: fluid sizes, so headings shrink on phones without breakpoint
+     overrides (website-plan/rebrand/06-tokens.md). Use these for every
+     heading; no text-[…] literals for headings. */
+  --text-display: clamp(2rem, 1.2rem + 3.2vw, 3.5rem); /* H1: 32px → 56px */
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem); /* 28px → 40px */
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.015em;
+  --text-stat: clamp(4rem, 3rem + 4vw, 6rem); /* 64px → 96px */
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.03em;
+  --text-quote: clamp(1.375rem, 1.1rem + 1.2vw, 2rem); /* 22px → 32px */
+  --text-quote--line-height: 1.3;
+  --text-h3: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem); /* 18px → 20px */
+  --text-h3--line-height: 1.3;
+  --text-lead: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem); /* 17px → 18px */
+  --text-lead--line-height: 1.55;
+
+  /* Easing (durations live in :root below) */
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root {
   color-scheme: light;
+
+  /* Motion durations */
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --motion-slow: 300ms;
+  --motion-reveal: 500ms;
+  --motion-emphasis: 600ms;
+  --motion-draw: 400ms;
+
+  /* Z-index scale: one value per role, no ad-hoc numbers */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 200; /* site header, mobile action bar */
+  --z-overlay: 300; /* mobile menu */
+  --z-banner: 400; /* cookie banner */
+  --z-skip: 600; /* skip link when focused */
+
+  /* The accent phrase colour on light surfaces; navy surfaces override it */
+  --accent-color: var(--color-primary);
 }
 
 html {
@@ -80,6 +158,61 @@ html {
   outline: 2px solid var(--color-primary-hover);
   outline-offset: 2px;
   border-radius: 4px;
+}
+/* On navy surfaces the deep-blue ring disappears; use the light flame blue. */
+.text-inverse :focus-visible,
+.tone-ink :focus-visible {
+  outline-color: var(--color-flame);
+}
+
+/* The accent rule: one phrase per H1/H2, set in the accent colour
+   (electric blue on light, sky blue on navy). See <Accent>. */
+.accent {
+  /* Direction 3: no coloured highlight words (it read as a template tell). */
+  color: inherit;
+}
+.tone-ink {
+  --accent-color: var(--color-flame);
+}
+
+/* Mobile menu sheet entrance */
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.anim-sheet-in {
+  animation: sheet-in var(--motion-base) cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+/* Entrance for small, non-LCP elements (hero proof row, needs card):
+   desktop only, never the H1. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (min-width: 1024px) {
+  .anim-rise-in {
+    animation: rise-in var(--motion-slow) cubic-bezier(0, 0, 0.2, 1) 120ms both;
+  }
+}
+
+/* The honeycomb from the van's rear window, as a quiet texture for navy
+   panels. Absolutely positioned, decorative only; fades out across the panel. */
+.brand-hex {
+  /* Retired in direction 3: the masked honeycomb fade read as a gradient. */
+  display: none;
 }
 
 .section {
