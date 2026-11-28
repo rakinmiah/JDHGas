@@ -178,11 +178,13 @@ export function AreaMapCheck({
           <p className="max-w-[40ch] text-neutral">Check your postcode, or find your town on the map.</p>
         </div>
         <div className="relative lg:flex lg:min-h-[560px] lg:items-center">
-          {/* Phones: the map, then the panel below it (no overlap, so the
-              coast towns stay in view). */}
+          {/* Phones: the map, then the checker below it (no overlap, so the
+              coast towns stay in view) on a flat grey band that closes the
+              section. A white card on white left an invisible box of padding
+              and a dead gap before the next section (28 Nov 2026). */}
           <div className="relative z-0 h-[380px] sm:h-[420px] lg:absolute lg:inset-0 lg:h-auto">{map}</div>
-          <div className="container-page relative z-[500] w-full pb-12 pt-6 lg:pointer-events-none lg:py-14">
-            <div ref={panelRef} className={panelCls}>
+          <div className="container-page relative z-[500] w-full bg-grey pb-10 pt-8 lg:pointer-events-none lg:bg-transparent lg:py-14">
+            <div ref={panelRef} className={`${panelCls} max-lg:rounded-none max-lg:bg-transparent max-lg:p-0!`}>
               <p className="font-display text-xl font-extrabold tracking-[-0.02em] text-navy">Do we cover you?</p>
               <div className="mt-5">{checker}</div>
               {slot}
